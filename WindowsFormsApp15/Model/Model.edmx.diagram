@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5e47c328f7849769444cca9195da9cd" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="amenicsModel.tb_controledeponto" Width="1.5" PointX="5.875" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_estoque" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_folhapagamento" Width="1.5" PointX="3.375" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_fornecedor" Width="1.5" PointX="8.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_funcionario" Width="1.5" PointX="0.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_log" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_produto" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_usuario" Width="1.5" PointX="4.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_venda" Width="1.5" PointX="0.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="amenicsModel.tb_venda_item" Width="1.5" PointX="2.875" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="amenicsModel.tb_controledeponto_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_controledeponto_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_folhapagamento_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_estoque_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_estoque_ibfk_2" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_folhapagamento_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_usuario_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_log_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_venda_item_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_venda_ibfk_1" ManuallyRouted="false" />
+        <AssociationConnector Association="amenicsModel.tb_venda_item_ibfk_2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

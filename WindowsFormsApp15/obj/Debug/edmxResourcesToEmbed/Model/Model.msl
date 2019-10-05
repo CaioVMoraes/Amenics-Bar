@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ecostoreModelStoreContainer" CdmEntityContainer="ecostoreEntities">
+    <EntitySetMapping Name="tb_controledeponto">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_controledeponto">
+        <MappingFragment StoreEntitySet="tb_controledeponto">
+          <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
+          <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
+          <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_estoque">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_estoque">
+        <MappingFragment StoreEntitySet="tb_estoque">
+          <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+          <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
+          <ScalarProperty Name="dt_validade" ColumnName="dt_validade" />
+          <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
+          <ScalarProperty Name="qtd_estoque" ColumnName="qtd_estoque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_folhapagamento">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_folhapagamento">
+        <MappingFragment StoreEntitySet="tb_folhapagamento">
+          <ScalarProperty Name="id_folhaPagamento" ColumnName="id_folhaPagamento" />
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
+          <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
+          <ScalarProperty Name="vl_desconto" ColumnName="vl_desconto" />
+          <ScalarProperty Name="vl_contribuicao" ColumnName="vl_contribuicao" />
+          <ScalarProperty Name="vl_total" ColumnName="vl_total" />
+          <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_fornecedor">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_fornecedor">
+        <MappingFragment StoreEntitySet="tb_fornecedor">
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="nm_fornecedor" ColumnName="nm_fornecedor" />
+          <ScalarProperty Name="nm_empresa" ColumnName="nm_empresa" />
+          <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+          <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+          <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+          <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_funcionario">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_funcionario">
+        <MappingFragment StoreEntitySet="tb_funcionario">
+          <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+          <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+          <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+          <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
+          <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
+          <ScalarProperty Name="tm_horasTrabalhadas" ColumnName="tm_horasTrabalhadas" />
+          <ScalarProperty Name="dt_contratacao" ColumnName="dt_contratacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_log">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_log">
+        <MappingFragment StoreEntitySet="tb_log">
+          <ScalarProperty Name="id_log" ColumnName="id_log" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="dt_dataLogin" ColumnName="dt_dataLogin" />
+          <ScalarProperty Name="dt_dataLogoff" ColumnName="dt_dataLogoff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_produto">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_produto">
+        <MappingFragment StoreEntitySet="tb_produto">
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+          <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
+          <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
+          <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
+          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="qtd_disponivel" ColumnName="qtd_disponivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_usuario">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nm_usuario" ColumnName="nm_usuario" />
+          <ScalarProperty Name="ds_senha" ColumnName="ds_senha" />
+          <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+          <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_venda">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_venda">
+        <MappingFragment StoreEntitySet="tb_venda">
+          <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+          <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_venda_item">
+      <EntityTypeMapping TypeName="ecostoreModel.tb_venda_item">
+        <MappingFragment StoreEntitySet="tb_venda_item">
+          <ScalarProperty Name="id_venda_item" ColumnName="id_venda_item" />
+          <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+          <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
