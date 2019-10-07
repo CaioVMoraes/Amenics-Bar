@@ -63,6 +63,16 @@ namespace WindowsFormsApp15.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3907f0a4052ed31662981053bbf12c4e {
+            get {
+                object obj = ResourceManager.GetObject("3907f0a4052ed31662981053bbf12c4e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap collaborator_male {
             get {
                 object obj = ResourceManager.GetObject("collaborator-male", resourceCulture);

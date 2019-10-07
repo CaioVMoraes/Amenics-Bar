@@ -43,16 +43,10 @@ namespace WindowsFormsApp15.Business
             List<tb_usuario> lista = database.ListaDeUsuarios();
 
             bool nomeExiste = lista.Exists(x => x.nm_usuario == usuario.nm_usuario);
-            bool emailExiste = lista.Exists(x => x.ds_email == usuario.ds_email);
 
             if (nomeExiste == true)
             {
                 throw new ArgumentException("Usúario já existe");
-            }
-
-            if (emailExiste == true)
-            {
-                throw new ArgumentException("E-mail já registrado");
             }
 
             if (usuario.ds_senha == string.Empty)
@@ -63,16 +57,6 @@ namespace WindowsFormsApp15.Business
             if (confiSenha == string.Empty)
             {
                 throw new ArgumentException("Confirme a sua senha");
-            }
-
-            if (usuario.ds_email.Contains("@") == false)
-            {
-                throw new ArgumentException("Email invalido");
-            }
-
-            if (usuario.ds_email == string.Empty)
-            {
-                throw new ArgumentException("Informe o seu e-mail");
             }
 
             if (usuario.nm_usuario == string.Empty)

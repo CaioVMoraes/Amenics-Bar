@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class UsuarioDatabase
     {
-        Model.ecostoreEntities db = new Model.ecostoreEntities();
+        Model.amenicsEntities db = new amenicsEntities();
 
         public tb_usuario usuario(string nome, string senha)
         {

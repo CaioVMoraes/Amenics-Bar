@@ -283,6 +283,7 @@
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\3907f0a4052ed31662981053bbf12c4e.jpg" />
+    <None Include="Resources\3907f0a4052ed31662981053bbf12c4e1.jpg" />
     <Content Include="Resources\kkk.jpg" />
     <Content Include="Script.txt" />
   </ItemGroup>

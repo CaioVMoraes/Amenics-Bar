@@ -1,0 +1,19 @@
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\bin\Debug\WindowsFormsApp15.exe.config
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.exe
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.pdb
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\Amenic's Bar.csprojResolveAssemblyReference.cache
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarEstoque.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarFuncionario.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarPedido.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarPonto.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarProduto.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastrarUsuario.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastroFornecedores.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmCadastroLogin.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmConsultarFornecedor.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmConsultarPonto.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmFluxoCaixa.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Telas.frmFolhaPagamento.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Form1.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\WindowsFormsApp15.Properties.Resources.resources
+C:\Users\Caio\Source\Repos\amenics-bar\WindowsFormsApp15\obj\Debug\Amenic's Bar.csproj.GenerateResource.Cache
