@@ -22,13 +22,14 @@ namespace WindowsFormsApp15.Model
     
         public int id_controleDePonto { get; set; }
         public int id_funcionario { get; set; }
-        public int id_usuario { get; set; }
-        public System.DateTime dt_mes { get; set; }
-        public Nullable<System.DateTime> dt_entrada { get; set; }
+        public Nullable<System.DateTime> dt_chegada { get; set; }
+        public Nullable<System.DateTime> dt_saidaAlmoco { get; set; }
+        public Nullable<System.DateTime> dt_voltaAlmoco { get; set; }
         public Nullable<System.DateTime> dt_saida { get; set; }
+        public Nullable<System.DateTime> dt_entradaHoraExtra { get; set; }
+        public Nullable<System.DateTime> dt_saidaHoraExtra { get; set; }
     
         public virtual tb_funcionario tb_funcionario { get; set; }
-        public virtual tb_usuario tb_usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_folhapagamento> tb_folhapagamento { get; set; }
     }

@@ -5,41 +5,125 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="amenicsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_cardapio">
+          <Key>
+            <PropertyRef Name="id_cardapio" />
+          </Key>
+          <Property Name="id_cardapio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_categoria" Type="int" Nullable="false" />
+          <Property Name="nm_refeicao" Type="int" Nullable="false" />
+          <Property Name="ds_descricao" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="img_refeicao" Type="longblob" />
+        </EntityType>
+        <EntityType Name="tb_categoria">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_categoria" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ds_categoria" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="tb_cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_cliente" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="ds_telefone" Type="varchar" MaxLength="15" />
+          <Property Name="ds_celular" Type="varchar" MaxLength="15" />
+          <Property Name="ds_email" Type="varchar" MaxLength="50" />
+          <Property Name="ds_cpf" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ds_rg" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="qtd_frequenciaMensal" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_comanda">
+          <Key>
+            <PropertyRef Name="id_comanda" />
+          </Key>
+          <Property Name="id_comanda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="dt_comanda" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_comanda_item">
+          <Key>
+            <PropertyRef Name="id_comanda_item" />
+          </Key>
+          <Property Name="id_comanda_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_comanda" Type="int" Nullable="false" />
+          <Property Name="id_cardapio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_compra">
+          <Key>
+            <PropertyRef Name="id_compra" />
+          </Key>
+          <Property Name="id_compra" Type="int" Nullable="false" />
+          <Property Name="dt_compra" Type="date" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tb_compra_item">
+          <Key>
+            <PropertyRef Name="id_compra_item" />
+          </Key>
+          <Property Name="id_compra_item" Type="int" Nullable="false" />
+          <Property Name="id_compra" Type="int" Nullable="false" />
+          <Property Name="id_produto" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="tb_controledeponto">
           <Key>
             <PropertyRef Name="id_controleDePonto" />
           </Key>
           <Property Name="id_controleDePonto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_funcionario" Type="int" Nullable="false" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="dt_mes" Type="date" Nullable="false" />
-          <Property Name="dt_entrada" Type="datetime" Precision="0" />
+          <Property Name="dt_chegada" Type="datetime" Precision="0" />
+          <Property Name="dt_saidaAlmoco" Type="datetime" Precision="0" />
+          <Property Name="dt_voltaAlmoco" Type="datetime" Precision="0" />
           <Property Name="dt_saida" Type="datetime" Precision="0" />
+          <Property Name="dt_entradaHoraExtra" Type="datetime" Precision="0" />
+          <Property Name="dt_saidaHoraExtra" Type="datetime" Precision="0" />
+        </EntityType>
+        <EntityType Name="tb_despesa">
+          <Key>
+            <PropertyRef Name="id_despesa" />
+          </Key>
+          <Property Name="id_despesa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ds_descricao" Type="varchar" MaxLength="200" />
+          <Property Name="vl_despesa" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="dt_pagamento" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
             <PropertyRef Name="id_estoque" />
           </Key>
-          <Property Name="id_estoque" Type="int" Nullable="false" />
-          <Property Name="id_fornecedor" Type="int" Nullable="false" />
+          <Property Name="id_estoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_produto" Type="int" Nullable="false" />
           <Property Name="dt_entrada" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="dt_validade" Type="date" />
-          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="qtd_produto" Type="int" Nullable="false" />
+          <Property Name="dt_validade" Type="date" Nullable="false" />
+          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="bt_vendido" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_folhapagamento">
           <Key>
             <PropertyRef Name="id_folhaPagamento" />
           </Key>
           <Property Name="id_folhaPagamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_funcionario" Type="int" />
-          <Property Name="dt_mes" Type="date" />
-          <Property Name="vl_salario" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="vl_desconto" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="vl_contribuicao" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="vl_total" Type="decimal" Precision="10" Scale="0" />
-          <Property Name="id_controleDePonto" Type="int" />
+          <Property Name="id_funcionario" Type="int" Nullable="false" />
+          <Property Name="id_controleDePonto" Type="int" Nullable="false" />
+          <Property Name="dt_pagamento" Type="date" Nullable="false" />
+          <Property Name="vl_gratificacoes" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_plr" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_salarioFamilia" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_valeAlimentacao" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_valeRefeicao" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_valeTransporte" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_inss" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_ir" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_fgts" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_planoSaude" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_planoOdonto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_faltas" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_fornecedor">
           <Key>
@@ -50,8 +134,12 @@
           <Property Name="nm_empresa" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="ds_telefone" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="ds_celular" Type="varchar" MaxLength="15" />
-          <Property Name="ds_endereco" Type="varchar" MaxLength="80" Nullable="false" />
-          <Property Name="ds_cnpj" Type="varchar" MaxLength="17" Nullable="false" />
+          <Property Name="ds_endereco" Type="varchar" MaxLength="80" />
+          <Property Name="ds_cep" Type="varchar" MaxLength="20" />
+          <Property Name="ds_cidade" Type="varchar" MaxLength="50" />
+          <Property Name="ds_UF" Type="varchar" MaxLength="15" />
+          <Property Name="ds_complemento" Type="varchar" MaxLength="50" />
+          <Property Name="ds_cnpj" Type="varchar" MaxLength="18" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_funcionario">
           <Key>
@@ -59,27 +147,22 @@
           </Key>
           <Property Name="id_funcionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nm_funcionario" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="ds_rg" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="ds_cpf" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="img_foto" Type="longblob" />
+          <Property Name="ds_telefone" Type="varchar" MaxLength="15" />
+          <Property Name="ds_celular" Type="varchar" MaxLength="20" />
+          <Property Name="ds_email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="dt_nascimento" Type="date" Nullable="false" />
           <Property Name="ds_genero" Type="enum" Nullable="false" />
-          <Property Name="vl_transporte" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="vl_refeicao" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="vl_alimentacao" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="vl_convenio" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="ds_endereco" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ds_cep" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="ds_cidade" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ds_UF" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="ds_complemento" Type="varchar" MaxLength="50" />
           <Property Name="ds_numeroCasa" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="ds_cpf" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="ds_rg" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="img_foto" Type="longblob" Nullable="false" />
-          <Property Name="ds_email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ds_cargo" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="vl_salario" Type="decimal" Precision="10" Scale="0" Nullable="false" />
-          <Property Name="ds_endereco" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ds_telefone" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="ds_celular" Type="varchar" MaxLength="20" />
-          <Property Name="tm_horasTrabalhadas" Type="time" Precision="0" Nullable="false" />
+          <Property Name="vl_salario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="dt_contratacao" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_log">
@@ -87,19 +170,20 @@
             <PropertyRef Name="id_log" />
           </Key>
           <Property Name="id_log" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_usuario" Type="int" />
-          <Property Name="dt_dataLogin" Type="datetime" Precision="0" />
-          <Property Name="dt_dataLogoff" Type="datetime" Precision="0" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="dt_dataLogin" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="ds_telaEntrou" Type="varchar" MaxLength="30" />
+          <Property Name="ds_oqFez" Type="varchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="tb_produto">
           <Key>
             <PropertyRef Name="id_produto" />
           </Key>
           <Property Name="id_produto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nm_produto" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="ds_categoria" Type="varchar" MaxLength="45" />
-          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="0" Nullable="false" />
           <Property Name="id_fornecedor" Type="int" Nullable="false" />
+          <Property Name="id_categoria" Type="int" Nullable="false" />
+          <Property Name="nm_produto" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="img_produto" Type="longblob" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -109,24 +193,118 @@
           <Property Name="id_funcionario" Type="int" Nullable="false" />
           <Property Name="nm_usuario" Type="varchar" MaxLength="65" Nullable="false" />
           <Property Name="ds_senha" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="nv_nivelAcesso" Type="enum" />
         </EntityType>
         <EntityType Name="tb_venda">
           <Key>
             <PropertyRef Name="id_venda" />
           </Key>
           <Property Name="id_venda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_usuario" Type="int" />
-          <Property Name="dt_saida" Type="datetime" Precision="0" />
+          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_cliente" Type="int" Nullable="false" />
+          <Property Name="dt_saida" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_venda_item">
           <Key>
             <PropertyRef Name="id_venda_item" />
           </Key>
           <Property Name="id_venda_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_venda" Type="int" />
-          <Property Name="id_produto" Type="int" />
-          <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="id_venda" Type="int" Nullable="false" />
+          <Property Name="id_estoque" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="tb_cardapio_ibfk_1">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
+          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tb_cardapio">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_ibfk_1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="tb_comanda">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_ibfk_2">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="tb_comanda">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_item_ibfk_1">
+          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cardapio">
+              <PropertyRef Name="id_cardapio" />
+            </Principal>
+            <Dependent Role="tb_comanda_item">
+              <PropertyRef Name="id_cardapio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_item_ibfk_2">
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_comanda">
+              <PropertyRef Name="id_comanda" />
+            </Principal>
+            <Dependent Role="tb_comanda_item">
+              <PropertyRef Name="id_comanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_compra_item_ibfk_1">
+          <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1" />
+          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_compra">
+              <PropertyRef Name="id_compra" />
+            </Principal>
+            <Dependent Role="tb_compra_item">
+              <PropertyRef Name="id_compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_compra_item_ibfk_2">
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1" />
+          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_produto">
+              <PropertyRef Name="id_produto" />
+            </Principal>
+            <Dependent Role="tb_compra_item">
+              <PropertyRef Name="id_produto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="tb_controledeponto_ibfk_1">
           <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -138,20 +316,6 @@
             </Principal>
             <Dependent Role="tb_controledeponto">
               <PropertyRef Name="id_funcionario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_controledeponto_ibfk_2">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_controledeponto">
-              <PropertyRef Name="id_usuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -169,22 +333,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_estoque_ibfk_2">
-          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_fornecedor">
-              <PropertyRef Name="id_fornecedor" />
-            </Principal>
-            <Dependent Role="tb_estoque">
-              <PropertyRef Name="id_fornecedor" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_folhapagamento_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="0..1">
+          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
@@ -198,7 +348,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_folhapagamento_ibfk_2">
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="0..1">
+          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
@@ -212,7 +362,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_log_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="0..1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_log" Type="Self.tb_log" Multiplicity="*" />
@@ -222,6 +372,30 @@
             </Principal>
             <Dependent Role="tb_log">
               <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_produto_ibfk_1">
+          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1" />
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fornecedor">
+              <PropertyRef Name="id_fornecedor" />
+            </Principal>
+            <Dependent Role="tb_produto">
+              <PropertyRef Name="id_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_produto_ibfk_2">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tb_produto">
+              <PropertyRef Name="id_categoria" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -238,7 +412,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="0..1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
@@ -251,22 +425,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="tb_venda_ibfk_2">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="tb_venda">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="tb_venda_item_ibfk_1">
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="0..1">
+          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tb_produto">
-              <PropertyRef Name="id_produto" />
+            <Principal Role="tb_estoque">
+              <PropertyRef Name="id_estoque" />
             </Principal>
             <Dependent Role="tb_venda_item">
-              <PropertyRef Name="id_produto" />
+              <PropertyRef Name="id_estoque" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_item_ibfk_2">
-          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="0..1">
+          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
@@ -280,7 +468,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="amenicsModelStoreContainer">
+          <EntitySet Name="tb_cardapio" EntityType="Self.tb_cardapio" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_comanda" EntityType="Self.tb_comanda" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_comanda_item" EntityType="Self.tb_comanda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_compra" EntityType="Self.tb_compra" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_compra_item" EntityType="Self.tb_compra_item" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_controledeponto" EntityType="Self.tb_controledeponto" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <EntitySet Name="tb_despesa" EntityType="Self.tb_despesa" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_folhapagamento" EntityType="Self.tb_folhapagamento" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_fornecedor" EntityType="Self.tb_fornecedor" Schema="db_a4e779_amenics" store:Type="Tables" />
@@ -290,20 +486,40 @@
           <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_venda" EntityType="Self.tb_venda" Schema="db_a4e779_amenics" store:Type="Tables" />
           <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
+          <AssociationSet Name="tb_cardapio_ibfk_1" Association="Self.tb_cardapio_ibfk_1">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_ibfk_1" Association="Self.tb_comanda_ibfk_1">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_ibfk_2" Association="Self.tb_comanda_ibfk_2">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_item_ibfk_1" Association="Self.tb_comanda_item_ibfk_1">
+            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
+            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_item_ibfk_2" Association="Self.tb_comanda_item_ibfk_2">
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_1" Association="Self.tb_compra_item_ibfk_1">
+            <End Role="tb_compra" EntitySet="tb_compra" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_2" Association="Self.tb_compra_item_ibfk_2">
+            <End Role="tb_produto" EntitySet="tb_produto" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
           <AssociationSet Name="tb_controledeponto_ibfk_1" Association="Self.tb_controledeponto_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
             <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
           </AssociationSet>
-          <AssociationSet Name="tb_controledeponto_ibfk_2" Association="Self.tb_controledeponto_ibfk_2">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
-          </AssociationSet>
           <AssociationSet Name="tb_estoque_ibfk_1" Association="Self.tb_estoque_ibfk_1">
             <End Role="tb_produto" EntitySet="tb_produto" />
-            <End Role="tb_estoque" EntitySet="tb_estoque" />
-          </AssociationSet>
-          <AssociationSet Name="tb_estoque_ibfk_2" Association="Self.tb_estoque_ibfk_2">
-            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
           <AssociationSet Name="tb_folhapagamento_ibfk_1" Association="Self.tb_folhapagamento_ibfk_1">
@@ -318,6 +534,14 @@
             <End Role="tb_usuario" EntitySet="tb_usuario" />
             <End Role="tb_log" EntitySet="tb_log" />
           </AssociationSet>
+          <AssociationSet Name="tb_produto_ibfk_1" Association="Self.tb_produto_ibfk_1">
+            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
+            <End Role="tb_produto" EntitySet="tb_produto" />
+          </AssociationSet>
+          <AssociationSet Name="tb_produto_ibfk_2" Association="Self.tb_produto_ibfk_2">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_produto" EntitySet="tb_produto" />
+          </AssociationSet>
           <AssociationSet Name="tb_usuario_ibfk_1" Association="Self.tb_usuario_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
             <End Role="tb_usuario" EntitySet="tb_usuario" />
@@ -326,8 +550,12 @@
             <End Role="tb_usuario" EntitySet="tb_usuario" />
             <End Role="tb_venda" EntitySet="tb_venda" />
           </AssociationSet>
+          <AssociationSet Name="tb_venda_ibfk_2" Association="Self.tb_venda_ibfk_2">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_venda" EntitySet="tb_venda" />
+          </AssociationSet>
           <AssociationSet Name="tb_venda_item_ibfk_1" Association="Self.tb_venda_item_ibfk_1">
-            <End Role="tb_produto" EntitySet="tb_produto" />
+            <End Role="tb_estoque" EntitySet="tb_estoque" />
             <End Role="tb_venda_item" EntitySet="tb_venda_item" />
           </AssociationSet>
           <AssociationSet Name="tb_venda_item_ibfk_2" Association="Self.tb_venda_item_ibfk_2">
@@ -340,46 +568,143 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="amenicsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tb_cardapio">
+          <Key>
+            <PropertyRef Name="id_cardapio" />
+          </Key>
+          <Property Name="id_cardapio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_categoria" Type="Int32" Nullable="false" />
+          <Property Name="nm_refeicao" Type="Int32" Nullable="false" />
+          <Property Name="ds_descricao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vl_valor" Type="Decimal" Nullable="false" />
+          <Property Name="img_refeicao" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="tb_categoria" Relationship="Self.tb_cardapio_ibfk_1" FromRole="tb_cardapio" ToRole="tb_categoria" />
+          <NavigationProperty Name="tb_comanda_item" Relationship="Self.tb_comanda_item_ibfk_1" FromRole="tb_cardapio" ToRole="tb_comanda_item" />
+        </EntityType>
+        <EntityType Name="tb_categoria">
+          <Key>
+            <PropertyRef Name="id_categoria" />
+          </Key>
+          <Property Name="id_categoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_categoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_cardapio" Relationship="Self.tb_cardapio_ibfk_1" FromRole="tb_categoria" ToRole="tb_cardapio" />
+          <NavigationProperty Name="tb_produto" Relationship="Self.tb_produto_ibfk_2" FromRole="tb_categoria" ToRole="tb_produto" />
+        </EntityType>
+        <EntityType Name="tb_cliente">
+          <Key>
+            <PropertyRef Name="id_cliente" />
+          </Key>
+          <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_cliente" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ds_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ds_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_rg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qtd_frequenciaMensal" Type="Int32" />
+          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_ibfk_2" FromRole="tb_cliente" ToRole="tb_comanda" />
+          <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_ibfk_2" FromRole="tb_cliente" ToRole="tb_venda" />
+        </EntityType>
+        <EntityType Name="tb_comanda">
+          <Key>
+            <PropertyRef Name="id_comanda" />
+          </Key>
+          <Property Name="id_comanda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="dt_comanda" Type="DateTime" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_cliente" Relationship="Self.tb_comanda_ibfk_2" FromRole="tb_comanda" ToRole="tb_cliente" />
+          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_comanda_ibfk_1" FromRole="tb_comanda" ToRole="tb_usuario" />
+          <NavigationProperty Name="tb_comanda_item" Relationship="Self.tb_comanda_item_ibfk_2" FromRole="tb_comanda" ToRole="tb_comanda_item" />
+        </EntityType>
+        <EntityType Name="tb_comanda_item">
+          <Key>
+            <PropertyRef Name="id_comanda_item" />
+          </Key>
+          <Property Name="id_comanda_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_comanda" Type="Int32" Nullable="false" />
+          <Property Name="id_cardapio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_cardapio" Relationship="Self.tb_comanda_item_ibfk_1" FromRole="tb_comanda_item" ToRole="tb_cardapio" />
+          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_item_ibfk_2" FromRole="tb_comanda_item" ToRole="tb_comanda" />
+        </EntityType>
+        <EntityType Name="tb_compra">
+          <Key>
+            <PropertyRef Name="id_compra" />
+          </Key>
+          <Property Name="id_compra" Type="Int32" Nullable="false" />
+          <Property Name="dt_compra" Type="DateTime" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_compra_item" Relationship="Self.tb_compra_item_ibfk_1" FromRole="tb_compra" ToRole="tb_compra_item" />
+        </EntityType>
+        <EntityType Name="tb_compra_item">
+          <Key>
+            <PropertyRef Name="id_compra_item" />
+          </Key>
+          <Property Name="id_compra_item" Type="Int32" Nullable="false" />
+          <Property Name="id_compra" Type="Int32" Nullable="false" />
+          <Property Name="id_produto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_compra" Relationship="Self.tb_compra_item_ibfk_1" FromRole="tb_compra_item" ToRole="tb_compra" />
+          <NavigationProperty Name="tb_produto" Relationship="Self.tb_compra_item_ibfk_2" FromRole="tb_compra_item" ToRole="tb_produto" />
+        </EntityType>
         <EntityType Name="tb_controledeponto">
           <Key>
             <PropertyRef Name="id_controleDePonto" />
           </Key>
           <Property Name="id_controleDePonto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_funcionario" Type="Int32" Nullable="false" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="dt_mes" Type="DateTime" Nullable="false" />
-          <Property Name="dt_entrada" Type="DateTime" />
+          <Property Name="dt_chegada" Type="DateTime" />
+          <Property Name="dt_saidaAlmoco" Type="DateTime" />
+          <Property Name="dt_voltaAlmoco" Type="DateTime" />
           <Property Name="dt_saida" Type="DateTime" />
+          <Property Name="dt_entradaHoraExtra" Type="DateTime" />
+          <Property Name="dt_saidaHoraExtra" Type="DateTime" />
           <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_controledeponto_ibfk_1" FromRole="tb_controledeponto" ToRole="tb_funcionario" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_controledeponto_ibfk_2" FromRole="tb_controledeponto" ToRole="tb_usuario" />
           <NavigationProperty Name="tb_folhapagamento" Relationship="Self.tb_folhapagamento_ibfk_2" FromRole="tb_controledeponto" ToRole="tb_folhapagamento" />
+        </EntityType>
+        <EntityType Name="tb_despesa">
+          <Key>
+            <PropertyRef Name="id_despesa" />
+          </Key>
+          <Property Name="id_despesa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ds_descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="vl_despesa" Type="Decimal" Nullable="false" />
+          <Property Name="dt_pagamento" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
             <PropertyRef Name="id_estoque" />
           </Key>
-          <Property Name="id_estoque" Type="Int32" Nullable="false" />
-          <Property Name="id_fornecedor" Type="Int32" Nullable="false" />
+          <Property Name="id_estoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_produto" Type="Int32" Nullable="false" />
           <Property Name="dt_entrada" Type="DateTime" Nullable="false" />
-          <Property Name="dt_validade" Type="DateTime" />
+          <Property Name="dt_validade" Type="DateTime" Nullable="false" />
           <Property Name="vl_valor" Type="Decimal" Nullable="false" />
-          <Property Name="qtd_produto" Type="Int32" Nullable="false" />
+          <Property Name="bt_vendido" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="tb_produto" Relationship="Self.tb_estoque_ibfk_1" FromRole="tb_estoque" ToRole="tb_produto" />
-          <NavigationProperty Name="tb_fornecedor" Relationship="Self.tb_estoque_ibfk_2" FromRole="tb_estoque" ToRole="tb_fornecedor" />
+          <NavigationProperty Name="tb_venda_item" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_estoque" ToRole="tb_venda_item" />
         </EntityType>
         <EntityType Name="tb_folhapagamento">
           <Key>
             <PropertyRef Name="id_folhaPagamento" />
           </Key>
           <Property Name="id_folhaPagamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_funcionario" Type="Int32" />
-          <Property Name="dt_mes" Type="DateTime" />
-          <Property Name="vl_salario" Type="Decimal" />
-          <Property Name="vl_desconto" Type="Decimal" />
-          <Property Name="vl_contribuicao" Type="Decimal" />
-          <Property Name="vl_total" Type="Decimal" />
-          <Property Name="id_controleDePonto" Type="Int32" />
+          <Property Name="id_funcionario" Type="Int32" Nullable="false" />
+          <Property Name="id_controleDePonto" Type="Int32" Nullable="false" />
+          <Property Name="dt_pagamento" Type="DateTime" Nullable="false" />
+          <Property Name="vl_gratificacoes" Type="Decimal" Nullable="false" />
+          <Property Name="vl_plr" Type="Decimal" Nullable="false" />
+          <Property Name="vl_salarioFamilia" Type="Decimal" Nullable="false" />
+          <Property Name="vl_valeAlimentacao" Type="Decimal" Nullable="false" />
+          <Property Name="vl_valeRefeicao" Type="Decimal" Nullable="false" />
+          <Property Name="vl_valeTransporte" Type="Decimal" Nullable="false" />
+          <Property Name="vl_inss" Type="Decimal" Nullable="false" />
+          <Property Name="vl_ir" Type="Decimal" Nullable="false" />
+          <Property Name="vl_fgts" Type="Decimal" Nullable="false" />
+          <Property Name="vl_planoSaude" Type="Decimal" Nullable="false" />
+          <Property Name="vl_planoOdonto" Type="Decimal" Nullable="false" />
+          <Property Name="vl_faltas" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="tb_controledeponto" Relationship="Self.tb_folhapagamento_ibfk_2" FromRole="tb_folhapagamento" ToRole="tb_controledeponto" />
           <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_folhapagamento_ibfk_1" FromRole="tb_folhapagamento" ToRole="tb_funcionario" />
         </EntityType>
@@ -392,9 +717,13 @@
           <Property Name="nm_empresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="ds_endereco" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cnpj" Type="String" MaxLength="17" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tb_estoque" Relationship="Self.tb_estoque_ibfk_2" FromRole="tb_fornecedor" ToRole="tb_estoque" />
+          <Property Name="ds_endereco" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_UF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ds_complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cnpj" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="tb_produto" Relationship="Self.tb_produto_ibfk_1" FromRole="tb_fornecedor" ToRole="tb_produto" />
         </EntityType>
         <EntityType Name="tb_funcionario">
           <Key>
@@ -402,27 +731,22 @@
           </Key>
           <Property Name="id_funcionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nm_funcionario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_rg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img_foto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ds_celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dt_nascimento" Type="DateTime" Nullable="false" />
           <Property Name="ds_genero" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="vl_transporte" Type="Decimal" Nullable="false" />
-          <Property Name="vl_refeicao" Type="Decimal" Nullable="false" />
-          <Property Name="vl_alimentacao" Type="Decimal" Nullable="false" />
-          <Property Name="vl_convenio" Type="Decimal" Nullable="false" />
+          <Property Name="ds_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_UF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ds_numeroCasa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_rg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="img_foto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="ds_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_cargo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="vl_salario" Type="Decimal" Nullable="false" />
-          <Property Name="ds_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tm_horasTrabalhadas" Type="Time" Nullable="false" />
           <Property Name="dt_contratacao" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="tb_controledeponto" Relationship="Self.tb_controledeponto_ibfk_1" FromRole="tb_funcionario" ToRole="tb_controledeponto" />
           <NavigationProperty Name="tb_folhapagamento" Relationship="Self.tb_folhapagamento_ibfk_1" FromRole="tb_funcionario" ToRole="tb_folhapagamento" />
@@ -433,9 +757,10 @@
             <PropertyRef Name="id_log" />
           </Key>
           <Property Name="id_log" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" />
-          <Property Name="dt_dataLogin" Type="DateTime" />
-          <Property Name="dt_dataLogoff" Type="DateTime" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="dt_dataLogin" Type="DateTime" Nullable="false" />
+          <Property Name="ds_telaEntrou" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ds_oqFez" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tb_usuario" Relationship="Self.tb_log_ibfk_1" FromRole="tb_log" ToRole="tb_usuario" />
         </EntityType>
         <EntityType Name="tb_produto">
@@ -443,12 +768,14 @@
             <PropertyRef Name="id_produto" />
           </Key>
           <Property Name="id_produto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nm_produto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_categoria" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="vl_valor" Type="Decimal" Nullable="false" />
           <Property Name="id_fornecedor" Type="Int32" Nullable="false" />
+          <Property Name="id_categoria" Type="Int32" Nullable="false" />
+          <Property Name="nm_produto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="img_produto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="tb_categoria" Relationship="Self.tb_produto_ibfk_2" FromRole="tb_produto" ToRole="tb_categoria" />
+          <NavigationProperty Name="tb_compra_item" Relationship="Self.tb_compra_item_ibfk_2" FromRole="tb_produto" ToRole="tb_compra_item" />
           <NavigationProperty Name="tb_estoque" Relationship="Self.tb_estoque_ibfk_1" FromRole="tb_produto" ToRole="tb_estoque" />
-          <NavigationProperty Name="tb_venda_item" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_produto" ToRole="tb_venda_item" />
+          <NavigationProperty Name="tb_fornecedor" Relationship="Self.tb_produto_ibfk_1" FromRole="tb_produto" ToRole="tb_fornecedor" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -458,7 +785,8 @@
           <Property Name="id_funcionario" Type="Int32" Nullable="false" />
           <Property Name="nm_usuario" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ds_senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tb_controledeponto" Relationship="Self.tb_controledeponto_ibfk_2" FromRole="tb_usuario" ToRole="tb_controledeponto" />
+          <Property Name="nv_nivelAcesso" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_ibfk_1" FromRole="tb_usuario" ToRole="tb_comanda" />
           <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_usuario_ibfk_1" FromRole="tb_usuario" ToRole="tb_funcionario" />
           <NavigationProperty Name="tb_log" Relationship="Self.tb_log_ibfk_1" FromRole="tb_usuario" ToRole="tb_log" />
           <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_ibfk_1" FromRole="tb_usuario" ToRole="tb_venda" />
@@ -468,8 +796,11 @@
             <PropertyRef Name="id_venda" />
           </Key>
           <Property Name="id_venda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" />
-          <Property Name="dt_saida" Type="DateTime" />
+          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="dt_saida" Type="DateTime" Nullable="false" />
+          <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_cliente" Relationship="Self.tb_venda_ibfk_2" FromRole="tb_venda" ToRole="tb_cliente" />
           <NavigationProperty Name="tb_usuario" Relationship="Self.tb_venda_ibfk_1" FromRole="tb_venda" ToRole="tb_usuario" />
           <NavigationProperty Name="tb_venda_item" Relationship="Self.tb_venda_item_ibfk_2" FromRole="tb_venda" ToRole="tb_venda_item" />
         </EntityType>
@@ -478,12 +809,129 @@
             <PropertyRef Name="id_venda_item" />
           </Key>
           <Property Name="id_venda_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_venda" Type="Int32" />
-          <Property Name="id_produto" Type="Int32" />
-          <Property Name="vl_valorTotal" Type="Decimal" />
-          <NavigationProperty Name="tb_produto" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_venda_item" ToRole="tb_produto" />
+          <Property Name="id_venda" Type="Int32" Nullable="false" />
+          <Property Name="id_estoque" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tb_estoque" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_venda_item" ToRole="tb_estoque" />
           <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_item_ibfk_2" FromRole="tb_venda_item" ToRole="tb_venda" />
         </EntityType>
+        <Association Name="tb_cardapio_ibfk_1">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
+          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tb_cardapio">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_item_ibfk_1">
+          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cardapio">
+              <PropertyRef Name="id_cardapio" />
+            </Principal>
+            <Dependent Role="tb_comanda_item">
+              <PropertyRef Name="id_cardapio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_produto_ibfk_2">
+          <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_categoria">
+              <PropertyRef Name="id_categoria" />
+            </Principal>
+            <Dependent Role="tb_produto">
+              <PropertyRef Name="id_categoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_ibfk_2">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="tb_comanda">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_venda_ibfk_2">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_cliente">
+              <PropertyRef Name="id_cliente" />
+            </Principal>
+            <Dependent Role="tb_venda">
+              <PropertyRef Name="id_cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_ibfk_1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_usuario">
+              <PropertyRef Name="id_usuario" />
+            </Principal>
+            <Dependent Role="tb_comanda">
+              <PropertyRef Name="id_usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_comanda_item_ibfk_2">
+          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_comanda">
+              <PropertyRef Name="id_comanda" />
+            </Principal>
+            <Dependent Role="tb_comanda_item">
+              <PropertyRef Name="id_comanda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_compra_item_ibfk_1">
+          <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1" />
+          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_compra">
+              <PropertyRef Name="id_compra" />
+            </Principal>
+            <Dependent Role="tb_compra_item">
+              <PropertyRef Name="id_compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_compra_item_ibfk_2">
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1" />
+          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_produto">
+              <PropertyRef Name="id_produto" />
+            </Principal>
+            <Dependent Role="tb_compra_item">
+              <PropertyRef Name="id_produto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="tb_controledeponto_ibfk_1">
           <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -498,22 +946,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_controledeponto_ibfk_2">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_controledeponto">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_folhapagamento_ibfk_2">
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="0..1">
+          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
@@ -540,22 +974,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_estoque_ibfk_2">
-          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1">
+        <Association Name="tb_venda_item_ibfk_1">
+          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
+          <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tb_fornecedor">
-              <PropertyRef Name="id_fornecedor" />
+            <Principal Role="tb_estoque">
+              <PropertyRef Name="id_estoque" />
             </Principal>
-            <Dependent Role="tb_estoque">
-              <PropertyRef Name="id_fornecedor" />
+            <Dependent Role="tb_venda_item">
+              <PropertyRef Name="id_estoque" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_folhapagamento_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="0..1">
+          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
@@ -565,6 +999,18 @@
             </Principal>
             <Dependent Role="tb_folhapagamento">
               <PropertyRef Name="id_funcionario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tb_produto_ibfk_1">
+          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1" />
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_fornecedor">
+              <PropertyRef Name="id_fornecedor" />
+            </Principal>
+            <Dependent Role="tb_produto">
+              <PropertyRef Name="id_fornecedor" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -581,7 +1027,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_log_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="0..1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_log" Type="Self.tb_log" Multiplicity="*" />
@@ -594,22 +1040,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_venda_item_ibfk_1">
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_produto">
-              <PropertyRef Name="id_produto" />
-            </Principal>
-            <Dependent Role="tb_venda_item">
-              <PropertyRef Name="id_produto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_venda_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="0..1">
+          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
@@ -623,7 +1055,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_item_ibfk_2">
-          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="0..1">
+          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
@@ -637,7 +1069,15 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="amenicsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_cardapio" EntityType="Self.tb_cardapio" />
+          <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" />
+          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" />
+          <EntitySet Name="tb_comanda" EntityType="Self.tb_comanda" />
+          <EntitySet Name="tb_comanda_item" EntityType="Self.tb_comanda_item" />
+          <EntitySet Name="tb_compra" EntityType="Self.tb_compra" />
+          <EntitySet Name="tb_compra_item" EntityType="Self.tb_compra_item" />
           <EntitySet Name="tb_controledeponto" EntityType="Self.tb_controledeponto" />
+          <EntitySet Name="tb_despesa" EntityType="Self.tb_despesa" />
           <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" />
           <EntitySet Name="tb_folhapagamento" EntityType="Self.tb_folhapagamento" />
           <EntitySet Name="tb_fornecedor" EntityType="Self.tb_fornecedor" />
@@ -647,12 +1087,44 @@
           <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" />
           <EntitySet Name="tb_venda" EntityType="Self.tb_venda" />
           <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" />
+          <AssociationSet Name="tb_cardapio_ibfk_1" Association="Self.tb_cardapio_ibfk_1">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_item_ibfk_1" Association="Self.tb_comanda_item_ibfk_1">
+            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
+            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_produto_ibfk_2" Association="Self.tb_produto_ibfk_2">
+            <End Role="tb_categoria" EntitySet="tb_categoria" />
+            <End Role="tb_produto" EntitySet="tb_produto" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_ibfk_2" Association="Self.tb_comanda_ibfk_2">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_venda_ibfk_2" Association="Self.tb_venda_ibfk_2">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_venda" EntitySet="tb_venda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_ibfk_1" Association="Self.tb_comanda_ibfk_1">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_comanda_item_ibfk_2" Association="Self.tb_comanda_item_ibfk_2">
+            <End Role="tb_comanda" EntitySet="tb_comanda" />
+            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_1" Association="Self.tb_compra_item_ibfk_1">
+            <End Role="tb_compra" EntitySet="tb_compra" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_2" Association="Self.tb_compra_item_ibfk_2">
+            <End Role="tb_produto" EntitySet="tb_produto" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
           <AssociationSet Name="tb_controledeponto_ibfk_1" Association="Self.tb_controledeponto_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
-            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
-          </AssociationSet>
-          <AssociationSet Name="tb_controledeponto_ibfk_2" Association="Self.tb_controledeponto_ibfk_2">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
             <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
           </AssociationSet>
           <AssociationSet Name="tb_folhapagamento_ibfk_2" Association="Self.tb_folhapagamento_ibfk_2">
@@ -663,13 +1135,17 @@
             <End Role="tb_produto" EntitySet="tb_produto" />
             <End Role="tb_estoque" EntitySet="tb_estoque" />
           </AssociationSet>
-          <AssociationSet Name="tb_estoque_ibfk_2" Association="Self.tb_estoque_ibfk_2">
-            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
+          <AssociationSet Name="tb_venda_item_ibfk_1" Association="Self.tb_venda_item_ibfk_1">
             <End Role="tb_estoque" EntitySet="tb_estoque" />
+            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
           </AssociationSet>
           <AssociationSet Name="tb_folhapagamento_ibfk_1" Association="Self.tb_folhapagamento_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
             <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
+          </AssociationSet>
+          <AssociationSet Name="tb_produto_ibfk_1" Association="Self.tb_produto_ibfk_1">
+            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
+            <End Role="tb_produto" EntitySet="tb_produto" />
           </AssociationSet>
           <AssociationSet Name="tb_usuario_ibfk_1" Association="Self.tb_usuario_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
@@ -678,10 +1154,6 @@
           <AssociationSet Name="tb_log_ibfk_1" Association="Self.tb_log_ibfk_1">
             <End Role="tb_usuario" EntitySet="tb_usuario" />
             <End Role="tb_log" EntitySet="tb_log" />
-          </AssociationSet>
-          <AssociationSet Name="tb_venda_item_ibfk_1" Association="Self.tb_venda_item_ibfk_1">
-            <End Role="tb_produto" EntitySet="tb_produto" />
-            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
           </AssociationSet>
           <AssociationSet Name="tb_venda_ibfk_1" Association="Self.tb_venda_ibfk_1">
             <End Role="tb_usuario" EntitySet="tb_usuario" />
@@ -698,15 +1170,100 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="amenicsModelStoreContainer" CdmEntityContainer="amenicsEntities">
+          <EntitySetMapping Name="tb_cardapio">
+            <EntityTypeMapping TypeName="amenicsModel.tb_cardapio">
+              <MappingFragment StoreEntitySet="tb_cardapio">
+                <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="nm_refeicao" ColumnName="nm_refeicao" />
+                <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
+                <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
+                <ScalarProperty Name="img_refeicao" ColumnName="img_refeicao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_categoria">
+            <EntityTypeMapping TypeName="amenicsModel.tb_categoria">
+              <MappingFragment StoreEntitySet="tb_categoria">
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="nm_categoria" ColumnName="nm_categoria" />
+                <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_cliente">
+            <EntityTypeMapping TypeName="amenicsModel.tb_cliente">
+              <MappingFragment StoreEntitySet="tb_cliente">
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="nm_cliente" ColumnName="nm_cliente" />
+                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+                <ScalarProperty Name="qtd_frequenciaMensal" ColumnName="qtd_frequenciaMensal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_comanda">
+            <EntityTypeMapping TypeName="amenicsModel.tb_comanda">
+              <MappingFragment StoreEntitySet="tb_comanda">
+                <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="dt_comanda" ColumnName="dt_comanda" />
+                <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_comanda_item">
+            <EntityTypeMapping TypeName="amenicsModel.tb_comanda_item">
+              <MappingFragment StoreEntitySet="tb_comanda_item">
+                <ScalarProperty Name="id_comanda_item" ColumnName="id_comanda_item" />
+                <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
+                <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_compra">
+            <EntityTypeMapping TypeName="amenicsModel.tb_compra">
+              <MappingFragment StoreEntitySet="tb_compra">
+                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+                <ScalarProperty Name="dt_compra" ColumnName="dt_compra" />
+                <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_compra_item">
+            <EntityTypeMapping TypeName="amenicsModel.tb_compra_item">
+              <MappingFragment StoreEntitySet="tb_compra_item">
+                <ScalarProperty Name="id_compra_item" ColumnName="id_compra_item" />
+                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tb_controledeponto">
             <EntityTypeMapping TypeName="amenicsModel.tb_controledeponto">
               <MappingFragment StoreEntitySet="tb_controledeponto">
                 <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
-                <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
+                <ScalarProperty Name="dt_chegada" ColumnName="dt_chegada" />
+                <ScalarProperty Name="dt_saidaAlmoco" ColumnName="dt_saidaAlmoco" />
+                <ScalarProperty Name="dt_voltaAlmoco" ColumnName="dt_voltaAlmoco" />
                 <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+                <ScalarProperty Name="dt_entradaHoraExtra" ColumnName="dt_entradaHoraExtra" />
+                <ScalarProperty Name="dt_saidaHoraExtra" ColumnName="dt_saidaHoraExtra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_despesa">
+            <EntityTypeMapping TypeName="amenicsModel.tb_despesa">
+              <MappingFragment StoreEntitySet="tb_despesa">
+                <ScalarProperty Name="id_despesa" ColumnName="id_despesa" />
+                <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
+                <ScalarProperty Name="vl_despesa" ColumnName="vl_despesa" />
+                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -714,12 +1271,11 @@
             <EntityTypeMapping TypeName="amenicsModel.tb_estoque">
               <MappingFragment StoreEntitySet="tb_estoque">
                 <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
-                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
                 <ScalarProperty Name="id_produto" ColumnName="id_produto" />
                 <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
                 <ScalarProperty Name="dt_validade" ColumnName="dt_validade" />
                 <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
-                <ScalarProperty Name="qtd_produto" ColumnName="qtd_produto" />
+                <ScalarProperty Name="bt_vendido" ColumnName="bt_vendido" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -728,12 +1284,20 @@
               <MappingFragment StoreEntitySet="tb_folhapagamento">
                 <ScalarProperty Name="id_folhaPagamento" ColumnName="id_folhaPagamento" />
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
-                <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
-                <ScalarProperty Name="vl_desconto" ColumnName="vl_desconto" />
-                <ScalarProperty Name="vl_contribuicao" ColumnName="vl_contribuicao" />
-                <ScalarProperty Name="vl_total" ColumnName="vl_total" />
                 <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
+                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
+                <ScalarProperty Name="vl_gratificacoes" ColumnName="vl_gratificacoes" />
+                <ScalarProperty Name="vl_plr" ColumnName="vl_plr" />
+                <ScalarProperty Name="vl_salarioFamilia" ColumnName="vl_salarioFamilia" />
+                <ScalarProperty Name="vl_valeAlimentacao" ColumnName="vl_valeAlimentacao" />
+                <ScalarProperty Name="vl_valeRefeicao" ColumnName="vl_valeRefeicao" />
+                <ScalarProperty Name="vl_valeTransporte" ColumnName="vl_valeTransporte" />
+                <ScalarProperty Name="vl_inss" ColumnName="vl_inss" />
+                <ScalarProperty Name="vl_ir" ColumnName="vl_ir" />
+                <ScalarProperty Name="vl_fgts" ColumnName="vl_fgts" />
+                <ScalarProperty Name="vl_planoSaude" ColumnName="vl_planoSaude" />
+                <ScalarProperty Name="vl_planoOdonto" ColumnName="vl_planoOdonto" />
+                <ScalarProperty Name="vl_faltas" ColumnName="vl_faltas" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -746,6 +1310,10 @@
                 <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
                 <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
                 <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
+                <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
+                <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
+                <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
+                <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
                 <ScalarProperty Name="ds_cnpj" ColumnName="ds_cnpj" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -755,27 +1323,22 @@
               <MappingFragment StoreEntitySet="tb_funcionario">
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
                 <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+                <ScalarProperty Name="img_foto" ColumnName="img_foto" />
+                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
                 <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
                 <ScalarProperty Name="ds_genero" ColumnName="ds_genero" />
-                <ScalarProperty Name="vl_transporte" ColumnName="vl_transporte" />
-                <ScalarProperty Name="vl_refeicao" ColumnName="vl_refeicao" />
-                <ScalarProperty Name="vl_alimentacao" ColumnName="vl_alimentacao" />
-                <ScalarProperty Name="vl_convenio" ColumnName="vl_convenio" />
+                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
                 <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
                 <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
                 <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
                 <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
                 <ScalarProperty Name="ds_numeroCasa" ColumnName="ds_numeroCasa" />
-                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
-                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
-                <ScalarProperty Name="img_foto" ColumnName="img_foto" />
-                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
                 <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
                 <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
-                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
-                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
-                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
-                <ScalarProperty Name="tm_horasTrabalhadas" ColumnName="tm_horasTrabalhadas" />
                 <ScalarProperty Name="dt_contratacao" ColumnName="dt_contratacao" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -786,7 +1349,8 @@
                 <ScalarProperty Name="id_log" ColumnName="id_log" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="dt_dataLogin" ColumnName="dt_dataLogin" />
-                <ScalarProperty Name="dt_dataLogoff" ColumnName="dt_dataLogoff" />
+                <ScalarProperty Name="ds_telaEntrou" ColumnName="ds_telaEntrou" />
+                <ScalarProperty Name="ds_oqFez" ColumnName="ds_oqFez" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -794,10 +1358,10 @@
             <EntityTypeMapping TypeName="amenicsModel.tb_produto">
               <MappingFragment StoreEntitySet="tb_produto">
                 <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-                <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
-                <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
-                <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
                 <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+                <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
+                <ScalarProperty Name="img_produto" ColumnName="img_produto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -808,6 +1372,7 @@
                 <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
                 <ScalarProperty Name="nm_usuario" ColumnName="nm_usuario" />
                 <ScalarProperty Name="ds_senha" ColumnName="ds_senha" />
+                <ScalarProperty Name="nv_nivelAcesso" ColumnName="nv_nivelAcesso" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -816,7 +1381,9 @@
               <MappingFragment StoreEntitySet="tb_venda">
                 <ScalarProperty Name="id_venda" ColumnName="id_venda" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
                 <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+                <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -825,8 +1392,7 @@
               <MappingFragment StoreEntitySet="tb_venda_item">
                 <ScalarProperty Name="id_venda_item" ColumnName="id_venda_item" />
                 <ScalarProperty Name="id_venda" ColumnName="id_venda" />
-                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-                <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+                <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

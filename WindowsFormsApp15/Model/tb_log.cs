@@ -15,9 +15,10 @@ namespace WindowsFormsApp15.Model
     public partial class tb_log
     {
         public int id_log { get; set; }
-        public Nullable<int> id_usuario { get; set; }
-        public Nullable<System.DateTime> dt_dataLogin { get; set; }
-        public Nullable<System.DateTime> dt_dataLogoff { get; set; }
+        public int id_usuario { get; set; }
+        public System.DateTime dt_dataLogin { get; set; }
+        public string ds_telaEntrou { get; set; }
+        public string ds_oqFez { get; set; }
     
         public virtual tb_usuario tb_usuario { get; set; }
     }

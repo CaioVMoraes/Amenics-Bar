@@ -1,9 +1,9 @@
-﻿USE db_a4e779_amenics;
+﻿USE db_a4e776_ecostor;
 
 -- -----------------------------------------------------
 -- Table `tb_funcionario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_funcionario` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_funcionario` (
   `id_funcionario` INT NOT NULL AUTO_INCREMENT,
   `nm_funcionario` VARCHAR(70) NOT NULL,
   `dt_nascimento` DATE NOT NULL,
@@ -36,7 +36,7 @@ DESC tb_funcionario;
 -- -----------------------------------------------------
 -- Table `tb_usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_usuario` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_usuario` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `id_funcionario` INT NOT NULL,
   `nm_usuario` VARCHAR(65) NOT NULL,
@@ -49,7 +49,7 @@ desc tb_usuario;
 -- -----------------------------------------------------
 -- Table `tb_fornecedor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_fornecedor` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_fornecedor` (
   `id_fornecedor` INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nm_fornecedor` VARCHAR(45) NOT NULL,
   `nm_empresa` VARCHAR(45) NOT NULL,
@@ -63,7 +63,7 @@ desc tb_fornecedor;
 -- -----------------------------------------------------
 -- Table `tb_produto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_produto` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_produto` (
   `id_produto` INT NOT NULL AUTO_INCREMENT,
   `nm_produto` VARCHAR(45) NOT NULL,
   `ds_categoria` VARCHAR(45) NULL,
@@ -75,7 +75,7 @@ desc tb_produto;
 -- -----------------------------------------------------
 -- Table `tb_estoque`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_estoque` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_estoque` (
   `id_estoque` INT NOT NULL,
   `id_fornecedor` INT NOT NULL,
   `id_produto` INT NOT NULL,
@@ -95,7 +95,7 @@ desc tb_estoque;
 -- -----------------------------------------------------
 -- Table `tb_venda`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_venda` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_venda` (
   `id_venda` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT NULL,
   `dt_saida` DATETIME NULL,
@@ -108,7 +108,7 @@ desc tb_venda;
 -- -----------------------------------------------------
 -- Table `tb_venda_item`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_venda_item` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_venda_item` (
   `id_venda_item` INT NOT NULL AUTO_INCREMENT,
   `id_venda` INT NULL,
   `id_produto` INT NULL,
@@ -125,7 +125,7 @@ desc tb_venda_item;
 -- -----------------------------------------------------
 -- Table `tb_controleDePonto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_controleDePonto` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_controleDePonto` (
   `id_controleDePonto` INT NOT NULL AUTO_INCREMENT,
   `id_funcionario` INT NOT NULL,
   `id_usuario` INT NOT NULL,
@@ -144,7 +144,7 @@ DESC tb_controleDePonto;
 -- -----------------------------------------------------
 -- Table `tb_folhaPagamento`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_folhaPagamento` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_folhaPagamento` (
   `id_folhaPagamento` INT NOT NULL AUTO_INCREMENT,
   `id_funcionario` INT NULL,
   `dt_mes` DATE NULL,
@@ -165,7 +165,7 @@ desc tb_folhaPagamento;
 -- -----------------------------------------------------
 -- Table `tb_log`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_a4e779_amenics`.`tb_log` (
+CREATE TABLE IF NOT EXISTS `db_a4e776_ecostor`.`tb_log` (
   `id_log` INT NOT NULL AUTO_INCREMENT,
   `id_usuario` INT NULL,
   `dt_dataLogin` DATETIME NULL,

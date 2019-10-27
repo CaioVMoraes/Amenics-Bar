@@ -9,18 +9,18 @@ namespace WindowsFormsApp15.Business
 {
     class UsuarioBusiness
     {
-        Database.UsuarioDatabase database = new Database.UsuarioDatabase();
+        Database.UsuarioDatabase db = new Database.UsuarioDatabase();
 
         public tb_usuario ModeloUsuario(string nome, string senha)
         {
-            tb_usuario usuario = database.usuario(nome, senha);
+            tb_usuario usuario = db.usuario(nome, senha);
 
             return usuario;
         }
 
         public bool Usuario(string nome, string senha)
         {
-            tb_usuario usuario = database.usuario(nome, senha);
+            tb_usuario usuario = db.usuario(nome, senha);
 
             if (usuario == null)
             {
@@ -40,7 +40,7 @@ namespace WindowsFormsApp15.Business
 
         public void inserirUsuario(tb_usuario usuario, string confiSenha)
         {
-            List<tb_usuario> lista = database.ListaDeUsuarios();
+            List<tb_usuario> lista = db.ListaDeUsuarios();
 
             bool nomeExiste = lista.Exists(x => x.nm_usuario == usuario.nm_usuario);
 
@@ -79,7 +79,65 @@ namespace WindowsFormsApp15.Business
                 throw new ArgumentException("Senha deve ter pelo menos 8 caractéres");
             }
 
-            database.inserirUsuario(usuario);
+            db.inserirUsuario(usuario);
+        }
+        public void alterarusuario(tb_usuario usuario)
+        {
+            List<tb_usuario> lista = db.ListaDeUsuarios();
+
+            bool nomeExiste = lista.Exists(x => x.nm_usuario == usuario.nm_usuario);
+
+            if (nomeExiste == true)
+            {
+                throw new ArgumentException("Usúario já existe");
+            }
+
+            if (usuario.ds_senha == string.Empty)
+            {
+                throw new ArgumentException("Insira uma senha válida");
+            }
+
+            if (usuario.nm_usuario == string.Empty)
+            {
+                throw new ArgumentException("Informe o seu nome de usúario");
+            }
+
+            if (usuario.ds_senha.Length < 8)
+            {
+                throw new ArgumentException("Senha deve ter pelo menos 8 caractéres");
+            }
+
+
+            db.alterarusuario(usuario);
+        }
+        public void RemoverUsuario(int id)
+        {
+            List<tb_usuario> lista = db.ListaDeUsuarios();
+            tb_usuario usuario = new tb_usuario();
+
+            bool nomeExiste = lista.Exists(x => x.nm_usuario == usuario.nm_usuario);
+
+            if (nomeExiste == true)
+            {
+                throw new ArgumentException("Usúario já existe");
+            }
+
+            if (usuario.ds_senha == string.Empty)
+            {
+                throw new ArgumentException("Insira uma senha válida");
+            }
+
+            if (usuario.nm_usuario == string.Empty)
+            {
+                throw new ArgumentException("Informe o seu nome de usúario");
+            }
+
+            if (usuario.ds_senha.Length < 8)
+            {
+                throw new ArgumentException("Senha deve ter pelo menos 8 caractéres");
+            }
+
+            db.RemoverUsuario(id);
         }
 
     }

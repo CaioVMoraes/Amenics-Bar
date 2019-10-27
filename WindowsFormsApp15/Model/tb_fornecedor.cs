@@ -17,7 +17,7 @@ namespace WindowsFormsApp15.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_fornecedor()
         {
-            this.tb_estoque = new HashSet<tb_estoque>();
+            this.tb_produto = new HashSet<tb_produto>();
         }
     
         public int id_fornecedor { get; set; }
@@ -26,9 +26,13 @@ namespace WindowsFormsApp15.Model
         public string ds_telefone { get; set; }
         public string ds_celular { get; set; }
         public string ds_endereco { get; set; }
+        public string ds_cep { get; set; }
+        public string ds_cidade { get; set; }
+        public string ds_UF { get; set; }
+        public string ds_complemento { get; set; }
         public string ds_cnpj { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_estoque> tb_estoque { get; set; }
+        public virtual ICollection<tb_produto> tb_produto { get; set; }
     }
 }

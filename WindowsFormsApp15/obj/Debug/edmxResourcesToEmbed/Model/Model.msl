@@ -1,15 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="amenicsModelStoreContainer" CdmEntityContainer="amenicsEntities">
+    <EntitySetMapping Name="tb_cardapio">
+      <EntityTypeMapping TypeName="amenicsModel.tb_cardapio">
+        <MappingFragment StoreEntitySet="tb_cardapio">
+          <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="nm_refeicao" ColumnName="nm_refeicao" />
+          <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
+          <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
+          <ScalarProperty Name="img_refeicao" ColumnName="img_refeicao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_categoria">
+      <EntityTypeMapping TypeName="amenicsModel.tb_categoria">
+        <MappingFragment StoreEntitySet="tb_categoria">
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="nm_categoria" ColumnName="nm_categoria" />
+          <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cliente">
+      <EntityTypeMapping TypeName="amenicsModel.tb_cliente">
+        <MappingFragment StoreEntitySet="tb_cliente">
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="nm_cliente" ColumnName="nm_cliente" />
+          <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+          <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+          <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+          <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+          <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+          <ScalarProperty Name="qtd_frequenciaMensal" ColumnName="qtd_frequenciaMensal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_comanda">
+      <EntityTypeMapping TypeName="amenicsModel.tb_comanda">
+        <MappingFragment StoreEntitySet="tb_comanda">
+          <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="dt_comanda" ColumnName="dt_comanda" />
+          <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_comanda_item">
+      <EntityTypeMapping TypeName="amenicsModel.tb_comanda_item">
+        <MappingFragment StoreEntitySet="tb_comanda_item">
+          <ScalarProperty Name="id_comanda_item" ColumnName="id_comanda_item" />
+          <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
+          <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_compra">
+      <EntityTypeMapping TypeName="amenicsModel.tb_compra">
+        <MappingFragment StoreEntitySet="tb_compra">
+          <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+          <ScalarProperty Name="dt_compra" ColumnName="dt_compra" />
+          <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_compra_item">
+      <EntityTypeMapping TypeName="amenicsModel.tb_compra_item">
+        <MappingFragment StoreEntitySet="tb_compra_item">
+          <ScalarProperty Name="id_compra_item" ColumnName="id_compra_item" />
+          <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_controledeponto">
       <EntityTypeMapping TypeName="amenicsModel.tb_controledeponto">
         <MappingFragment StoreEntitySet="tb_controledeponto">
           <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
           <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-          <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
-          <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
+          <ScalarProperty Name="dt_chegada" ColumnName="dt_chegada" />
+          <ScalarProperty Name="dt_saidaAlmoco" ColumnName="dt_saidaAlmoco" />
+          <ScalarProperty Name="dt_voltaAlmoco" ColumnName="dt_voltaAlmoco" />
           <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+          <ScalarProperty Name="dt_entradaHoraExtra" ColumnName="dt_entradaHoraExtra" />
+          <ScalarProperty Name="dt_saidaHoraExtra" ColumnName="dt_saidaHoraExtra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_despesa">
+      <EntityTypeMapping TypeName="amenicsModel.tb_despesa">
+        <MappingFragment StoreEntitySet="tb_despesa">
+          <ScalarProperty Name="id_despesa" ColumnName="id_despesa" />
+          <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
+          <ScalarProperty Name="vl_despesa" ColumnName="vl_despesa" />
+          <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -17,12 +102,11 @@
       <EntityTypeMapping TypeName="amenicsModel.tb_estoque">
         <MappingFragment StoreEntitySet="tb_estoque">
           <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
-          <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
           <ScalarProperty Name="id_produto" ColumnName="id_produto" />
           <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
           <ScalarProperty Name="dt_validade" ColumnName="dt_validade" />
           <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
-          <ScalarProperty Name="qtd_produto" ColumnName="qtd_produto" />
+          <ScalarProperty Name="bt_vendido" ColumnName="bt_vendido" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -31,12 +115,20 @@
         <MappingFragment StoreEntitySet="tb_folhapagamento">
           <ScalarProperty Name="id_folhaPagamento" ColumnName="id_folhaPagamento" />
           <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-          <ScalarProperty Name="dt_mes" ColumnName="dt_mes" />
-          <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
-          <ScalarProperty Name="vl_desconto" ColumnName="vl_desconto" />
-          <ScalarProperty Name="vl_contribuicao" ColumnName="vl_contribuicao" />
-          <ScalarProperty Name="vl_total" ColumnName="vl_total" />
           <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
+          <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
+          <ScalarProperty Name="vl_gratificacoes" ColumnName="vl_gratificacoes" />
+          <ScalarProperty Name="vl_plr" ColumnName="vl_plr" />
+          <ScalarProperty Name="vl_salarioFamilia" ColumnName="vl_salarioFamilia" />
+          <ScalarProperty Name="vl_valeAlimentacao" ColumnName="vl_valeAlimentacao" />
+          <ScalarProperty Name="vl_valeRefeicao" ColumnName="vl_valeRefeicao" />
+          <ScalarProperty Name="vl_valeTransporte" ColumnName="vl_valeTransporte" />
+          <ScalarProperty Name="vl_inss" ColumnName="vl_inss" />
+          <ScalarProperty Name="vl_ir" ColumnName="vl_ir" />
+          <ScalarProperty Name="vl_fgts" ColumnName="vl_fgts" />
+          <ScalarProperty Name="vl_planoSaude" ColumnName="vl_planoSaude" />
+          <ScalarProperty Name="vl_planoOdonto" ColumnName="vl_planoOdonto" />
+          <ScalarProperty Name="vl_faltas" ColumnName="vl_faltas" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -49,6 +141,10 @@
           <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
           <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
           <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
+          <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
+          <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
+          <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
+          <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
           <ScalarProperty Name="ds_cnpj" ColumnName="ds_cnpj" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -58,27 +154,22 @@
         <MappingFragment StoreEntitySet="tb_funcionario">
           <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
           <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+          <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+          <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+          <ScalarProperty Name="img_foto" ColumnName="img_foto" />
+          <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+          <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+          <ScalarProperty Name="ds_email" ColumnName="ds_email" />
           <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
           <ScalarProperty Name="ds_genero" ColumnName="ds_genero" />
-          <ScalarProperty Name="vl_transporte" ColumnName="vl_transporte" />
-          <ScalarProperty Name="vl_refeicao" ColumnName="vl_refeicao" />
-          <ScalarProperty Name="vl_alimentacao" ColumnName="vl_alimentacao" />
-          <ScalarProperty Name="vl_convenio" ColumnName="vl_convenio" />
+          <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
           <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
           <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
           <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
           <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
           <ScalarProperty Name="ds_numeroCasa" ColumnName="ds_numeroCasa" />
-          <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
-          <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
-          <ScalarProperty Name="img_foto" ColumnName="img_foto" />
-          <ScalarProperty Name="ds_email" ColumnName="ds_email" />
           <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
           <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
-          <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
-          <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
-          <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
-          <ScalarProperty Name="tm_horasTrabalhadas" ColumnName="tm_horasTrabalhadas" />
           <ScalarProperty Name="dt_contratacao" ColumnName="dt_contratacao" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -89,7 +180,8 @@
           <ScalarProperty Name="id_log" ColumnName="id_log" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
           <ScalarProperty Name="dt_dataLogin" ColumnName="dt_dataLogin" />
-          <ScalarProperty Name="dt_dataLogoff" ColumnName="dt_dataLogoff" />
+          <ScalarProperty Name="ds_telaEntrou" ColumnName="ds_telaEntrou" />
+          <ScalarProperty Name="ds_oqFez" ColumnName="ds_oqFez" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -97,10 +189,10 @@
       <EntityTypeMapping TypeName="amenicsModel.tb_produto">
         <MappingFragment StoreEntitySet="tb_produto">
           <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-          <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
-          <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
-          <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
           <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+          <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
+          <ScalarProperty Name="img_produto" ColumnName="img_produto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -111,6 +203,7 @@
           <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
           <ScalarProperty Name="nm_usuario" ColumnName="nm_usuario" />
           <ScalarProperty Name="ds_senha" ColumnName="ds_senha" />
+          <ScalarProperty Name="nv_nivelAcesso" ColumnName="nv_nivelAcesso" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,7 +212,9 @@
         <MappingFragment StoreEntitySet="tb_venda">
           <ScalarProperty Name="id_venda" ColumnName="id_venda" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+          <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -128,8 +223,7 @@
         <MappingFragment StoreEntitySet="tb_venda_item">
           <ScalarProperty Name="id_venda_item" ColumnName="id_venda_item" />
           <ScalarProperty Name="id_venda" ColumnName="id_venda" />
-          <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-          <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+          <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
