@@ -18,6 +18,13 @@ namespace WindowsFormsApp15.Business
             return usuario;
         }
 
+        public tb_usuario UsuarioPorFuncionario(int funcionario)
+        {
+            tb_usuario usuario = db.UsuarioPorFuncionario(funcionario);
+
+            return usuario;
+        }
+
         public bool Usuario(string nome, string senha)
         {
             tb_usuario usuario = db.usuario(nome, senha);
@@ -138,6 +145,36 @@ namespace WindowsFormsApp15.Business
             }
 
             db.RemoverUsuario(id);
+        }
+
+        public void alterarSenha(tb_usuario usuario, string confiSenha)
+        {
+            if (usuario.ds_senha == string.Empty)
+            {
+                throw new ArgumentException("Insira uma senha válida");
+            }
+
+            if (confiSenha == string.Empty)
+            {
+                throw new ArgumentException("Confirme a sua senha");
+            }
+
+            if (usuario.ds_senha != confiSenha)
+            {
+                throw new ArgumentException("Senhas não compatíveis");
+            }
+
+            if (usuario.ds_senha.Length < 8)
+            {
+                throw new ArgumentException("Senha deve ter pelo menos 8 caractéres");
+            }
+
+            if (confiSenha.Length < 8)
+            {
+                throw new ArgumentException("Senha deve ter pelo menos 8 caractéres");
+            }
+
+            db.alterarSenha(usuario);
         }
 
     }

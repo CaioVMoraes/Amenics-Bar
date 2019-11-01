@@ -12,6 +12,7 @@ namespace WindowsFormsApp15.Database
 
         Model.amenicsEntities db = new amenicsEntities();
 
+
         public void InserirCliente(tb_cliente modelo)
         {
             db.tb_cliente.Add(modelo);

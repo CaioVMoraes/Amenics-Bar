@@ -26,7 +26,6 @@ namespace WindowsFormsApp15.Model
         }
     
         public virtual DbSet<tb_cardapio> tb_cardapio { get; set; }
-        public virtual DbSet<tb_categoria> tb_categoria { get; set; }
         public virtual DbSet<tb_cliente> tb_cliente { get; set; }
         public virtual DbSet<tb_comanda> tb_comanda { get; set; }
         public virtual DbSet<tb_comanda_item> tb_comanda_item { get; set; }
@@ -40,6 +39,7 @@ namespace WindowsFormsApp15.Model
         public virtual DbSet<tb_funcionario> tb_funcionario { get; set; }
         public virtual DbSet<tb_log> tb_log { get; set; }
         public virtual DbSet<tb_produto> tb_produto { get; set; }
+        public virtual DbSet<tb_recuperacao> tb_recuperacao { get; set; }
         public virtual DbSet<tb_usuario> tb_usuario { get; set; }
         public virtual DbSet<tb_venda> tb_venda { get; set; }
         public virtual DbSet<tb_venda_item> tb_venda_item { get; set; }

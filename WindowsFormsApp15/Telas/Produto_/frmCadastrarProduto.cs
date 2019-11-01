@@ -44,7 +44,7 @@ namespace WindowsFormsApp15.Telas
 
                 modelo.img_produto = imagem_byte;
                 modelo.id_fornecedor = Convert.ToInt32(txtIDFornecedor.Text);
-                modelo.id_categoria = Convert.ToInt32(cboCategoria.Text);
+                modelo.ds_categoria = cboCategoria.Text;
                 modelo.nm_produto = txtNome.Text;
                 modelo.vl_valor = nudValor.Value;
 
@@ -96,19 +96,9 @@ namespace WindowsFormsApp15.Telas
             this.Close();
         }
 
-        private void CarregarCategoria()
-        {
-            Business.CategoriaBusiness business = new Business.CategoriaBusiness();
-
-            List<tb_categoria> lista = business.ConsultarCategoria();
-
-            cboCategoria.DisplayMember = nameof(tb_categoria.nm_categoria);
-            cboCategoria.DataSource = lista;
-        }
-
         private void frmCadastrarProduto_Load(object sender, EventArgs e)
         {
-            this.CarregarCategoria();
+
         }
     }
 }

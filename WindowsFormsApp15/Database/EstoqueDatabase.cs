@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class EstoqueDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
         public void CadastrarEstoque(tb_estoque modelo)
         {
             db.tb_estoque.Add(modelo);

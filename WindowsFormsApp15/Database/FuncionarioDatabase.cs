@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class FuncionarioDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
 
         public void CadastrarFuncionario(tb_funcionario funcionario)
         {
@@ -89,6 +89,13 @@ namespace WindowsFormsApp15.Database
             db.tb_funcionario.Remove(modelo);
 
             db.SaveChanges();
+        }
+
+        public tb_funcionario ConfirmarEmail(string email)
+        {
+            tb_funcionario funcionario = db.tb_funcionario.FirstOrDefault(x => x.ds_email == email);
+
+            return funcionario;
         }
     }
 }

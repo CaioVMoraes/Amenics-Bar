@@ -23,11 +23,11 @@ namespace WindowsFormsApp15.Model
     
         public int id_produto { get; set; }
         public int id_fornecedor { get; set; }
-        public int id_categoria { get; set; }
+        public string ds_categoria { get; set; }
         public string nm_produto { get; set; }
         public byte[] img_produto { get; set; }
+        public decimal vl_valor { get; set; }
     
-        public virtual tb_categoria tb_categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_compra_item> tb_compra_item { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

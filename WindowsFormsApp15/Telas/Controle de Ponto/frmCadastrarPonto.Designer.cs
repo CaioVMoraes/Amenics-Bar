@@ -28,131 +28,203 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastrarPonto));
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.btnEntrar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblPausar = new System.Windows.Forms.Label();
+            this.lblDesligar = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblComecarHoraExtra = new System.Windows.Forms.Label();
+            this.lblSaidaHoraExtra = new System.Windows.Forms.Label();
+            this.lblVoltarPausa = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // bunifuMetroTextbox1
+            // lblNome
             // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.SteelBlue;
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.bunifuMetroTextbox1.BorderThickness = 3;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuMetroTextbox1.isPassword = true;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(248, 65);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(192, 33);
-            this.bunifuMetroTextbox1.TabIndex = 125;
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lblNome.AutoSize = true;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(30, 56);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(51, 20);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "label1";
             // 
-            // btnEntrar
+            // lblHora
             // 
-            this.btnEntrar.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnEntrar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEntrar.BorderRadius = 0;
-            this.btnEntrar.ButtonText = "CADASTRAR";
-            this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnEntrar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnEntrar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnEntrar.Iconimage")));
-            this.btnEntrar.Iconimage_right = null;
-            this.btnEntrar.Iconimage_right_Selected = null;
-            this.btnEntrar.Iconimage_Selected = null;
-            this.btnEntrar.IconMarginLeft = 0;
-            this.btnEntrar.IconMarginRight = 0;
-            this.btnEntrar.IconRightVisible = true;
-            this.btnEntrar.IconRightZoom = 0D;
-            this.btnEntrar.IconVisible = true;
-            this.btnEntrar.IconZoom = 90D;
-            this.btnEntrar.IsTab = false;
-            this.btnEntrar.Location = new System.Drawing.Point(302, 123);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.btnEntrar.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnEntrar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnEntrar.selected = false;
-            this.btnEntrar.Size = new System.Drawing.Size(138, 34);
-            this.btnEntrar.TabIndex = 123;
-            this.btnEntrar.Text = "CADASTRAR";
-            this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntrar.Textcolor = System.Drawing.Color.White;
-            this.btnEntrar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.AutoSize = true;
+            this.lblHora.BackColor = System.Drawing.Color.Transparent;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.White;
+            this.lblHora.Location = new System.Drawing.Point(30, 91);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(51, 20);
+            this.lblHora.TabIndex = 1;
+            this.lblHora.Text = "label1";
             // 
-            // bunifuMetroTextbox4
+            // lblPausar
             // 
-            this.bunifuMetroTextbox4.BorderColorFocused = System.Drawing.Color.SteelBlue;
-            this.bunifuMetroTextbox4.BorderColorIdle = System.Drawing.SystemColors.MenuHighlight;
-            this.bunifuMetroTextbox4.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.bunifuMetroTextbox4.BorderThickness = 3;
-            this.bunifuMetroTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.bunifuMetroTextbox4.isPassword = true;
-            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(248, 23);
-            this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
-            this.bunifuMetroTextbox4.Size = new System.Drawing.Size(192, 33);
-            this.bunifuMetroTextbox4.TabIndex = 122;
-            this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lblPausar.AutoSize = true;
+            this.lblPausar.BackColor = System.Drawing.Color.Transparent;
+            this.lblPausar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPausar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPausar.ForeColor = System.Drawing.Color.White;
+            this.lblPausar.Location = new System.Drawing.Point(263, 56);
+            this.lblPausar.Name = "lblPausar";
+            this.lblPausar.Size = new System.Drawing.Size(105, 20);
+            this.lblPausar.TabIndex = 2;
+            this.lblPausar.Text = "Ir Para Pausa";
+            this.lblPausar.Click += new System.EventHandler(this.lblPausar_Click);
             // 
-            // label6
+            // lblDesligar
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(106, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 20);
-            this.label6.TabIndex = 119;
-            this.label6.Text = "ID Usuario:";
+            this.lblDesligar.AutoSize = true;
+            this.lblDesligar.BackColor = System.Drawing.Color.Transparent;
+            this.lblDesligar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDesligar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesligar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblDesligar.Location = new System.Drawing.Point(29, 127);
+            this.lblDesligar.Name = "lblDesligar";
+            this.lblDesligar.Size = new System.Drawing.Size(86, 24);
+            this.lblDesligar.TabIndex = 3;
+            this.lblDesligar.Text = "Desligar";
+            this.lblDesligar.Click += new System.EventHandler(this.lblDesligar_Click);
             // 
-            // label7
+            // timer1
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(79, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(132, 20);
-            this.label7.TabIndex = 118;
-            this.label7.Text = "ID Funcionario:";
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // CadastrarPonto
+            // lblComecarHoraExtra
+            // 
+            this.lblComecarHoraExtra.AutoSize = true;
+            this.lblComecarHoraExtra.BackColor = System.Drawing.Color.Transparent;
+            this.lblComecarHoraExtra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblComecarHoraExtra.Enabled = false;
+            this.lblComecarHoraExtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComecarHoraExtra.ForeColor = System.Drawing.Color.White;
+            this.lblComecarHoraExtra.Location = new System.Drawing.Point(547, 56);
+            this.lblComecarHoraExtra.Name = "lblComecarHoraExtra";
+            this.lblComecarHoraExtra.Size = new System.Drawing.Size(151, 20);
+            this.lblComecarHoraExtra.TabIndex = 4;
+            this.lblComecarHoraExtra.Text = "Começar Hora extra";
+            this.lblComecarHoraExtra.Visible = false;
+            this.lblComecarHoraExtra.Click += new System.EventHandler(this.lblComecarHoraExtra_Click);
+            // 
+            // lblSaidaHoraExtra
+            // 
+            this.lblSaidaHoraExtra.AutoSize = true;
+            this.lblSaidaHoraExtra.BackColor = System.Drawing.Color.Transparent;
+            this.lblSaidaHoraExtra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSaidaHoraExtra.Enabled = false;
+            this.lblSaidaHoraExtra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSaidaHoraExtra.ForeColor = System.Drawing.Color.White;
+            this.lblSaidaHoraExtra.Location = new System.Drawing.Point(547, 91);
+            this.lblSaidaHoraExtra.Name = "lblSaidaHoraExtra";
+            this.lblSaidaHoraExtra.Size = new System.Drawing.Size(128, 20);
+            this.lblSaidaHoraExtra.TabIndex = 5;
+            this.lblSaidaHoraExtra.Text = "Saída Hora extra";
+            this.lblSaidaHoraExtra.Visible = false;
+            this.lblSaidaHoraExtra.Click += new System.EventHandler(this.lblSaidaHoraExtra_Click);
+            // 
+            // lblVoltarPausa
+            // 
+            this.lblVoltarPausa.AutoSize = true;
+            this.lblVoltarPausa.BackColor = System.Drawing.Color.Transparent;
+            this.lblVoltarPausa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblVoltarPausa.Enabled = false;
+            this.lblVoltarPausa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVoltarPausa.ForeColor = System.Drawing.Color.White;
+            this.lblVoltarPausa.Location = new System.Drawing.Point(263, 91);
+            this.lblVoltarPausa.Name = "lblVoltarPausa";
+            this.lblVoltarPausa.Size = new System.Drawing.Size(122, 20);
+            this.lblVoltarPausa.TabIndex = 6;
+            this.lblVoltarPausa.Text = "Voltar da Pausa";
+            this.lblVoltarPausa.Click += new System.EventHandler(this.lblVoltarPausa_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(703, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(679, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "_";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(728, 28);
+            this.panel1.TabIndex = 308;
+            // 
+            // frmCadastrarPonto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(492, 180);
-            this.Controls.Add(this.bunifuMetroTextbox1);
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.bunifuMetroTextbox4);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Name = "CadastrarPonto";
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(728, 180);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblVoltarPausa);
+            this.Controls.Add(this.lblSaidaHoraExtra);
+            this.Controls.Add(this.lblComecarHoraExtra);
+            this.Controls.Add(this.lblDesligar);
+            this.Controls.Add(this.lblPausar);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.lblNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmCadastrarPonto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cadastrar Controle de Ponto";
+            this.Load += new System.EventHandler(this.frmCadastrarPonto_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
-        private Bunifu.Framework.UI.BunifuFlatButton btnEntrar;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Label lblPausar;
+        private System.Windows.Forms.Label lblDesligar;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblComecarHoraExtra;
+        private System.Windows.Forms.Label lblSaidaHoraExtra;
+        private System.Windows.Forms.Label lblVoltarPausa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

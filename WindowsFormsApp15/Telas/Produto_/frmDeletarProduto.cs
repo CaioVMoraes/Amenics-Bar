@@ -67,7 +67,7 @@ namespace WindowsFormsApp15.Telas
             txtIDFornecedor.Text = modelo.tb_fornecedor.nm_fornecedor;
             txtNome.Text = modelo.nm_produto;
             imgImagem.Image = imagem;
-            cboCategoria.Text = modelo.tb_categoria.nm_categoria;
+            cboCategoria.Text = modelo.ds_categoria;
         }
 
         private void label1_Click(object sender, EventArgs e)

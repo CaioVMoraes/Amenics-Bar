@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class ControledePontoDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
         public void CadastrarPonto(tb_controledeponto modelo)
         {
             db.tb_controledeponto.Add(modelo);

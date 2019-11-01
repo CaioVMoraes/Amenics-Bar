@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp15.Model;
 
 namespace WindowsFormsApp15.Telas.Compra
 {
@@ -45,6 +46,23 @@ namespace WindowsFormsApp15.Telas.Compra
         private void lblSair_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dtpContrat_onValueChanged(object sender, EventArgs e)
+        {
+            Business.CompraBusiness business = new Business.CompraBusiness();
+
+            DateTime data = dtpCompra.Value.Date;
+
+            List<tb_compra_item> lista = business.ConsultarCompraItem(data);
+
+            dgvCompra.AutoGenerateColumns = false;
+            dgvCompra.DataSource = lista;
+        }
+
+        private void frmConsultarCompra_Load(object sender, EventArgs e)
+        {
+            dtpCompra.Value = DateTime.Now.Date;
         }
     }
 }

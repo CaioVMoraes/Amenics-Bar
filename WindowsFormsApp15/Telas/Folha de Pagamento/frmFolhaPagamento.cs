@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp15.Telas
 {
-    public partial class frmFolhaPagamento : Form
+    public partial class nudSaude : Form
     {
-        public frmFolhaPagamento()
+        public nudSaude()
         {
             InitializeComponent();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

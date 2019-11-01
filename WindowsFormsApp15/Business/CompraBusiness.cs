@@ -27,6 +27,12 @@ namespace WindowsFormsApp15.Business
 
             return lista;
         }
+        public List<tb_compra_item> ConsultarCompraItem(DateTime data)
+        {
+            List<tb_compra_item> lista = db.ConsultarCompraItem(data);
+
+            return lista;
+        }
         public tb_compra Listar(int id)
         {
             tb_compra modelo = db.Listar(id);

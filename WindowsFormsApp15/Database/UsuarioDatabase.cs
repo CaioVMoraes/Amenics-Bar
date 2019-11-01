@@ -9,11 +9,17 @@ namespace WindowsFormsApp15.Database
 {
     class UsuarioDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
 
         public tb_usuario usuario(string nome, string senha)
         {
             tb_usuario usuario = db.tb_usuario.FirstOrDefault(x => x.nm_usuario == nome && x.ds_senha == senha);
+
+            return usuario;
+        }
+        public tb_usuario UsuarioPorFuncionario(int funcionario)
+        {
+            tb_usuario usuario = db.tb_usuario.FirstOrDefault(x => x.id_funcionario == funcionario);
 
             return usuario;
         }
@@ -41,6 +47,15 @@ namespace WindowsFormsApp15.Database
 
             modelo.nm_usuario = alterar.nm_usuario;
             modelo.ds_senha = alterar.ds_senha;
+
+            db.SaveChanges();
+        }
+
+        public void alterarSenha(tb_usuario modelo)
+        {
+            tb_usuario alterar = db.tb_usuario.FirstOrDefault(x => x.id_usuario == modelo.id_usuario);
+
+            alterar.ds_senha = modelo.ds_senha;
 
             db.SaveChanges();
         }

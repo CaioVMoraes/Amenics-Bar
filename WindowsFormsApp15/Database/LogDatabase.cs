@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class LogDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
         public void InserirLog(tb_log modelo)
         {
             db.tb_log.Add(modelo);

@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class FornecedorDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
         public void CadastarFornecedor(tb_fornecedor modelo)
         {
             db.tb_fornecedor.Add(modelo);

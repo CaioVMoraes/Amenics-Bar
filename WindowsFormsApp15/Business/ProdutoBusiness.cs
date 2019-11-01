@@ -21,7 +21,7 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("O campo fornecedor é obrigatório");
             }
-            if (modelo.id_categoria == 0)
+            if (modelo.ds_categoria == string.Empty)
             {
                 throw new ArgumentException("O campo categoria é obrigatório");
             }
@@ -44,7 +44,7 @@ namespace WindowsFormsApp15.Business
 
             return lista;
         }
-        public List<Model.tb_produto> ConsultarProdutoCategoria(int idcategoria)
+        public List<Model.tb_produto> ConsultarProdutoCategoria(string idcategoria)
         {
             List<Model.tb_produto> lista = db.ConsultarProdutoCategoria(idcategoria);
 
@@ -86,7 +86,7 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("O campo fornecedor é obrigatório");
             }
-            if (modelo.id_categoria == 0)
+            if (modelo.ds_categoria == string.Empty)
             {
                 throw new ArgumentException("O campo categoria é obrigatório");
             }
@@ -107,26 +107,6 @@ namespace WindowsFormsApp15.Business
         {
             db.RemoverProduto(id);
 
-            if (modelo.id_fornecedor == 0)
-            {
-                throw new ArgumentException("O campo fornecedor é obrigatório");
-            }
-            if (modelo.id_categoria == 0)
-            {
-                throw new ArgumentException("O campo categoria é obrigatório");
-            }
-            if (modelo.nm_produto == string.Empty)
-            {
-                throw new ArgumentException("O campo Nome do produto é obrigatório");
-            }
-            if (modelo.vl_valor == 0)
-            {
-                throw new ArgumentException("O campo Valor é obrigatório");
-            }
-            if (modelo.img_produto == null)
-            {
-                throw new ArgumentException("imagem do produto é obrigatório");
-            }
 
         }
     }

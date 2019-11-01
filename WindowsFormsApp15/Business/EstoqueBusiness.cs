@@ -13,9 +13,9 @@ namespace WindowsFormsApp15.Business
         Database.EstoqueDatabase db = new Database.EstoqueDatabase();
         public void CadastrarEstoque(tb_estoque modelo)
         {
-            if (modelo.id_estoque == 0)
+            if (modelo.id_produto == 0)
             {
-                throw new ArgumentException("Id inválido");
+                throw new ArgumentException("Produto Invalido");
             }
             if (modelo.dt_entrada == null)
             {

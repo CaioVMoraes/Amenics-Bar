@@ -60,7 +60,7 @@ namespace WindowsFormsApp15.Telas
 
                 modelo.img_produto = imagem_byte;
                 modelo.id_fornecedor = Convert.ToInt32(txtIDFornecedor.Text);
-                modelo.id_categoria = Convert.ToInt32(cboCategoria.Text);
+                modelo.ds_categoria = cboCategoria.Text;
                 modelo.nm_produto = txtNome.Text;
                 modelo.vl_valor = nudValor.Value;
 
@@ -87,7 +87,7 @@ namespace WindowsFormsApp15.Telas
             txtIDFornecedor.Text = modelo.tb_fornecedor.nm_fornecedor;
             txtNome.Text = modelo.nm_produto;
             imgImagem.Image = imagem;
-            cboCategoria.Text = modelo.tb_categoria.nm_categoria;
+            cboCategoria.Text = modelo.ds_categoria;
         }
 
         private void btnProcurar_Click(object sender, EventArgs e)
@@ -113,19 +113,8 @@ namespace WindowsFormsApp15.Telas
             this.Close();
         }
 
-        private void CarregarCategoria()
-        {
-            Business.CategoriaBusiness business = new Business.CategoriaBusiness();
-
-            List<tb_categoria> lista = business.ConsultarCategoria();
-
-            cboCategoria.DisplayMember = nameof(tb_categoria.nm_categoria);
-            cboCategoria.DataSource = lista;
-        }
-
         private void frmAlterarProdutos_Load(object sender, EventArgs e)
         {
-            this.CarregarCategoria();
         }
     }
 }

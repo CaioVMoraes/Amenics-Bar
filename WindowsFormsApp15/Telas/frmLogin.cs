@@ -64,7 +64,11 @@ namespace WindowsFormsApp15
                 if (login == true)
                 {
                     Telas.Menu tela = new Telas.Menu();
+                    Telas.frmCadastrarPonto ponto = new Telas.frmCadastrarPonto();
+                    ponto.Show();
                     tela.Show();
+
+                    this.Hide();
                 }
                 else
                 {
@@ -78,17 +82,6 @@ namespace WindowsFormsApp15
             
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Telas.frmCadastrarUsuario tela = new Telas.frmCadastrarUsuario();
-            tela.Show();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-            Telas.frmCadastrarFuncionario tela = new Telas.frmCadastrarFuncionario();
-            tela.Show();
-        }
         public static void Move_Form(IntPtr Handle, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -106,6 +99,19 @@ namespace WindowsFormsApp15
         private void lblSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblMinimizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Recuperação_de_Senha.ConfirmarEmail tela = new Recuperação_de_Senha.ConfirmarEmail();
+            tela.Show();
+
+            this.Hide();
         }
     }
 }

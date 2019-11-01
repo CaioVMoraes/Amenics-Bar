@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class VendaDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
         public void InserirVenda(tb_venda modelo)
         {
             db.tb_venda.Add(modelo);

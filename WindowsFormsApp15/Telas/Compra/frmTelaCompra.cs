@@ -77,7 +77,7 @@ namespace WindowsFormsApp15.Telas.Compra
             try
             {
                 Business.CompraBusiness compraBusiness = new Business.CompraBusiness();
-
+                Business.EstoqueBusiness estoqueBusiness = new Business.EstoqueBusiness();
                 Model.tb_compra compra = new Model.tb_compra();
 
                 compra.dt_compra = DateTime.Now.Date;
@@ -86,16 +86,23 @@ namespace WindowsFormsApp15.Telas.Compra
                 compraBusiness.InserirCompra(compra);
 
                 Model.tb_compra_item compraItem = new Model.tb_compra_item();
+                Model.tb_estoque estoqueItem = new Model.tb_estoque();
 
                 List<Model.tb_produto> itens = dgvProdutos.DataSource as List<Model.tb_produto>;
 
-                foreach (var item in itens)
-                {
-                    compraItem.id_compra = compra.id_compra;
-                    compraItem.id_produto = item.id_produto;
+                    foreach (var item in itens)
+                    {
+                        compraItem.id_compra = compra.id_compra;
+                        compraItem.id_produto = item.id_produto;
 
-                    compraBusiness.InserirCompraItem(compraItem);
-                }
+                        estoqueItem.id_produto = item.id_produto;
+                        estoqueItem.dt_entrada = DateTime.Now;
+                        estoqueItem.bt_vendido = false;
+
+                        compraBusiness.InserirCompraItem(compraItem);
+                        estoqueBusiness.CadastrarEstoque(estoqueItem);
+                    }
+                
 
                 MessageBox.Show("Compra finalizada com sucesso");
 
@@ -122,15 +129,22 @@ namespace WindowsFormsApp15.Telas.Compra
                     itens = new List<Model.tb_produto>();
                 }
 
-                itens.Add(produto);
+                int quantiadade = Convert.ToInt32(nudQuantidade.Value);
 
-                dgvProdutos.AutoGenerateColumns = false;
-                dgvProdutos.DataSource = null;
-                dgvProdutos.DataSource = itens;
+                for (int i = 0; i < quantiadade; i++)
+                {
+                    itens.Add(produto);
 
-                decimal total = itens.Sum(x => x.vl_valor);
+                    dgvProdutos.AutoGenerateColumns = false;
+                    dgvProdutos.DataSource = null;
+                    dgvProdutos.DataSource = itens;
 
-                lblTotal.Text = total.ToString();
+                    decimal total = itens.Sum(x => x.vl_valor);
+
+                    lblTotal.Text = total.ToString();
+                }
+
+                nudQuantidade.Value = 1;
             }
             catch (Exception ex)
             {

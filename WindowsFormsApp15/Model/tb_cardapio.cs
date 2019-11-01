@@ -27,7 +27,6 @@ namespace WindowsFormsApp15.Model
         public decimal vl_valor { get; set; }
         public byte[] img_refeicao { get; set; }
     
-        public virtual tb_categoria tb_categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_comanda_item> tb_comanda_item { get; set; }
     }

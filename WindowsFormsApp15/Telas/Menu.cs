@@ -97,12 +97,6 @@ namespace WindowsFormsApp15.Telas
             ConsuProd.Show();
         }
 
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            Telas.frmCadastrarEstoque CadaEst = new frmCadastrarEstoque();
-            CadaEst.Show();
-        }
-
         private void btnCaixa_Click(object sender, EventArgs e)
         {
             Telas.frmFluxoCaixa Caixa = new frmFluxoCaixa();
@@ -123,7 +117,7 @@ namespace WindowsFormsApp15.Telas
 
         private void btnGerarFolhaPagamento_Click(object sender, EventArgs e)
         {
-            Telas.frmFolhaPagamento CadastrarFolha = new frmFolhaPagamento();
+            Telas.nudSaude CadastrarFolha = new nudSaude();
             CadastrarFolha.Show();
         }
 
@@ -166,6 +160,17 @@ namespace WindowsFormsApp15.Telas
             Form1 tela = new Form1();
             tela.Show();
             this.Hide();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Telas.Compra.frmConsultarCompra CadastrarFunc = new Telas.Compra.frmConsultarCompra();
+            CadastrarFunc.Show();
+        }
+
+        private void lblMinimizar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="amenicsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="db_a4e779_amenicsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="tb_cardapio">
     <Key>
       <PropertyRef Name="id_cardapio" />
@@ -10,14 +10,6 @@
     <Property Name="ds_descricao" Type="varchar" MaxLength="45" Nullable="false" />
     <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
     <Property Name="img_refeicao" Type="longblob" />
-  </EntityType>
-  <EntityType Name="tb_categoria">
-    <Key>
-      <PropertyRef Name="id_categoria" />
-    </Key>
-    <Property Name="id_categoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nm_categoria" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="ds_categoria" Type="varchar" MaxLength="45" />
   </EntityType>
   <EntityType Name="tb_cliente">
     <Key>
@@ -176,9 +168,19 @@
     </Key>
     <Property Name="id_produto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_fornecedor" Type="int" Nullable="false" />
-    <Property Name="id_categoria" Type="int" Nullable="false" />
+    <Property Name="ds_categoria" Type="varchar" MaxLength="70" Nullable="false" />
     <Property Name="nm_produto" Type="varchar" MaxLength="45" Nullable="false" />
-    <Property Name="img_produto" Type="longblob" />
+    <Property Name="img_produto" Type="longblob" Nullable="false" />
+    <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_recuperacao">
+    <Key>
+      <PropertyRef Name="id_recuperacao" />
+    </Key>
+    <Property Name="id_recuperacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_usuario" Type="int" Nullable="false" />
+    <Property Name="ds_codigo" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="dt_data" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="tb_usuario">
     <Key>
@@ -208,18 +210,6 @@
     <Property Name="id_venda" Type="int" Nullable="false" />
     <Property Name="id_estoque" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="tb_cardapio_ibfk_1">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
-    <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="id_categoria" />
-      </Principal>
-      <Dependent Role="tb_cardapio">
-        <PropertyRef Name="id_categoria" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="tb_comanda_ibfk_1">
     <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -382,15 +372,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="tb_produto_ibfk_2">
-    <End Role="tb_categoria" Type="Self.tb_categoria" Multiplicity="1" />
-    <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+  <Association Name="tb_recuperacao_ibfk_1">
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="tb_recuperacao" Type="Self.tb_recuperacao" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_categoria">
-        <PropertyRef Name="id_categoria" />
+      <Principal Role="tb_usuario">
+        <PropertyRef Name="id_usuario" />
       </Principal>
-      <Dependent Role="tb_produto">
-        <PropertyRef Name="id_categoria" />
+      <Dependent Role="tb_recuperacao">
+        <PropertyRef Name="id_usuario" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -462,9 +454,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="amenicsModelStoreContainer">
+  <EntityContainer Name="db_a4e779_amenicsModelStoreContainer">
     <EntitySet Name="tb_cardapio" EntityType="Self.tb_cardapio" Schema="db_a4e779_amenics" store:Type="Tables" />
-    <EntitySet Name="tb_categoria" EntityType="Self.tb_categoria" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_comanda" EntityType="Self.tb_comanda" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_comanda_item" EntityType="Self.tb_comanda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
@@ -478,13 +469,10 @@
     <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_log" EntityType="Self.tb_log" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_produto" EntityType="Self.tb_produto" Schema="db_a4e779_amenics" store:Type="Tables" />
+    <EntitySet Name="tb_recuperacao" EntityType="Self.tb_recuperacao" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_venda" EntityType="Self.tb_venda" Schema="db_a4e779_amenics" store:Type="Tables" />
     <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
-    <AssociationSet Name="tb_cardapio_ibfk_1" Association="Self.tb_cardapio_ibfk_1">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_cardapio" EntitySet="tb_cardapio" />
-    </AssociationSet>
     <AssociationSet Name="tb_comanda_ibfk_1" Association="Self.tb_comanda_ibfk_1">
       <End Role="tb_usuario" EntitySet="tb_usuario" />
       <End Role="tb_comanda" EntitySet="tb_comanda" />
@@ -533,9 +521,9 @@
       <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
       <End Role="tb_produto" EntitySet="tb_produto" />
     </AssociationSet>
-    <AssociationSet Name="tb_produto_ibfk_2" Association="Self.tb_produto_ibfk_2">
-      <End Role="tb_categoria" EntitySet="tb_categoria" />
-      <End Role="tb_produto" EntitySet="tb_produto" />
+    <AssociationSet Name="tb_recuperacao_ibfk_1" Association="Self.tb_recuperacao_ibfk_1">
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+      <End Role="tb_recuperacao" EntitySet="tb_recuperacao" />
     </AssociationSet>
     <AssociationSet Name="tb_usuario_ibfk_1" Association="Self.tb_usuario_ibfk_1">
       <End Role="tb_funcionario" EntitySet="tb_funcionario" />

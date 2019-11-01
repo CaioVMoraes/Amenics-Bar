@@ -51,5 +51,10 @@ namespace WindowsFormsApp15.Telas.Usuario
         {
             this.Close();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

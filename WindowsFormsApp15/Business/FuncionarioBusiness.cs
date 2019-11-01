@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp15.Model;
 
 namespace WindowsFormsApp15.Business
 {
@@ -221,6 +222,33 @@ namespace WindowsFormsApp15.Business
             }
 
             db.RemoverFuncionario(id);
+        }
+
+        public tb_funcionario ModeloEmail(string email)
+        {
+            tb_funcionario funcioarnio = db.ConfirmarEmail(email);
+
+            return funcioarnio;
+        }
+
+        public bool ConfirmarEmail(string email)
+        {
+            tb_funcionario funcioarnio = db.ConfirmarEmail(email);
+
+            if (funcioarnio == null)
+            {
+                throw new ArgumentException("Email Inválido");
+            }
+
+            if (funcioarnio != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
         }
     }
 }

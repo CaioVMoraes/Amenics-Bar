@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class CompraDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
 
         public void InserirCompra(tb_compra modelo)
         {
@@ -26,6 +26,12 @@ namespace WindowsFormsApp15.Database
         public List<tb_compra> ConsultarCompra()
         {
             List<tb_compra> lista = db.tb_compra.ToList();
+
+            return lista;
+        }
+        public List<tb_compra_item> ConsultarCompraItem(DateTime data)
+        {
+            List<tb_compra_item> lista = db.tb_compra_item.Where(x => x.tb_compra.dt_compra == data).ToList();
 
             return lista;
         }

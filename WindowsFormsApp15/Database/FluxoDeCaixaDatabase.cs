@@ -10,6 +10,7 @@ namespace WindowsFormsApp15.Database
     class FluxoDeCaixaDatabase
     {
         Model.amenicsEntities db = new amenicsEntities();
+
         public List<vw_fluxocaixa> FluxoDeCaixa()
         {
             List<vw_fluxocaixa> lista = db.vw_fluxocaixa.ToList();

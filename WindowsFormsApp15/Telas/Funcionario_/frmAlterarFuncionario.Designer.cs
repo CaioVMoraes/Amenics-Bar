@@ -60,7 +60,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.dtpContrat = new Bunifu.Framework.UI.BunifuDatepicker();
             this.dtpNascimento = new Bunifu.Framework.UI.BunifuDatepicker();
-            this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.cboCargo = new System.Windows.Forms.ComboBox();
             this.cboGen = new System.Windows.Forms.ComboBox();
@@ -85,11 +84,13 @@
             this.txtImagem = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtCelular = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label12
@@ -505,15 +506,6 @@
             this.dtpNascimento.TabIndex = 295;
             this.dtpNascimento.Value = new System.DateTime(2019, 9, 25, 23, 52, 13, 816);
             // 
-            // txtCelular
-            // 
-            this.txtCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelular.Location = new System.Drawing.Point(539, 312);
-            this.txtCelular.MaxLength = 20;
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(148, 22);
-            this.txtCelular.TabIndex = 311;
-            // 
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -786,11 +778,20 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.txtCelular);
             this.groupBox3.Location = new System.Drawing.Point(24, 220);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(697, 230);
             this.groupBox3.TabIndex = 333;
             this.groupBox3.TabStop = false;
+            // 
+            // txtCelular
+            // 
+            this.txtCelular.Location = new System.Drawing.Point(515, 95);
+            this.txtCelular.Mask = "+55 (00) 00000-0000";
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(148, 20);
+            this.txtCelular.TabIndex = 334;
             // 
             // frmAlterarFuncionario
             // 
@@ -818,7 +819,6 @@
             this.Controls.Add(this.btnCadastrarFuncionario);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtRg);
-            this.Controls.Add(this.txtCelular);
             this.Controls.Add(this.txtTelefone);
             this.Controls.Add(this.cboCargo);
             this.Controls.Add(this.cboGen);
@@ -860,6 +860,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudSalario)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -897,7 +899,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private Bunifu.Framework.UI.BunifuDatepicker dtpContrat;
         private Bunifu.Framework.UI.BunifuDatepicker dtpNascimento;
-        private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.ComboBox cboCargo;
         private System.Windows.Forms.ComboBox cboGen;
@@ -922,5 +923,6 @@
         private System.Windows.Forms.TextBox txtImagem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox txtCelular;
     }
 }

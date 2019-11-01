@@ -49,16 +49,22 @@ namespace WindowsFormsApp15.Telas
 
                     tb_estoque estoqueModelo = estoqueBusiness.ListarAlterarNaoVendidos(produto.id_produto);
 
-                    itens.Add(estoqueModelo);
+                    int quantidade = Convert.ToInt32(nudQuantidade.Value);
 
-                    dgvProdutos.AutoGenerateColumns = false;
-                    dgvProdutos.DataSource = null;
-                    dgvProdutos.DataSource = itens;
+                    for (int i = 0; i < quantidade; i++)
+                    {
+                        itens.Add(estoqueModelo);
 
-                    decimal total = itens.Sum(x => x.vl_valor);
+                        dgvProdutos.AutoGenerateColumns = false;
+                        dgvProdutos.DataSource = null;
+                        dgvProdutos.DataSource = itens;
 
-                    lblTotal.Text = total.ToString();
-                    lblRestante.Text = total.ToString();
+                        decimal total = itens.Sum(x => x.vl_valor);
+
+                        lblTotal.Text = total.ToString();
+                        lblRestante.Text = total.ToString();
+                    }
+
                 }
                 else
                 {

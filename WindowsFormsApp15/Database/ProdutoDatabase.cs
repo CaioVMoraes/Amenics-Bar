@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class ProdutoDatabase
     {
-        Model.amenicsEntities db = new Model.amenicsEntities();
+        Model.amenicsEntities db = new amenicsEntities();
+
 
         public void CadastrarProduto(tb_produto produto)
         {
@@ -23,9 +24,9 @@ namespace WindowsFormsApp15.Database
 
             return lista;
         }
-        public List<tb_produto> ConsultarProdutoCategoria(int idcategoria)
+        public List<tb_produto> ConsultarProdutoCategoria(string categoria)
         {
-            List<tb_produto> lista = db.tb_produto.Where(x => x.id_categoria == idcategoria).ToList();
+            List<tb_produto> lista = db.tb_produto.Where(x => x.ds_categoria == categoria).ToList();
 
             return lista;
         }
@@ -62,7 +63,8 @@ namespace WindowsFormsApp15.Database
             tb_produto alterar = db.tb_produto.FirstOrDefault(x => x.id_produto == x.id_produto);
 
             modelo.nm_produto = alterar.nm_produto;
-            modelo.id_categoria = alterar.id_categoria;
+            modelo.vl_valor = alterar.vl_valor;
+            modelo.ds_categoria = alterar.ds_categoria;
             modelo.id_fornecedor = alterar.id_fornecedor;
             modelo.img_produto = alterar.img_produto;
             
