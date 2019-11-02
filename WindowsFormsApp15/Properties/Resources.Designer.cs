@@ -83,6 +83,16 @@ namespace WindowsFormsApp15.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Background_1 {
+            get {
+                object obj = ResourceManager.GetObject("Background 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Caminhão {
             get {
                 object obj = ResourceManager.GetObject("Caminhão", resourceCulture);
@@ -146,6 +156,16 @@ namespace WindowsFormsApp15.Properties {
         internal static System.Drawing.Bitmap Fundo {
             get {
                 object obj = ResourceManager.GetObject("Fundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fundo_Roxo {
+            get {
+                object obj = ResourceManager.GetObject("Fundo Roxo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

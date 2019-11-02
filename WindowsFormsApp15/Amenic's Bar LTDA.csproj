@@ -68,6 +68,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
       <Private>True</Private>
@@ -562,6 +563,8 @@
     <None Include="Resources\Caminhão.png" />
     <None Include="Resources\gif.gif" />
     <None Include="Resources\Fundo.png" />
+    <None Include="Resources\Background 1.jpg" />
+    <None Include="Resources\Fundo Roxo.jpg" />
     <Content Include="Resources\kkk.jpg" />
     <None Include="Resources\Logo Branco.png" />
     <None Include="Resources\Plano Verde1.png" />
