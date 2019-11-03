@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTelaCompra));
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -51,9 +54,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -80,6 +80,30 @@
             this.dgvProdutos.ReadOnly = true;
             this.dgvProdutos.Size = new System.Drawing.Size(724, 408);
             this.dgvProdutos.TabIndex = 168;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "nm_produto";
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 325;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "ds_categoria";
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 225;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "vl_valor";
+            this.Column3.HeaderText = "";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 130;
             // 
             // label7
             // 
@@ -113,7 +137,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Green;
+            this.label15.ForeColor = System.Drawing.Color.Purple;
             this.label15.Location = new System.Drawing.Point(999, 486);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 55);
@@ -123,7 +147,7 @@
             // 
             // btnFinalizarPedido
             // 
-            this.btnFinalizarPedido.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.btnFinalizarPedido.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.btnFinalizarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinalizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFinalizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,7 +162,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel5.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(742, 96);
             this.panel5.Name = "panel5";
@@ -160,7 +184,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.imgUsuario);
@@ -297,7 +321,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel4.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(0, 106);
             this.panel4.Name = "panel4";
@@ -333,30 +357,6 @@
             this.label2.Size = new System.Drawing.Size(129, 25);
             this.label2.TabIndex = 75;
             this.label2.Text = "Quantidade:";
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "nm_produto";
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 325;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "ds_categoria";
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 225;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "vl_valor";
-            this.Column3.HeaderText = "";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 130;
             // 
             // frmTelaCompra
             // 

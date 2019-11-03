@@ -56,13 +56,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 28);
+            this.panel1.Size = new System.Drawing.Size(787, 28);
             this.panel1.TabIndex = 295;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -73,7 +73,7 @@
             this.lblMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMinimizar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimizar.ForeColor = System.Drawing.Color.White;
-            this.lblMinimizar.Location = new System.Drawing.Point(437, 2);
+            this.lblMinimizar.Location = new System.Drawing.Point(727, 2);
             this.lblMinimizar.Name = "lblMinimizar";
             this.lblMinimizar.Size = new System.Drawing.Size(21, 23);
             this.lblMinimizar.TabIndex = 156;
@@ -87,7 +87,7 @@
             this.lblSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSair.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair.ForeColor = System.Drawing.Color.White;
-            this.lblSair.Location = new System.Drawing.Point(462, 5);
+            this.lblSair.Location = new System.Drawing.Point(752, 5);
             this.lblSair.Name = "lblSair";
             this.lblSair.Size = new System.Drawing.Size(23, 23);
             this.lblSair.TabIndex = 155;
@@ -101,7 +101,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(168, 38);
+            this.label5.Location = new System.Drawing.Point(307, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(156, 20);
             this.label5.TabIndex = 291;
@@ -111,7 +111,7 @@
             // 
             this.picProduto.BackColor = System.Drawing.Color.Transparent;
             this.picProduto.Image = global::WindowsFormsApp15.Properties.Resources._860086;
-            this.picProduto.Location = new System.Drawing.Point(172, 71);
+            this.picProduto.Location = new System.Drawing.Point(53, 35);
             this.picProduto.Name = "picProduto";
             this.picProduto.Size = new System.Drawing.Size(139, 112);
             this.picProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(244, 189);
+            this.btnLimpar.Location = new System.Drawing.Point(125, 153);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(67, 23);
             this.btnLimpar.TabIndex = 310;
@@ -129,7 +129,7 @@
             // 
             // btnProcurar
             // 
-            this.btnProcurar.Location = new System.Drawing.Point(172, 189);
+            this.btnProcurar.Location = new System.Drawing.Point(53, 153);
             this.btnProcurar.Name = "btnProcurar";
             this.btnProcurar.Size = new System.Drawing.Size(66, 23);
             this.btnProcurar.TabIndex = 309;
@@ -144,7 +144,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(64, 313);
+            this.label2.Location = new System.Drawing.Point(315, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 305;
@@ -157,7 +157,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(64, 278);
+            this.label7.Location = new System.Drawing.Point(315, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 20);
             this.label7.TabIndex = 304;
@@ -166,23 +166,29 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.txtNome);
-            this.groupBox2.Controls.Add(this.btnCadastrar);
-            this.groupBox2.Controls.Add(this.txtIDFornecedor);
+            this.groupBox2.Controls.Add(this.txtImagem);
             this.groupBox2.Controls.Add(this.nudValor);
+            this.groupBox2.Controls.Add(this.picProduto);
+            this.groupBox2.Controls.Add(this.btnLimpar);
             this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.btnProcurar);
             this.groupBox2.Controls.Add(this.cboCategoria);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(57, 248);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.txtNome);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.btnCadastrar);
+            this.groupBox2.Controls.Add(this.txtIDFornecedor);
+            this.groupBox2.Location = new System.Drawing.Point(26, 72);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 252);
+            this.groupBox2.Size = new System.Drawing.Size(728, 252);
             this.groupBox2.TabIndex = 306;
             this.groupBox2.TabStop = false;
             // 
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(170, 61);
+            this.txtNome.Location = new System.Drawing.Point(478, 80);
             this.txtNome.MaxLength = 45;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(183, 22);
@@ -209,7 +215,7 @@
             this.btnCadastrar.IconVisible = true;
             this.btnCadastrar.IconZoom = 90D;
             this.btnCadastrar.IsTab = false;
-            this.btnCadastrar.Location = new System.Drawing.Point(120, 181);
+            this.btnCadastrar.Location = new System.Drawing.Point(523, 193);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnCadastrar.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -226,7 +232,7 @@
             // txtIDFornecedor
             // 
             this.txtIDFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDFornecedor.Location = new System.Drawing.Point(170, 27);
+            this.txtIDFornecedor.Location = new System.Drawing.Point(478, 46);
             this.txtIDFornecedor.Name = "txtIDFornecedor";
             this.txtIDFornecedor.Size = new System.Drawing.Size(183, 22);
             this.txtIDFornecedor.TabIndex = 301;
@@ -234,7 +240,7 @@
             // nudValor
             // 
             this.nudValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudValor.Location = new System.Drawing.Point(170, 131);
+            this.nudValor.Location = new System.Drawing.Point(478, 150);
             this.nudValor.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -252,7 +258,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(7, 99);
+            this.label6.Location = new System.Drawing.Point(315, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 20);
             this.label6.TabIndex = 158;
@@ -262,7 +268,7 @@
             // 
             this.cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(170, 94);
+            this.cboCategoria.Location = new System.Drawing.Point(478, 113);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(183, 23);
             this.cboCategoria.TabIndex = 299;
@@ -274,7 +280,7 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(7, 135);
+            this.label4.Location = new System.Drawing.Point(315, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 20);
             this.label4.TabIndex = 160;
@@ -284,7 +290,7 @@
             // 
             this.txtImagem.Enabled = false;
             this.txtImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtImagem.Location = new System.Drawing.Point(141, 218);
+            this.txtImagem.Location = new System.Drawing.Point(22, 182);
             this.txtImagem.Name = "txtImagem";
             this.txtImagem.Size = new System.Drawing.Size(203, 22);
             this.txtImagem.TabIndex = 303;
@@ -294,18 +300,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(488, 553);
-            this.Controls.Add(this.txtImagem);
-            this.Controls.Add(this.picProduto);
-            this.Controls.Add(this.btnLimpar);
-            this.Controls.Add(this.btnProcurar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(787, 357);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadastrarProduto";
             this.Text = "CadastrarProduto";

@@ -88,7 +88,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel4.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel4.Controls.Add(this.nudPago);
             this.panel4.Controls.Add(this.lblTroco);
             this.panel4.Controls.Add(this.label9);
@@ -318,7 +318,7 @@
             // 
             // btnFinalizarPedido
             // 
-            this.btnFinalizarPedido.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.btnFinalizarPedido.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.btnFinalizarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinalizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFinalizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,7 +333,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel5.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(742, 248);
             this.panel5.Name = "panel5";
@@ -366,7 +366,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtCPFCliente);
             this.panel1.Controls.Add(this.label13);

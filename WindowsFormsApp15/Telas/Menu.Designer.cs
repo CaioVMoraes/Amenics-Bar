@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMinimizar = new System.Windows.Forms.Label();
@@ -69,7 +68,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
@@ -123,7 +122,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel2.Controls.Add(this.lblNome);
             this.panel2.Controls.Add(this.imgPerfil);
             this.panel2.Controls.Add(this.label1);
@@ -186,7 +185,7 @@
             // 
             // btnCadastrarUsuario
             // 
-            this.btnCadastrarUsuario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCadastrarUsuario.BackColor = System.Drawing.Color.Purple;
             this.btnCadastrarUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarUsuario.Enabled = false;
             this.btnCadastrarUsuario.FlatAppearance.BorderSize = 0;
@@ -203,7 +202,7 @@
             // 
             // btnConsultarFuncionario
             // 
-            this.btnConsultarFuncionario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultarFuncionario.BackColor = System.Drawing.Color.Purple;
             this.btnConsultarFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarFuncionario.FlatAppearance.BorderSize = 0;
             this.btnConsultarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -219,7 +218,7 @@
             // 
             // btnCadastrarFuncionario
             // 
-            this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCadastrarFuncionario.BackColor = System.Drawing.Color.Purple;
             this.btnCadastrarFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarFuncionario.FlatAppearance.BorderSize = 0;
             this.btnCadastrarFuncionario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -235,7 +234,7 @@
             // 
             // btnConsultarFornecedor
             // 
-            this.btnConsultarFornecedor.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultarFornecedor.BackColor = System.Drawing.Color.Purple;
             this.btnConsultarFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarFornecedor.Enabled = false;
             this.btnConsultarFornecedor.FlatAppearance.BorderSize = 0;
@@ -252,7 +251,7 @@
             // 
             // btnCadastrarFornecedor
             // 
-            this.btnCadastrarFornecedor.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCadastrarFornecedor.BackColor = System.Drawing.Color.Purple;
             this.btnCadastrarFornecedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarFornecedor.Enabled = false;
             this.btnCadastrarFornecedor.FlatAppearance.BorderSize = 0;
@@ -269,7 +268,7 @@
             // 
             // btnConsultarProduto
             // 
-            this.btnConsultarProduto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultarProduto.BackColor = System.Drawing.Color.Purple;
             this.btnConsultarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarProduto.Enabled = false;
             this.btnConsultarProduto.FlatAppearance.BorderSize = 0;
@@ -286,7 +285,7 @@
             // 
             // btnCadastrarProduto
             // 
-            this.btnCadastrarProduto.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCadastrarProduto.BackColor = System.Drawing.Color.Purple;
             this.btnCadastrarProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrarProduto.Enabled = false;
             this.btnCadastrarProduto.FlatAppearance.BorderSize = 0;
@@ -303,7 +302,7 @@
             // 
             // btnDespesasEGastos
             // 
-            this.btnDespesasEGastos.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnDespesasEGastos.BackColor = System.Drawing.Color.Purple;
             this.btnDespesasEGastos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDespesasEGastos.Enabled = false;
             this.btnDespesasEGastos.FlatAppearance.BorderSize = 0;
@@ -320,7 +319,7 @@
             // 
             // btnCaixa
             // 
-            this.btnCaixa.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCaixa.BackColor = System.Drawing.Color.Purple;
             this.btnCaixa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCaixa.Enabled = false;
             this.btnCaixa.FlatAppearance.BorderSize = 0;
@@ -337,7 +336,7 @@
             // 
             // btnConsultarFolhaPagamento
             // 
-            this.btnConsultarFolhaPagamento.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultarFolhaPagamento.BackColor = System.Drawing.Color.Purple;
             this.btnConsultarFolhaPagamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarFolhaPagamento.Enabled = false;
             this.btnConsultarFolhaPagamento.FlatAppearance.BorderSize = 0;
@@ -354,7 +353,7 @@
             // 
             // btnGerarFolhaPagamento
             // 
-            this.btnGerarFolhaPagamento.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnGerarFolhaPagamento.BackColor = System.Drawing.Color.Purple;
             this.btnGerarFolhaPagamento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGerarFolhaPagamento.Enabled = false;
             this.btnGerarFolhaPagamento.FlatAppearance.BorderSize = 0;
@@ -371,7 +370,7 @@
             // 
             // btnConsultarEstoque
             // 
-            this.btnConsultarEstoque.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnConsultarEstoque.BackColor = System.Drawing.Color.Purple;
             this.btnConsultarEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsultarEstoque.Enabled = false;
             this.btnConsultarEstoque.FlatAppearance.BorderSize = 0;
@@ -388,7 +387,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.SeaGreen;
+            this.button1.BackColor = System.Drawing.Color.Purple;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -449,7 +448,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.SeaGreen;
+            this.button2.BackColor = System.Drawing.Color.Purple;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

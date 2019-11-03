@@ -35,11 +35,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMinimizar = new System.Windows.Forms.Label();
             this.lblSair = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAlterar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +48,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(241, 32);
+            this.txtSenha.Location = new System.Drawing.Point(227, 36);
             this.txtSenha.MaxLength = 8;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
@@ -63,7 +63,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(46, 76);
+            this.label3.Location = new System.Drawing.Point(32, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 324;
@@ -72,7 +72,7 @@
             // txtConfirmar
             // 
             this.txtConfirmar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmar.Location = new System.Drawing.Point(241, 73);
+            this.txtConfirmar.Location = new System.Drawing.Point(227, 77);
             this.txtConfirmar.MaxLength = 8;
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.PasswordChar = '*';
@@ -87,7 +87,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(46, 35);
+            this.label1.Location = new System.Drawing.Point(32, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 323;
@@ -116,14 +116,49 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(12, 198);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(460, 195);
+            this.groupBox2.Size = new System.Drawing.Size(453, 195);
             this.groupBox2.TabIndex = 336;
             this.groupBox2.TabStop = false;
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Activecolor = System.Drawing.Color.RoyalBlue;
+            this.btnAlterar.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAlterar.BorderRadius = 0;
+            this.btnAlterar.ButtonText = "ALTERAR";
+            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAlterar.DisabledColor = System.Drawing.Color.Gray;
+            this.btnAlterar.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnAlterar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Iconimage")));
+            this.btnAlterar.Iconimage_right = null;
+            this.btnAlterar.Iconimage_right_Selected = null;
+            this.btnAlterar.Iconimage_Selected = null;
+            this.btnAlterar.IconMarginLeft = 0;
+            this.btnAlterar.IconMarginRight = 0;
+            this.btnAlterar.IconRightVisible = true;
+            this.btnAlterar.IconRightZoom = 0D;
+            this.btnAlterar.IconVisible = true;
+            this.btnAlterar.IconZoom = 90D;
+            this.btnAlterar.IsTab = false;
+            this.btnAlterar.Location = new System.Drawing.Point(171, 135);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Normalcolor = System.Drawing.Color.DodgerBlue;
+            this.btnAlterar.OnHovercolor = System.Drawing.Color.RoyalBlue;
+            this.btnAlterar.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnAlterar.selected = false;
+            this.btnAlterar.Size = new System.Drawing.Size(138, 34);
+            this.btnAlterar.TabIndex = 171;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlterar.Textcolor = System.Drawing.Color.White;
+            this.btnAlterar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -169,46 +204,11 @@
             this.pictureBox1.TabIndex = 341;
             this.pictureBox1.TabStop = false;
             // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Activecolor = System.Drawing.Color.RoyalBlue;
-            this.btnAlterar.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAlterar.BorderRadius = 0;
-            this.btnAlterar.ButtonText = "ALTERAR";
-            this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAlterar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAlterar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAlterar.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Iconimage")));
-            this.btnAlterar.Iconimage_right = null;
-            this.btnAlterar.Iconimage_right_Selected = null;
-            this.btnAlterar.Iconimage_Selected = null;
-            this.btnAlterar.IconMarginLeft = 0;
-            this.btnAlterar.IconMarginRight = 0;
-            this.btnAlterar.IconRightVisible = true;
-            this.btnAlterar.IconRightZoom = 0D;
-            this.btnAlterar.IconVisible = true;
-            this.btnAlterar.IconZoom = 90D;
-            this.btnAlterar.IsTab = false;
-            this.btnAlterar.Location = new System.Drawing.Point(171, 135);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Normalcolor = System.Drawing.Color.DodgerBlue;
-            this.btnAlterar.OnHovercolor = System.Drawing.Color.RoyalBlue;
-            this.btnAlterar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAlterar.selected = false;
-            this.btnAlterar.Size = new System.Drawing.Size(138, 34);
-            this.btnAlterar.TabIndex = 171;
-            this.btnAlterar.Text = "ALTERAR";
-            this.btnAlterar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlterar.Textcolor = System.Drawing.Color.White;
-            this.btnAlterar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
-            // 
             // frmAlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(477, 410);
             this.Controls.Add(this.panel1);

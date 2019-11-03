@@ -99,7 +99,7 @@
             this.lblMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMinimizar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimizar.ForeColor = System.Drawing.Color.White;
-            this.lblMinimizar.Location = new System.Drawing.Point(442, 2);
+            this.lblMinimizar.Location = new System.Drawing.Point(924, 2);
             this.lblMinimizar.Name = "lblMinimizar";
             this.lblMinimizar.Size = new System.Drawing.Size(21, 23);
             this.lblMinimizar.TabIndex = 156;
@@ -109,13 +109,13 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 28);
+            this.panel1.Size = new System.Drawing.Size(975, 28);
             this.panel1.TabIndex = 334;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove_1);
             // 
@@ -126,7 +126,7 @@
             this.lblSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSair.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair.ForeColor = System.Drawing.Color.White;
-            this.lblSair.Location = new System.Drawing.Point(467, 5);
+            this.lblSair.Location = new System.Drawing.Point(949, 5);
             this.lblSair.Name = "lblSair";
             this.lblSair.Size = new System.Drawing.Size(23, 23);
             this.lblSair.TabIndex = 155;
@@ -154,7 +154,7 @@
             this.btnBuscar.IconVisible = true;
             this.btnBuscar.IconZoom = 90D;
             this.btnBuscar.IsTab = false;
-            this.btnBuscar.Location = new System.Drawing.Point(305, 38);
+            this.btnBuscar.Location = new System.Drawing.Point(311, 203);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Normalcolor = System.Drawing.Color.DodgerBlue;
             this.btnBuscar.OnHovercolor = System.Drawing.Color.RoyalBlue;
@@ -172,7 +172,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WindowsFormsApp15.Properties.Resources.EditarFuncionario;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(139, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -186,7 +186,7 @@
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label21.Location = new System.Drawing.Point(171, 248);
+            this.label21.Location = new System.Drawing.Point(178, 78);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(132, 20);
             this.label21.TabIndex = 332;
@@ -196,18 +196,19 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label27);
-            this.groupBox1.Location = new System.Drawing.Point(12, 248);
+            this.groupBox1.Location = new System.Drawing.Point(19, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(460, 92);
+            this.groupBox1.Size = new System.Drawing.Size(460, 320);
             this.groupBox1.TabIndex = 333;
             this.groupBox1.TabStop = false;
             // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(152, 43);
+            this.txtID.Location = new System.Drawing.Point(158, 208);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(129, 22);
             this.txtID.TabIndex = 284;
@@ -219,7 +220,7 @@
             this.label27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label27.Location = new System.Drawing.Point(37, 45);
+            this.label27.Location = new System.Drawing.Point(43, 210);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(100, 20);
             this.label27.TabIndex = 166;
@@ -232,7 +233,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(171, 58);
+            this.label5.Location = new System.Drawing.Point(669, 78);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 20);
             this.label5.TabIndex = 331;
@@ -252,7 +253,7 @@
             this.groupBox2.Controls.Add(this.txtUsuario);
             this.groupBox2.Controls.Add(this.cboNivel);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 346);
+            this.groupBox2.Location = new System.Drawing.Point(495, 78);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(460, 320);
             this.groupBox2.TabIndex = 330;
@@ -373,11 +374,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(493, 681);
+            this.ClientSize = new System.Drawing.Size(975, 432);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);

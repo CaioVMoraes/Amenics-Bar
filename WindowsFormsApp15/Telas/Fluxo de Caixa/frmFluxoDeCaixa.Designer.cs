@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFluxoDeCaixa));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblMinimizar = new System.Windows.Forms.Label();
             this.lblSair = new System.Windows.Forms.Label();
-            this.dgvFluxo = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvFluxo = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFluxo)).BeginInit();
             this.SuspendLayout();
@@ -41,7 +40,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Controls.Add(this.label3);
@@ -77,15 +76,6 @@
             this.lblSair.TabIndex = 155;
             this.lblSair.Text = "X";
             // 
-            // dgvFluxo
-            // 
-            this.dgvFluxo.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFluxo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFluxo.Location = new System.Drawing.Point(12, 34);
-            this.dgvFluxo.Name = "dgvFluxo";
-            this.dgvFluxo.Size = new System.Drawing.Size(771, 471);
-            this.dgvFluxo.TabIndex = 330;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -98,6 +88,15 @@
             this.label3.Size = new System.Drawing.Size(126, 20);
             this.label3.TabIndex = 329;
             this.label3.Text = "Fluxo de Caixa";
+            // 
+            // dgvFluxo
+            // 
+            this.dgvFluxo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFluxo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFluxo.Location = new System.Drawing.Point(12, 34);
+            this.dgvFluxo.Name = "dgvFluxo";
+            this.dgvFluxo.Size = new System.Drawing.Size(771, 471);
+            this.dgvFluxo.TabIndex = 330;
             // 
             // frmFluxoDeCaixa
             // 
