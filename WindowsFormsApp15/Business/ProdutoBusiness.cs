@@ -15,8 +15,6 @@ namespace WindowsFormsApp15.Business
 
         public void CadastrarProduto(Model.tb_produto modelo)
         {
-            db.CadastrarProduto(modelo);
-
             if(modelo.id_fornecedor == 0 )
             {
                 throw new ArgumentException("O campo fornecedor é obrigatório");
@@ -37,6 +35,8 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("imagem do produto é obrigatório");
             }
+
+            db.CadastrarProduto(modelo);
         }
         public List<Model.tb_produto> ConsultarProduto(string nome)
         {
@@ -50,7 +50,7 @@ namespace WindowsFormsApp15.Business
 
             return lista;
         }
-        public List<Model.tb_produto> ConsultarProdutoFornecedor(int idfornecedor)
+        public List<Model.tb_produto> ConsultarProdutoFornecedor(string idfornecedor)
         {
             List<Model.tb_produto> lista = db.ConsultarProdutoFornecedor(idfornecedor);
 
@@ -80,8 +80,6 @@ namespace WindowsFormsApp15.Business
 
         public void AlterarProduto(Model.tb_produto modelo)
         {
-            db.AlterarProduto(modelo);
-
             if (modelo.id_fornecedor == 0)
             {
                 throw new ArgumentException("O campo fornecedor é obrigatório");
@@ -102,12 +100,12 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("imagem do produto é obrigatório");
             }
+
+            db.AlterarProduto(modelo);
         }
         public void RemoverProduto(int id)
         {
             db.RemoverProduto(id);
-
-
         }
     }
 }

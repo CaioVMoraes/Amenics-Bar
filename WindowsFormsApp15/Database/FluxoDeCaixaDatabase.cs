@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class FluxoDeCaixaDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public List<vw_fluxocaixa> FluxoDeCaixa()
         {

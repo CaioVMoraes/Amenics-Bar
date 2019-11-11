@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class FornecedorDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void CadastarFornecedor(tb_fornecedor modelo)
         {
@@ -19,14 +19,20 @@ namespace WindowsFormsApp15.Database
         }
         public List<tb_fornecedor> ConsultarFornecedorNomeEmpresa(string NomeEmpresa)
         {
-            List<tb_fornecedor> lista = db.tb_fornecedor.Where(x => x.nm_empresa == NomeEmpresa).ToList();
+            List<tb_fornecedor> lista = db.tb_fornecedor.Where(x => x.nm_empresa.Contains(NomeEmpresa)).ToList();
 
             return lista;
         
         }
         public List<tb_fornecedor> ConsultarFornecedorNome(string Nome)
         {
-            List<tb_fornecedor> lista = db.tb_fornecedor.Where(x => x.nm_fornecedor == Nome).ToList();
+            List<tb_fornecedor> lista = db.tb_fornecedor.Where(x => x.nm_fornecedor.Contains(Nome)).ToList();
+
+            return lista;
+        }
+        public List<tb_fornecedor> ConsultarFornecedor()
+        {
+            List<tb_fornecedor> lista = db.tb_fornecedor.ToList();
 
             return lista;
         }
@@ -40,19 +46,21 @@ namespace WindowsFormsApp15.Database
         {
             tb_fornecedor alterar = db.tb_fornecedor.FirstOrDefault(x => x.nm_empresa == x.nm_empresa);
 
-            modelo.nm_empresa = alterar.nm_empresa;
-            modelo.ds_celular = alterar.ds_celular;
-            modelo.ds_cnpj = alterar.ds_cnpj;
-            modelo.ds_endereco = alterar.ds_endereco;
-            modelo.ds_telefone = modelo.ds_telefone;
-            modelo.nm_fornecedor = modelo.nm_fornecedor;
+            alterar.nm_empresa = modelo.nm_empresa;
+            alterar.ds_celular = modelo.ds_celular;
+            alterar.ds_cnpj = modelo.ds_cnpj;
+            alterar.ds_endereco = modelo.ds_endereco;
+            alterar.ds_telefone = modelo.ds_telefone;
+            alterar.nm_fornecedor = modelo.nm_fornecedor;
 
             db.SaveChanges();
         }
         public void RemoverFornecedor(int id)
         {
             tb_fornecedor deletar = db.tb_fornecedor.FirstOrDefault(x => x.id_fornecedor == id);
+
             db.tb_fornecedor.Remove(deletar);
+
             db.SaveChanges();
         }
     }

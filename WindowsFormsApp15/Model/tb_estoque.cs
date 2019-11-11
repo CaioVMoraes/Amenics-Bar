@@ -23,8 +23,6 @@ namespace WindowsFormsApp15.Model
         public int id_estoque { get; set; }
         public int id_produto { get; set; }
         public System.DateTime dt_entrada { get; set; }
-        public System.DateTime dt_validade { get; set; }
-        public decimal vl_valor { get; set; }
         public bool bt_vendido { get; set; }
     
         public virtual tb_produto tb_produto { get; set; }

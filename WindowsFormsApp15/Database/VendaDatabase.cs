@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class VendaDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void InserirVenda(tb_venda modelo)
         {
@@ -23,12 +23,20 @@ namespace WindowsFormsApp15.Database
             db.SaveChanges();
         } 
 
-        public List<tb_venda> ConsultarVenda()
+        public List<tb_venda> ConsultarVenda(DateTime venda)
         {
-            List<tb_venda> lista = db.tb_venda.ToList();
+            List<tb_venda> lista = db.tb_venda.Where(x => x.dt_saida == venda).ToList();
 
             return lista;
         }
+
+        public List<tb_venda_item> ConsultarVendaItem(DateTime venda)
+        {
+            List<tb_venda_item> lista = db.tb_venda_item.Where(x => x.tb_venda.dt_saida == venda).ToList();
+
+            return lista;
+        }
+
         public tb_venda Listar(int id)
         {
             tb_venda modelo = db.tb_venda.FirstOrDefault(x => x.id_venda == id);

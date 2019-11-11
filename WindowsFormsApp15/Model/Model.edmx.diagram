@@ -4,43 +4,33 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8383aaebada047289bd89e99c4d5ae69" Name="Diagram1" ZoomLevel="33">
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_cardapio" Width="1.5" PointX="8.25" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_cliente" Width="1.5" PointX="6" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_comanda" Width="1.5" PointX="8.25" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_comanda_item" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_compra" Width="1.5" PointX="6" PointY="24" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_compra_item" Width="1.5" PointX="8.25" PointY="22.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_controledeponto" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_despesa" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_estoque" Width="1.5" PointX="8.25" PointY="19.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_folhapagamento" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_fornecedor" Width="1.5" PointX="3.75" PointY="19.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_funcionario" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_log" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_produto" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_recuperacao" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_usuario" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_venda" Width="1.5" PointX="8.25" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_a4e779_amenicsModel.tb_venda_item" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_comanda_item_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_comanda_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_venda_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_comanda_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_comanda_item_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_compra_item_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_compra_item_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_controledeponto_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_folhapagamento_ibfk_2" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_estoque_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_venda_item_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_folhapagamento_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_produto_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_usuario_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_log_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_recuperacao_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_venda_ibfk_1" ManuallyRouted="false" />
-        <AssociationConnector Association="db_a4e779_amenicsModel.tb_venda_item_ibfk_2" ManuallyRouted="false" />
+      <Diagram DiagramId="33dc28096c8642308cbb416b50b20944" Name="Diagram1" ZoomLevel="192">
+        <EntityTypeShape EntityType="ecostorModel.tb_cliente" Width="1.5" PointX="3" PointY="19.25" />
+        <EntityTypeShape EntityType="ecostorModel.tb_compra" Width="1.5" PointX="3" PointY="22.75" />
+        <EntityTypeShape EntityType="ecostorModel.tb_compra_item" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="ecostorModel.tb_controledeponto" Width="1.5" PointX="3" PointY="15.625" />
+        <EntityTypeShape EntityType="ecostorModel.tb_estoque" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="ecostorModel.tb_folhapagamento" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="ecostorModel.tb_fornecedor" Width="1.5" PointX="0.75" PointY="18.875" />
+        <EntityTypeShape EntityType="ecostorModel.tb_funcionario" Width="1.5" PointX="0.75" PointY="10.125" />
+        <EntityTypeShape EntityType="ecostorModel.tb_produto" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="ecostorModel.tb_recuperacao" Width="1.5" PointX="5.25" PointY="15.75" />
+        <EntityTypeShape EntityType="ecostorModel.tb_usuario" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="ecostorModel.tb_venda" Width="1.5" PointX="5.25" PointY="12.25" />
+        <EntityTypeShape EntityType="ecostorModel.tb_venda_item" Width="1.5" PointX="7.5" PointY="12.625" />
+        <EntityTypeShape EntityType="ecostorModel.vw_fluxocaixa" Width="1.5" PointX="5.75" PointY="7.25" />
+        <AssociationConnector Association="ecostorModel.tb_venda_ibfk_2" />
+        <AssociationConnector Association="ecostorModel.tb_compra_item_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_compra_item_ibfk_2" />
+        <AssociationConnector Association="ecostorModel.tb_controledeponto_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_estoque_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_venda_item_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_folhapagamento_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_produto_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_usuario_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_recuperacao_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_venda_ibfk_1" />
+        <AssociationConnector Association="ecostorModel.tb_venda_item_ibfk_2" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

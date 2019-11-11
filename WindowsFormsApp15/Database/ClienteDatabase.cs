@@ -10,8 +10,7 @@ namespace WindowsFormsApp15.Database
     class ClienteDatabase
     {
 
-        Model.amenicsEntities db = new amenicsEntities();
-
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void InserirCliente(tb_cliente modelo)
         {
@@ -32,13 +31,13 @@ namespace WindowsFormsApp15.Database
         }
         public List<tb_cliente> ConsultarClienteNome(string nome)
         {
-            List<tb_cliente> lista = db.tb_cliente.Where(x => x.nm_cliente == nome).ToList();
+            List<tb_cliente> lista = db.tb_cliente.Where(x => x.nm_cliente.Contains(nome)).ToList();
 
             return lista;
         }
          public List<tb_cliente> ConsultarClienteCpf(string cpf)
         {
-            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_cpf == cpf).ToList();
+            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_cpf.Contains(cpf)).ToList();
 
             return lista;
         }
@@ -50,13 +49,13 @@ namespace WindowsFormsApp15.Database
         }
         public List<tb_cliente> ConsultarClienteRg(string RG)
         {
-            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_rg == RG).ToList();
+            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_rg.Contains(RG)).ToList();
 
             return lista;
         }
         public List<tb_cliente> ConsultarClienteTelefone(string tel)
         {
-            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_telefone == tel).ToList();
+            List<tb_cliente> lista = db.tb_cliente.Where(x => x.ds_telefone.Contains(tel)).ToList();
 
             return lista;
         }
@@ -77,12 +76,13 @@ namespace WindowsFormsApp15.Database
         {
             tb_cliente alterar = db.tb_cliente.FirstOrDefault(x => x.id_cliente == x.id_cliente);
 
-            modelo.ds_celular = alterar.ds_celular;
-            modelo.ds_cpf = alterar.ds_cpf;
-            modelo.ds_rg = alterar.ds_rg;
-            modelo.ds_email = alterar.ds_email;
-            modelo.ds_telefone = alterar.ds_telefone;
-            modelo.nm_cliente = alterar.nm_cliente;
+            alterar.ds_celular = modelo.ds_celular;
+            alterar.ds_cpf = modelo.ds_cpf;
+            alterar.ds_rg = modelo.ds_rg;
+            alterar.ds_email = modelo.ds_email;
+            alterar.ds_telefone = modelo.ds_telefone;
+            alterar.nm_cliente = modelo.nm_cliente;
+            alterar.qtd_frequenciaMensal = modelo.qtd_frequenciaMensal;
 
             db.SaveChanges();
 

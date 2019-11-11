@@ -64,7 +64,7 @@ namespace WindowsFormsApp15.Business
             {
                 throw new Exception("Numero de celular é obrigatório");
             }
-            if (funcionario.vl_salario == 0)
+            if (funcionario.vl_salarioPorHora == 0)
             {
                 throw new Exception("Salário é obrigatório");
             }
@@ -184,7 +184,7 @@ namespace WindowsFormsApp15.Business
             {
                 throw new Exception("Numero de celular é obrigatório");
             }
-            if (funcionario.vl_salario == 0)
+            if (funcionario.vl_salarioPorHora == 0)
             {
                 throw new Exception("Salário é obrigatório");
             }
@@ -213,6 +213,12 @@ namespace WindowsFormsApp15.Business
             }
 
             db.AlterarFuncionario(funcionario);
+        }
+        public List<tb_funcionario> ConsultarFuncionario()
+        {
+            List<tb_funcionario> lista = db.ConsultarFuncionario();
+
+            return lista;
         }
         public void RemoverFuncionario(int id)
         {
@@ -247,7 +253,6 @@ namespace WindowsFormsApp15.Business
             else
             {
                 return false;
-
             }
         }
     }

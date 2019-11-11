@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultarCompra));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblMinimizar = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblSair = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,15 +49,32 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Fundo_Roxo;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblMinimizar);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 28);
+            this.panel1.Size = new System.Drawing.Size(597, 28);
             this.panel1.TabIndex = 315;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(546, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 23);
+            this.label1.TabIndex = 325;
+            this.label1.Text = "_";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblMinimizar
             // 
@@ -63,12 +83,27 @@
             this.lblMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMinimizar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimizar.ForeColor = System.Drawing.Color.White;
-            this.lblMinimizar.Location = new System.Drawing.Point(534, 0);
+            this.lblMinimizar.Location = new System.Drawing.Point(643, 1);
             this.lblMinimizar.Name = "lblMinimizar";
             this.lblMinimizar.Size = new System.Drawing.Size(21, 23);
             this.lblMinimizar.TabIndex = 156;
             this.lblMinimizar.Text = "_";
             this.lblMinimizar.Click += new System.EventHandler(this.lblMinimizar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(571, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 23);
+            this.label2.TabIndex = 324;
+            this.label2.Text = "X";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblSair
             // 
@@ -77,7 +112,7 @@
             this.lblSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSair.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair.ForeColor = System.Drawing.Color.White;
-            this.lblSair.Location = new System.Drawing.Point(559, 3);
+            this.lblSair.Location = new System.Drawing.Point(668, 4);
             this.lblSair.Name = "lblSair";
             this.lblSair.Size = new System.Drawing.Size(23, 23);
             this.lblSair.TabIndex = 155;
@@ -95,10 +130,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvCompra.Location = new System.Drawing.Point(12, 150);
+            this.dgvCompra.Location = new System.Drawing.Point(12, 149);
             this.dgvCompra.Name = "dgvCompra";
             this.dgvCompra.ReadOnly = true;
-            this.dgvCompra.Size = new System.Drawing.Size(569, 325);
+            this.dgvCompra.Size = new System.Drawing.Size(570, 325);
             this.dgvCompra.TabIndex = 321;
             // 
             // Column1
@@ -138,7 +173,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(217, 57);
+            this.label3.Location = new System.Drawing.Point(221, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(153, 20);
             this.label3.TabIndex = 320;
@@ -146,12 +181,12 @@
             // 
             // dtpCompra
             // 
-            this.dtpCompra.BackColor = System.Drawing.Color.SkyBlue;
+            this.dtpCompra.BackColor = System.Drawing.Color.SeaGreen;
             this.dtpCompra.BorderRadius = 0;
             this.dtpCompra.ForeColor = System.Drawing.Color.White;
             this.dtpCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCompra.FormatCustom = null;
-            this.dtpCompra.Location = new System.Drawing.Point(278, 112);
+            this.dtpCompra.Location = new System.Drawing.Point(282, 110);
             this.dtpCompra.Name = "dtpCompra";
             this.dtpCompra.Size = new System.Drawing.Size(161, 27);
             this.dtpCompra.TabIndex = 323;
@@ -165,7 +200,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(127, 115);
+            this.label6.Location = new System.Drawing.Point(131, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 20);
             this.label6.TabIndex = 322;
@@ -175,15 +210,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(591, 486);
+            this.ClientSize = new System.Drawing.Size(597, 486);
             this.Controls.Add(this.dtpCompra);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvCompra);
             this.Controls.Add(this.label3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConsultarCompra";
             this.Text = "frmConsultarCompra";
             this.Load += new System.EventHandler(this.frmConsultarCompra_Load);
@@ -208,5 +244,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

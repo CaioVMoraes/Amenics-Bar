@@ -34,7 +34,7 @@ namespace WindowsFormsApp15.Telas
         {
             try
             {
-                Model.tb_produto produto = listBox1.SelectedItem as Model.tb_produto;
+                Model.tb_produto produto = listProdutos.SelectedItem as Model.tb_produto;
 
                 List<Model.tb_estoque> estoque = estoqueBusiness.ConsultarEstoqueId(produto.id_produto);
 
@@ -47,12 +47,12 @@ namespace WindowsFormsApp15.Telas
                         itens = new List<Model.tb_estoque>();
                     }
 
-                    tb_estoque estoqueModelo = estoqueBusiness.ListarAlterarNaoVendidos(produto.id_produto);
-
                     int quantidade = Convert.ToInt32(nudQuantidade.Value);
 
                     for (int i = 0; i < quantidade; i++)
                     {
+                        tb_estoque estoqueModelo = estoqueBusiness.ListarAlterarNaoVendidos(produto.id_produto);
+                    
                         itens.Add(estoqueModelo);
 
                         dgvProdutos.AutoGenerateColumns = false;
@@ -86,8 +86,8 @@ namespace WindowsFormsApp15.Telas
 
                 List<tb_produto> lista = produtoBusiness.ConsultarTodosProdutos();
 
-                listBox1.DisplayMember = nameof(tb_produto.nm_produto);
-                listBox1.DataSource = lista;
+                listProdutos.DisplayMember = nameof(tb_produto.nm_produto);
+                listProdutos.DataSource = lista;
 
                 Utils.ConverterImagem imageConverter = new Utils.ConverterImagem();
 
@@ -109,9 +109,11 @@ namespace WindowsFormsApp15.Telas
 
                 Model.tb_venda venda = new Model.tb_venda();
 
+                tb_cliente cliente = new tb_cliente();
+
                 if (txtCPFCliente.Visible == true)
                 {
-                    tb_cliente cliente = clienteBusiness.ListarClienteCpf(txtCPFCliente.Text);
+                    cliente = clienteBusiness.ListarClienteCpf(txtCPFCliente.Text);
                     venda.id_cliente = cliente.id_cliente;
                 }
                 else
@@ -121,7 +123,16 @@ namespace WindowsFormsApp15.Telas
 
                 venda.id_usuario = Autenticacao.Usuario.UsuarioLogado.IDUsuario;
                 venda.dt_saida = DateTime.Now;
-                venda.vl_valorTotal = Convert.ToDecimal(lblTotal.Text);
+
+                
+                if(cliente.qtd_frequenciaMensal == 100)
+                {
+                    venda.vl_valorTotal = Convert.ToDecimal(lblTotal.Text) / 2;
+                }
+                else
+                {
+                    venda.vl_valorTotal = Convert.ToDecimal(lblTotal.Text);
+                }
 
                 vendaBusiness.InserirVenda(venda);
 
@@ -138,6 +149,10 @@ namespace WindowsFormsApp15.Telas
                     }
 
                     MessageBox.Show("Pedido finalizado com sucesso");
+
+                    cliente.qtd_frequenciaMensal = cliente.qtd_frequenciaMensal + 1;
+
+                    clienteBusiness.AlterarCliente(cliente);
 
                     dgvProdutos.DataSource = null;
 
@@ -221,7 +236,38 @@ namespace WindowsFormsApp15.Telas
         {
             if(e.ColumnIndex == 3)
             {
+                try
+                {
+                    tb_estoque estoque = dgvProdutos.CurrentRow.DataBoundItem as tb_estoque;
+
+                    List<Model.tb_estoque> itens = dgvProdutos.DataSource as List<Model.tb_estoque>;
+
+                    itens.Remove(estoque);
+
+                    dgvProdutos.AutoGenerateColumns = false;
+                    dgvProdutos.DataSource = null;
+                    dgvProdutos.DataSource = itens;
+
+                    estoqueBusiness.AlterarEstoqueNaoVendido(estoque.id_produto);
+
+                    }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            Telas.Cliente.frmCadastrarCliente tela = new Cliente.frmCadastrarCliente();
+            tela.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Telas.Cliente.frmCadastrarCliente tela = new Cliente.frmCadastrarCliente();
+            tela.Show();
         }
     }
 }

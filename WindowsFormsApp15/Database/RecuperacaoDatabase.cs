@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class RecuperacaoDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void Inserir (tb_recuperacao model)
         {

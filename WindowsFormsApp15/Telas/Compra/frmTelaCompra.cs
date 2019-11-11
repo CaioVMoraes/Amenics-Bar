@@ -96,7 +96,7 @@ namespace WindowsFormsApp15.Telas.Compra
                         compraItem.id_produto = item.id_produto;
 
                         estoqueItem.id_produto = item.id_produto;
-                        estoqueItem.dt_entrada = DateTime.Now;
+                        estoqueItem.dt_entrada = DateTime.Now.Date;
                         estoqueItem.bt_vendido = false;
 
                         compraBusiness.InserirCompraItem(compraItem);
@@ -149,6 +149,29 @@ namespace WindowsFormsApp15.Telas.Compra
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                try
+                {
+                    tb_produto produto = dgvProdutos.CurrentRow.DataBoundItem as tb_produto;
+
+                    List<Model.tb_produto> itens = dgvProdutos.DataSource as List<Model.tb_produto>;
+
+                    itens.Remove(produto);
+
+                    dgvProdutos.AutoGenerateColumns = false;
+                    dgvProdutos.DataSource = null;
+                    dgvProdutos.DataSource = itens;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

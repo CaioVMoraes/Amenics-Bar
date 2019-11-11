@@ -4,18 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="db_a4e779_amenicsModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="tb_cardapio">
-          <Key>
-            <PropertyRef Name="id_cardapio" />
-          </Key>
-          <Property Name="id_cardapio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_categoria" Type="int" Nullable="false" />
-          <Property Name="nm_refeicao" Type="int" Nullable="false" />
-          <Property Name="ds_descricao" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="img_refeicao" Type="longblob" />
-        </EntityType>
+    <Schema Namespace="ecostorModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tb_cliente">
           <Key>
             <PropertyRef Name="id_cliente" />
@@ -29,29 +18,11 @@
           <Property Name="ds_rg" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="qtd_frequenciaMensal" Type="int" />
         </EntityType>
-        <EntityType Name="tb_comanda">
-          <Key>
-            <PropertyRef Name="id_comanda" />
-          </Key>
-          <Property Name="id_comanda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_cliente" Type="int" Nullable="false" />
-          <Property Name="dt_comanda" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tb_comanda_item">
-          <Key>
-            <PropertyRef Name="id_comanda_item" />
-          </Key>
-          <Property Name="id_comanda_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_comanda" Type="int" Nullable="false" />
-          <Property Name="id_cardapio" Type="int" Nullable="false" />
-        </EntityType>
         <EntityType Name="tb_compra">
           <Key>
             <PropertyRef Name="id_compra" />
           </Key>
-          <Property Name="id_compra" Type="int" Nullable="false" />
+          <Property Name="id_compra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dt_compra" Type="date" Nullable="false" />
           <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
@@ -59,7 +30,7 @@
           <Key>
             <PropertyRef Name="id_compra_item" />
           </Key>
-          <Property Name="id_compra_item" Type="int" Nullable="false" />
+          <Property Name="id_compra_item" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_compra" Type="int" Nullable="false" />
           <Property Name="id_produto" Type="int" Nullable="false" />
         </EntityType>
@@ -73,17 +44,6 @@
           <Property Name="dt_saidaAlmoco" Type="datetime" Precision="0" />
           <Property Name="dt_voltaAlmoco" Type="datetime" Precision="0" />
           <Property Name="dt_saida" Type="datetime" Precision="0" />
-          <Property Name="dt_entradaHoraExtra" Type="datetime" Precision="0" />
-          <Property Name="dt_saidaHoraExtra" Type="datetime" Precision="0" />
-        </EntityType>
-        <EntityType Name="tb_despesa">
-          <Key>
-            <PropertyRef Name="id_despesa" />
-          </Key>
-          <Property Name="id_despesa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ds_descricao" Type="varchar" MaxLength="200" />
-          <Property Name="vl_despesa" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="dt_pagamento" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
@@ -91,9 +51,7 @@
           </Key>
           <Property Name="id_estoque" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_produto" Type="int" Nullable="false" />
-          <Property Name="dt_entrada" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="dt_validade" Type="date" Nullable="false" />
-          <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="dt_entrada" Type="date" Nullable="false" />
           <Property Name="bt_vendido" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_folhapagamento">
@@ -102,7 +60,6 @@
           </Key>
           <Property Name="id_folhaPagamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_funcionario" Type="int" Nullable="false" />
-          <Property Name="id_controleDePonto" Type="int" Nullable="false" />
           <Property Name="dt_pagamento" Type="date" Nullable="false" />
           <Property Name="vl_gratificacoes" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="vl_plr" Type="decimal" Precision="10" Scale="2" Nullable="false" />
@@ -115,7 +72,7 @@
           <Property Name="vl_fgts" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="vl_planoSaude" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="vl_planoOdonto" Type="decimal" Precision="10" Scale="2" Nullable="false" />
-          <Property Name="vl_faltas" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="vl_liquido" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_fornecedor">
           <Key>
@@ -154,18 +111,8 @@
           <Property Name="ds_complemento" Type="varchar" MaxLength="50" />
           <Property Name="ds_numeroCasa" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="ds_cargo" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="vl_salario" Type="decimal" Precision="10" Scale="2" Nullable="false" />
           <Property Name="dt_contratacao" Type="date" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tb_log">
-          <Key>
-            <PropertyRef Name="id_log" />
-          </Key>
-          <Property Name="id_log" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="dt_dataLogin" Type="datetime" Precision="0" Nullable="false" />
-          <Property Name="ds_telaEntrou" Type="varchar" MaxLength="30" />
-          <Property Name="ds_oqFez" Type="varchar" MaxLength="30" />
+          <Property Name="vl_salarioPorHora" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_produto">
           <Key>
@@ -175,8 +122,8 @@
           <Property Name="id_fornecedor" Type="int" Nullable="false" />
           <Property Name="ds_categoria" Type="varchar" MaxLength="70" Nullable="false" />
           <Property Name="nm_produto" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="img_produto" Type="longblob" Nullable="false" />
           <Property Name="vl_valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="img_produto" Type="longblob" />
         </EntityType>
         <EntityType Name="tb_recuperacao">
           <Key>
@@ -186,6 +133,7 @@
           <Property Name="id_usuario" Type="int" Nullable="false" />
           <Property Name="ds_codigo" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="dt_data" Type="date" Nullable="false" />
+          <Property Name="bt_usado" Type="bool" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -195,7 +143,7 @@
           <Property Name="id_funcionario" Type="int" Nullable="false" />
           <Property Name="nm_usuario" Type="varchar" MaxLength="65" Nullable="false" />
           <Property Name="ds_senha" Type="varchar" MaxLength="16" Nullable="false" />
-          <Property Name="nv_nivelAcesso" Type="enum" />
+          <Property Name="nv_nivelAcesso" Type="enum" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_venda">
           <Key>
@@ -203,8 +151,8 @@
           </Key>
           <Property Name="id_venda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_cliente" Type="int" Nullable="false" />
-          <Property Name="dt_saida" Type="datetime" Precision="0" Nullable="false" />
+          <Property Name="id_cliente" Type="int" />
+          <Property Name="dt_saida" Type="date" Nullable="false" />
           <Property Name="vl_valorTotal" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="tb_venda_item">
@@ -215,64 +163,21 @@
           <Property Name="id_venda" Type="int" Nullable="false" />
           <Property Name="id_estoque" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="tb_comanda_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_comanda">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_comanda_ibfk_2">
-          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cliente">
-              <PropertyRef Name="id_cliente" />
-            </Principal>
-            <Dependent Role="tb_comanda">
-              <PropertyRef Name="id_cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_comanda_item_ibfk_1">
-          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cardapio">
-              <PropertyRef Name="id_cardapio" />
-            </Principal>
-            <Dependent Role="tb_comanda_item">
-              <PropertyRef Name="id_cardapio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_comanda_item_ibfk_2">
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_comanda">
-              <PropertyRef Name="id_comanda" />
-            </Principal>
-            <Dependent Role="tb_comanda_item">
-              <PropertyRef Name="id_comanda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'def.db_a4e776_ecostor.vw_fluxocaixa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_fluxocaixa">
+          <Key>
+            <PropertyRef Name="dt_pagamento" />
+            <PropertyRef Name="tp_operacao" />
+          </Key>
+          <Property Name="dt_pagamento" Type="date" Nullable="false" />
+          <Property Name="vl_operacao" Type="decimal" Precision="54" Scale="2" />
+          <Property Name="tp_operacao" Type="varchar" MaxLength="7" Nullable="false" />
+        </EntityType>
         <Association Name="tb_compra_item_ibfk_1">
-          <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1" />
+          <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_compra">
@@ -284,7 +189,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_compra_item_ibfk_2">
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1" />
+          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_produto">
@@ -337,36 +244,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_folhapagamento_ibfk_2">
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_controledeponto">
-              <PropertyRef Name="id_controleDePonto" />
-            </Principal>
-            <Dependent Role="tb_folhapagamento">
-              <PropertyRef Name="id_controleDePonto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_log_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_log" Type="Self.tb_log" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_log">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_produto_ibfk_1">
-          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1" />
+          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_fornecedor">
@@ -392,7 +273,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_usuario_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1" />
+          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_funcionario">
@@ -418,7 +301,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_ibfk_2">
-          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
@@ -459,41 +342,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="db_a4e779_amenicsModelStoreContainer">
-          <EntitySet Name="tb_cardapio" EntityType="Self.tb_cardapio" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_comanda" EntityType="Self.tb_comanda" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_comanda_item" EntityType="Self.tb_comanda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_compra" EntityType="Self.tb_compra" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_compra_item" EntityType="Self.tb_compra_item" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_controledeponto" EntityType="Self.tb_controledeponto" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_despesa" EntityType="Self.tb_despesa" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_folhapagamento" EntityType="Self.tb_folhapagamento" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_fornecedor" EntityType="Self.tb_fornecedor" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_log" EntityType="Self.tb_log" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_produto" EntityType="Self.tb_produto" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_recuperacao" EntityType="Self.tb_recuperacao" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_venda" EntityType="Self.tb_venda" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" Schema="db_a4e779_amenics" store:Type="Tables" />
-          <AssociationSet Name="tb_comanda_ibfk_1" Association="Self.tb_comanda_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_ibfk_2" Association="Self.tb_comanda_ibfk_2">
-            <End Role="tb_cliente" EntitySet="tb_cliente" />
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_item_ibfk_1" Association="Self.tb_comanda_item_ibfk_1">
-            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
-            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_item_ibfk_2" Association="Self.tb_comanda_item_ibfk_2">
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
-          </AssociationSet>
+        <EntityContainer Name="ecostorModelStoreContainer">
+          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_compra" EntityType="Self.tb_compra" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_compra_item" EntityType="Self.tb_compra_item" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_controledeponto" EntityType="Self.tb_controledeponto" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_folhapagamento" EntityType="Self.tb_folhapagamento" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_fornecedor" EntityType="Self.tb_fornecedor" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_produto" EntityType="Self.tb_produto" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_recuperacao" EntityType="Self.tb_recuperacao" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_venda" EntityType="Self.tb_venda" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" Schema="db_a4e776_ecostor" store:Type="Tables" />
+          <EntitySet Name="vw_fluxocaixa" EntityType="Self.vw_fluxocaixa" store:Type="Views" store:Schema="db_a4e776_ecostor">
+            <DefiningQuery>SELECT
+`vw_fluxocaixa`.`dt_pagamento`, 
+`vw_fluxocaixa`.`vl_operacao`, 
+`vw_fluxocaixa`.`tp_operacao`
+FROM `vw_fluxocaixa` AS `vw_fluxocaixa`</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="tb_compra_item_ibfk_1" Association="Self.tb_compra_item_ibfk_1">
             <End Role="tb_compra" EntitySet="tb_compra" />
             <End Role="tb_compra_item" EntitySet="tb_compra_item" />
@@ -513,14 +382,6 @@
           <AssociationSet Name="tb_folhapagamento_ibfk_1" Association="Self.tb_folhapagamento_ibfk_1">
             <End Role="tb_funcionario" EntitySet="tb_funcionario" />
             <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
-          </AssociationSet>
-          <AssociationSet Name="tb_folhapagamento_ibfk_2" Association="Self.tb_folhapagamento_ibfk_2">
-            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
-            <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
-          </AssociationSet>
-          <AssociationSet Name="tb_log_ibfk_1" Association="Self.tb_log_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_log" EntitySet="tb_log" />
           </AssociationSet>
           <AssociationSet Name="tb_produto_ibfk_1" Association="Self.tb_produto_ibfk_1">
             <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
@@ -551,79 +412,106 @@
             <End Role="tb_venda_item" EntitySet="tb_venda_item" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="db_a4e779_amenicsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="tb_cardapio">
-          <Key>
-            <PropertyRef Name="id_cardapio" />
-          </Key>
-          <Property Name="id_cardapio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_categoria" Type="Int32" Nullable="false" />
-          <Property Name="nm_refeicao" Type="Int32" Nullable="false" />
-          <Property Name="ds_descricao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="vl_valor" Type="Decimal" Nullable="false" />
-          <Property Name="img_refeicao" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="tb_comanda_item" Relationship="Self.tb_comanda_item_ibfk_1" FromRole="tb_cardapio" ToRole="tb_comanda_item" />
-        </EntityType>
+      <Schema Namespace="ecostorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ecostorEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_cliente" EntityType="ecostorModel.tb_cliente" />
+          <EntitySet Name="tb_compra" EntityType="ecostorModel.tb_compra" />
+          <EntitySet Name="tb_compra_item" EntityType="ecostorModel.tb_compra_item" />
+          <EntitySet Name="tb_controledeponto" EntityType="ecostorModel.tb_controledeponto" />
+          <EntitySet Name="tb_estoque" EntityType="ecostorModel.tb_estoque" />
+          <EntitySet Name="tb_folhapagamento" EntityType="ecostorModel.tb_folhapagamento" />
+          <EntitySet Name="tb_fornecedor" EntityType="ecostorModel.tb_fornecedor" />
+          <EntitySet Name="tb_funcionario" EntityType="ecostorModel.tb_funcionario" />
+          <EntitySet Name="tb_produto" EntityType="ecostorModel.tb_produto" />
+          <EntitySet Name="tb_recuperacao" EntityType="ecostorModel.tb_recuperacao" />
+          <EntitySet Name="tb_usuario" EntityType="ecostorModel.tb_usuario" />
+          <EntitySet Name="tb_venda" EntityType="ecostorModel.tb_venda" />
+          <EntitySet Name="tb_venda_item" EntityType="ecostorModel.tb_venda_item" />
+          <EntitySet Name="vw_fluxocaixa" EntityType="ecostorModel.vw_fluxocaixa" />
+          <AssociationSet Name="tb_venda_ibfk_2" Association="ecostorModel.tb_venda_ibfk_2">
+            <End Role="tb_cliente" EntitySet="tb_cliente" />
+            <End Role="tb_venda" EntitySet="tb_venda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_1" Association="ecostorModel.tb_compra_item_ibfk_1">
+            <End Role="tb_compra" EntitySet="tb_compra" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_compra_item_ibfk_2" Association="ecostorModel.tb_compra_item_ibfk_2">
+            <End Role="tb_produto" EntitySet="tb_produto" />
+            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_controledeponto_ibfk_1" Association="ecostorModel.tb_controledeponto_ibfk_1">
+            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
+          </AssociationSet>
+          <AssociationSet Name="tb_estoque_ibfk_1" Association="ecostorModel.tb_estoque_ibfk_1">
+            <End Role="tb_produto" EntitySet="tb_produto" />
+            <End Role="tb_estoque" EntitySet="tb_estoque" />
+          </AssociationSet>
+          <AssociationSet Name="tb_venda_item_ibfk_1" Association="ecostorModel.tb_venda_item_ibfk_1">
+            <End Role="tb_estoque" EntitySet="tb_estoque" />
+            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
+          </AssociationSet>
+          <AssociationSet Name="tb_folhapagamento_ibfk_1" Association="ecostorModel.tb_folhapagamento_ibfk_1">
+            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+            <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
+          </AssociationSet>
+          <AssociationSet Name="tb_produto_ibfk_1" Association="ecostorModel.tb_produto_ibfk_1">
+            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
+            <End Role="tb_produto" EntitySet="tb_produto" />
+          </AssociationSet>
+          <AssociationSet Name="tb_usuario_ibfk_1" Association="ecostorModel.tb_usuario_ibfk_1">
+            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+          </AssociationSet>
+          <AssociationSet Name="tb_recuperacao_ibfk_1" Association="ecostorModel.tb_recuperacao_ibfk_1">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_recuperacao" EntitySet="tb_recuperacao" />
+          </AssociationSet>
+          <AssociationSet Name="tb_venda_ibfk_1" Association="ecostorModel.tb_venda_ibfk_1">
+            <End Role="tb_usuario" EntitySet="tb_usuario" />
+            <End Role="tb_venda" EntitySet="tb_venda" />
+          </AssociationSet>
+          <AssociationSet Name="tb_venda_item_ibfk_2" Association="ecostorModel.tb_venda_item_ibfk_2">
+            <End Role="tb_venda" EntitySet="tb_venda" />
+            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="tb_cliente">
           <Key>
             <PropertyRef Name="id_cliente" />
           </Key>
           <Property Name="id_cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nm_cliente" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nm_cliente" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
           <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ds_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_rg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_cpf" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_rg" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="qtd_frequenciaMensal" Type="Int32" />
-          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_ibfk_2" FromRole="tb_cliente" ToRole="tb_comanda" />
-          <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_ibfk_2" FromRole="tb_cliente" ToRole="tb_venda" />
-        </EntityType>
-        <EntityType Name="tb_comanda">
-          <Key>
-            <PropertyRef Name="id_comanda" />
-          </Key>
-          <Property Name="id_comanda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_cliente" Type="Int32" Nullable="false" />
-          <Property Name="dt_comanda" Type="DateTime" Nullable="false" />
-          <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
-          <NavigationProperty Name="tb_cliente" Relationship="Self.tb_comanda_ibfk_2" FromRole="tb_comanda" ToRole="tb_cliente" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_comanda_ibfk_1" FromRole="tb_comanda" ToRole="tb_usuario" />
-          <NavigationProperty Name="tb_comanda_item" Relationship="Self.tb_comanda_item_ibfk_2" FromRole="tb_comanda" ToRole="tb_comanda_item" />
-        </EntityType>
-        <EntityType Name="tb_comanda_item">
-          <Key>
-            <PropertyRef Name="id_comanda_item" />
-          </Key>
-          <Property Name="id_comanda_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_comanda" Type="Int32" Nullable="false" />
-          <Property Name="id_cardapio" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_cardapio" Relationship="Self.tb_comanda_item_ibfk_1" FromRole="tb_comanda_item" ToRole="tb_cardapio" />
-          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_item_ibfk_2" FromRole="tb_comanda_item" ToRole="tb_comanda" />
+          <NavigationProperty Name="tb_venda" Relationship="ecostorModel.tb_venda_ibfk_2" FromRole="tb_cliente" ToRole="tb_venda" />
         </EntityType>
         <EntityType Name="tb_compra">
           <Key>
             <PropertyRef Name="id_compra" />
           </Key>
-          <Property Name="id_compra" Type="Int32" Nullable="false" />
+          <Property Name="id_compra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dt_compra" Type="DateTime" Nullable="false" />
           <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
-          <NavigationProperty Name="tb_compra_item" Relationship="Self.tb_compra_item_ibfk_1" FromRole="tb_compra" ToRole="tb_compra_item" />
+          <NavigationProperty Name="tb_compra_item" Relationship="ecostorModel.tb_compra_item_ibfk_1" FromRole="tb_compra" ToRole="tb_compra_item" />
         </EntityType>
         <EntityType Name="tb_compra_item">
           <Key>
             <PropertyRef Name="id_compra_item" />
           </Key>
-          <Property Name="id_compra_item" Type="Int32" Nullable="false" />
+          <Property Name="id_compra_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_compra" Type="Int32" Nullable="false" />
           <Property Name="id_produto" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_compra" Relationship="Self.tb_compra_item_ibfk_1" FromRole="tb_compra_item" ToRole="tb_compra" />
-          <NavigationProperty Name="tb_produto" Relationship="Self.tb_compra_item_ibfk_2" FromRole="tb_compra_item" ToRole="tb_produto" />
+          <NavigationProperty Name="tb_compra" Relationship="ecostorModel.tb_compra_item_ibfk_1" FromRole="tb_compra_item" ToRole="tb_compra" />
+          <NavigationProperty Name="tb_produto" Relationship="ecostorModel.tb_compra_item_ibfk_2" FromRole="tb_compra_item" ToRole="tb_produto" />
         </EntityType>
         <EntityType Name="tb_controledeponto">
           <Key>
@@ -635,19 +523,7 @@
           <Property Name="dt_saidaAlmoco" Type="DateTime" />
           <Property Name="dt_voltaAlmoco" Type="DateTime" />
           <Property Name="dt_saida" Type="DateTime" />
-          <Property Name="dt_entradaHoraExtra" Type="DateTime" />
-          <Property Name="dt_saidaHoraExtra" Type="DateTime" />
-          <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_controledeponto_ibfk_1" FromRole="tb_controledeponto" ToRole="tb_funcionario" />
-          <NavigationProperty Name="tb_folhapagamento" Relationship="Self.tb_folhapagamento_ibfk_2" FromRole="tb_controledeponto" ToRole="tb_folhapagamento" />
-        </EntityType>
-        <EntityType Name="tb_despesa">
-          <Key>
-            <PropertyRef Name="id_despesa" />
-          </Key>
-          <Property Name="id_despesa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ds_descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="vl_despesa" Type="Decimal" Nullable="false" />
-          <Property Name="dt_pagamento" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="tb_funcionario" Relationship="ecostorModel.tb_controledeponto_ibfk_1" FromRole="tb_controledeponto" ToRole="tb_funcionario" />
         </EntityType>
         <EntityType Name="tb_estoque">
           <Key>
@@ -656,11 +532,9 @@
           <Property Name="id_estoque" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_produto" Type="Int32" Nullable="false" />
           <Property Name="dt_entrada" Type="DateTime" Nullable="false" />
-          <Property Name="dt_validade" Type="DateTime" Nullable="false" />
-          <Property Name="vl_valor" Type="Decimal" Nullable="false" />
           <Property Name="bt_vendido" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tb_produto" Relationship="Self.tb_estoque_ibfk_1" FromRole="tb_estoque" ToRole="tb_produto" />
-          <NavigationProperty Name="tb_venda_item" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_estoque" ToRole="tb_venda_item" />
+          <NavigationProperty Name="tb_produto" Relationship="ecostorModel.tb_estoque_ibfk_1" FromRole="tb_estoque" ToRole="tb_produto" />
+          <NavigationProperty Name="tb_venda_item" Relationship="ecostorModel.tb_venda_item_ibfk_1" FromRole="tb_estoque" ToRole="tb_venda_item" />
         </EntityType>
         <EntityType Name="tb_folhapagamento">
           <Key>
@@ -668,7 +542,6 @@
           </Key>
           <Property Name="id_folhaPagamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_funcionario" Type="Int32" Nullable="false" />
-          <Property Name="id_controleDePonto" Type="Int32" Nullable="false" />
           <Property Name="dt_pagamento" Type="DateTime" Nullable="false" />
           <Property Name="vl_gratificacoes" Type="Decimal" Nullable="false" />
           <Property Name="vl_plr" Type="Decimal" Nullable="false" />
@@ -681,64 +554,52 @@
           <Property Name="vl_fgts" Type="Decimal" Nullable="false" />
           <Property Name="vl_planoSaude" Type="Decimal" Nullable="false" />
           <Property Name="vl_planoOdonto" Type="Decimal" Nullable="false" />
-          <Property Name="vl_faltas" Type="Decimal" Nullable="false" />
-          <NavigationProperty Name="tb_controledeponto" Relationship="Self.tb_folhapagamento_ibfk_2" FromRole="tb_folhapagamento" ToRole="tb_controledeponto" />
-          <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_folhapagamento_ibfk_1" FromRole="tb_folhapagamento" ToRole="tb_funcionario" />
+          <Property Name="vl_liquido" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_funcionario" Relationship="ecostorModel.tb_folhapagamento_ibfk_1" FromRole="tb_folhapagamento" ToRole="tb_funcionario" />
         </EntityType>
         <EntityType Name="tb_fornecedor">
           <Key>
             <PropertyRef Name="id_fornecedor" />
           </Key>
           <Property Name="id_fornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nm_fornecedor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nm_empresa" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nm_fornecedor" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="nm_empresa" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ds_telefone" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_celular" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_endereco" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="ds_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ds_cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ds_UF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ds_cnpj" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tb_produto" Relationship="Self.tb_produto_ibfk_1" FromRole="tb_fornecedor" ToRole="tb_produto" />
+          <Property Name="ds_cnpj" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_produto" Relationship="ecostorModel.tb_produto_ibfk_1" FromRole="tb_fornecedor" ToRole="tb_produto" />
         </EntityType>
         <EntityType Name="tb_funcionario">
           <Key>
             <PropertyRef Name="id_funcionario" />
           </Key>
           <Property Name="id_funcionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nm_funcionario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_rg" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cpf" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nm_funcionario" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="ds_rg" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cpf" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="img_foto" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="ds_telefone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_celular" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ds_email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dt_nascimento" Type="DateTime" Nullable="false" />
-          <Property Name="ds_genero" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_endereco" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cep" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cidade" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_UF" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_genero" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <Property Name="ds_endereco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cep" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cidade" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ds_UF" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="ds_complemento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ds_numeroCasa" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_cargo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="vl_salario" Type="Decimal" Nullable="false" />
+          <Property Name="ds_numeroCasa" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ds_cargo" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="dt_contratacao" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="tb_controledeponto" Relationship="Self.tb_controledeponto_ibfk_1" FromRole="tb_funcionario" ToRole="tb_controledeponto" />
-          <NavigationProperty Name="tb_folhapagamento" Relationship="Self.tb_folhapagamento_ibfk_1" FromRole="tb_funcionario" ToRole="tb_folhapagamento" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_usuario_ibfk_1" FromRole="tb_funcionario" ToRole="tb_usuario" />
-        </EntityType>
-        <EntityType Name="tb_log">
-          <Key>
-            <PropertyRef Name="id_log" />
-          </Key>
-          <Property Name="id_log" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="dt_dataLogin" Type="DateTime" Nullable="false" />
-          <Property Name="ds_telaEntrou" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="ds_oqFez" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_log_ibfk_1" FromRole="tb_log" ToRole="tb_usuario" />
+          <Property Name="vl_salarioPorHora" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="tb_controledeponto" Relationship="ecostorModel.tb_controledeponto_ibfk_1" FromRole="tb_funcionario" ToRole="tb_controledeponto" />
+          <NavigationProperty Name="tb_folhapagamento" Relationship="ecostorModel.tb_folhapagamento_ibfk_1" FromRole="tb_funcionario" ToRole="tb_folhapagamento" />
+          <NavigationProperty Name="tb_usuario" Relationship="ecostorModel.tb_usuario_ibfk_1" FromRole="tb_funcionario" ToRole="tb_usuario" />
         </EntityType>
         <EntityType Name="tb_produto">
           <Key>
@@ -746,13 +607,13 @@
           </Key>
           <Property Name="id_produto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_fornecedor" Type="Int32" Nullable="false" />
-          <Property Name="ds_categoria" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nm_produto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="img_produto" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ds_categoria" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="nm_produto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="vl_valor" Type="Decimal" Nullable="false" />
-          <NavigationProperty Name="tb_compra_item" Relationship="Self.tb_compra_item_ibfk_2" FromRole="tb_produto" ToRole="tb_compra_item" />
-          <NavigationProperty Name="tb_estoque" Relationship="Self.tb_estoque_ibfk_1" FromRole="tb_produto" ToRole="tb_estoque" />
-          <NavigationProperty Name="tb_fornecedor" Relationship="Self.tb_produto_ibfk_1" FromRole="tb_produto" ToRole="tb_fornecedor" />
+          <Property Name="img_produto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="tb_compra_item" Relationship="ecostorModel.tb_compra_item_ibfk_2" FromRole="tb_produto" ToRole="tb_compra_item" />
+          <NavigationProperty Name="tb_estoque" Relationship="ecostorModel.tb_estoque_ibfk_1" FromRole="tb_produto" ToRole="tb_estoque" />
+          <NavigationProperty Name="tb_fornecedor" Relationship="ecostorModel.tb_produto_ibfk_1" FromRole="tb_produto" ToRole="tb_fornecedor" />
         </EntityType>
         <EntityType Name="tb_recuperacao">
           <Key>
@@ -760,9 +621,10 @@
           </Key>
           <Property Name="id_recuperacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="ds_codigo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ds_codigo" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
           <Property Name="dt_data" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_recuperacao_ibfk_1" FromRole="tb_recuperacao" ToRole="tb_usuario" />
+          <Property Name="bt_usado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="tb_usuario" Relationship="ecostorModel.tb_recuperacao_ibfk_1" FromRole="tb_recuperacao" ToRole="tb_usuario" />
         </EntityType>
         <EntityType Name="tb_usuario">
           <Key>
@@ -770,14 +632,12 @@
           </Key>
           <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_funcionario" Type="Int32" Nullable="false" />
-          <Property Name="nm_usuario" Type="String" MaxLength="65" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ds_senha" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="nv_nivelAcesso" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tb_comanda" Relationship="Self.tb_comanda_ibfk_1" FromRole="tb_usuario" ToRole="tb_comanda" />
-          <NavigationProperty Name="tb_funcionario" Relationship="Self.tb_usuario_ibfk_1" FromRole="tb_usuario" ToRole="tb_funcionario" />
-          <NavigationProperty Name="tb_log" Relationship="Self.tb_log_ibfk_1" FromRole="tb_usuario" ToRole="tb_log" />
-          <NavigationProperty Name="tb_recuperacao" Relationship="Self.tb_recuperacao_ibfk_1" FromRole="tb_usuario" ToRole="tb_recuperacao" />
-          <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_ibfk_1" FromRole="tb_usuario" ToRole="tb_venda" />
+          <Property Name="nm_usuario" Type="String" Nullable="false" MaxLength="65" FixedLength="false" Unicode="false" />
+          <Property Name="ds_senha" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="nv_nivelAcesso" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tb_funcionario" Relationship="ecostorModel.tb_usuario_ibfk_1" FromRole="tb_usuario" ToRole="tb_funcionario" />
+          <NavigationProperty Name="tb_recuperacao" Relationship="ecostorModel.tb_recuperacao_ibfk_1" FromRole="tb_usuario" ToRole="tb_recuperacao" />
+          <NavigationProperty Name="tb_venda" Relationship="ecostorModel.tb_venda_ibfk_1" FromRole="tb_usuario" ToRole="tb_venda" />
         </EntityType>
         <EntityType Name="tb_venda">
           <Key>
@@ -785,12 +645,12 @@
           </Key>
           <Property Name="id_venda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_cliente" Type="Int32" Nullable="false" />
+          <Property Name="id_cliente" Type="Int32" />
           <Property Name="dt_saida" Type="DateTime" Nullable="false" />
           <Property Name="vl_valorTotal" Type="Decimal" Nullable="false" />
-          <NavigationProperty Name="tb_cliente" Relationship="Self.tb_venda_ibfk_2" FromRole="tb_venda" ToRole="tb_cliente" />
-          <NavigationProperty Name="tb_usuario" Relationship="Self.tb_venda_ibfk_1" FromRole="tb_venda" ToRole="tb_usuario" />
-          <NavigationProperty Name="tb_venda_item" Relationship="Self.tb_venda_item_ibfk_2" FromRole="tb_venda" ToRole="tb_venda_item" />
+          <NavigationProperty Name="tb_cliente" Relationship="ecostorModel.tb_venda_ibfk_2" FromRole="tb_venda" ToRole="tb_cliente" />
+          <NavigationProperty Name="tb_usuario" Relationship="ecostorModel.tb_venda_ibfk_1" FromRole="tb_venda" ToRole="tb_usuario" />
+          <NavigationProperty Name="tb_venda_item" Relationship="ecostorModel.tb_venda_item_ibfk_2" FromRole="tb_venda" ToRole="tb_venda_item" />
         </EntityType>
         <EntityType Name="tb_venda_item">
           <Key>
@@ -799,42 +659,23 @@
           <Property Name="id_venda_item" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_venda" Type="Int32" Nullable="false" />
           <Property Name="id_estoque" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="tb_estoque" Relationship="Self.tb_venda_item_ibfk_1" FromRole="tb_venda_item" ToRole="tb_estoque" />
-          <NavigationProperty Name="tb_venda" Relationship="Self.tb_venda_item_ibfk_2" FromRole="tb_venda_item" ToRole="tb_venda" />
+          <NavigationProperty Name="tb_estoque" Relationship="ecostorModel.tb_venda_item_ibfk_1" FromRole="tb_venda_item" ToRole="tb_estoque" />
+          <NavigationProperty Name="tb_venda" Relationship="ecostorModel.tb_venda_item_ibfk_2" FromRole="tb_venda_item" ToRole="tb_venda" />
         </EntityType>
-        <Association Name="tb_comanda_item_ibfk_1">
-          <End Role="tb_cardapio" Type="Self.tb_cardapio" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cardapio">
-              <PropertyRef Name="id_cardapio" />
-            </Principal>
-            <Dependent Role="tb_comanda_item">
-              <PropertyRef Name="id_cardapio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_comanda_ibfk_2">
-          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_cliente">
-              <PropertyRef Name="id_cliente" />
-            </Principal>
-            <Dependent Role="tb_comanda">
-              <PropertyRef Name="id_cliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="vw_fluxocaixa">
+          <Key>
+            <PropertyRef Name="dt_pagamento" />
+            <PropertyRef Name="tp_operacao" />
+          </Key>
+          <Property Name="dt_pagamento" Type="DateTime" Nullable="false" />
+          <Property Name="vl_operacao" Type="Decimal" />
+          <Property Name="tp_operacao" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+        </EntityType>
         <Association Name="tb_venda_ibfk_2">
-          <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="1">
+          <End Type="ecostorModel.tb_cliente" Role="tb_cliente" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
+          <End Type="ecostorModel.tb_venda" Role="tb_venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_cliente">
               <PropertyRef Name="id_cliente" />
@@ -844,37 +685,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_comanda_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_comanda">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="tb_comanda_item_ibfk_2">
-          <End Role="tb_comanda" Type="Self.tb_comanda" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_comanda_item" Type="Self.tb_comanda_item" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_comanda">
-              <PropertyRef Name="id_comanda" />
-            </Principal>
-            <Dependent Role="tb_comanda_item">
-              <PropertyRef Name="id_comanda" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_compra_item_ibfk_1">
-          <End Role="tb_compra" Type="Self.tb_compra" Multiplicity="1" />
-          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <End Type="ecostorModel.tb_compra" Role="tb_compra" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ecostorModel.tb_compra_item" Role="tb_compra_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_compra">
               <PropertyRef Name="id_compra" />
@@ -885,8 +700,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_compra_item_ibfk_2">
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1" />
-          <End Role="tb_compra_item" Type="Self.tb_compra_item" Multiplicity="*" />
+          <End Type="ecostorModel.tb_produto" Role="tb_produto" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ecostorModel.tb_compra_item" Role="tb_compra_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_produto">
               <PropertyRef Name="id_produto" />
@@ -897,10 +714,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_controledeponto_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
+          <End Type="ecostorModel.tb_funcionario" Role="tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="*" />
+          <End Type="ecostorModel.tb_controledeponto" Role="tb_controledeponto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_funcionario">
               <PropertyRef Name="id_funcionario" />
@@ -910,25 +727,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_folhapagamento_ibfk_2">
-          <End Role="tb_controledeponto" Type="Self.tb_controledeponto" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_controledeponto">
-              <PropertyRef Name="id_controleDePonto" />
-            </Principal>
-            <Dependent Role="tb_folhapagamento">
-              <PropertyRef Name="id_controleDePonto" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_estoque_ibfk_1">
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="1">
+          <End Type="ecostorModel.tb_produto" Role="tb_produto" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="*" />
+          <End Type="ecostorModel.tb_estoque" Role="tb_estoque" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_produto">
               <PropertyRef Name="id_produto" />
@@ -939,10 +742,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_item_ibfk_1">
-          <End Role="tb_estoque" Type="Self.tb_estoque" Multiplicity="1">
+          <End Type="ecostorModel.tb_estoque" Role="tb_estoque" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
+          <End Type="ecostorModel.tb_venda_item" Role="tb_venda_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_estoque">
               <PropertyRef Name="id_estoque" />
@@ -953,10 +756,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_folhapagamento_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1">
+          <End Type="ecostorModel.tb_funcionario" Role="tb_funcionario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_folhapagamento" Type="Self.tb_folhapagamento" Multiplicity="*" />
+          <End Type="ecostorModel.tb_folhapagamento" Role="tb_folhapagamento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_funcionario">
               <PropertyRef Name="id_funcionario" />
@@ -967,8 +770,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_produto_ibfk_1">
-          <End Role="tb_fornecedor" Type="Self.tb_fornecedor" Multiplicity="1" />
-          <End Role="tb_produto" Type="Self.tb_produto" Multiplicity="*" />
+          <End Type="ecostorModel.tb_fornecedor" Role="tb_fornecedor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ecostorModel.tb_produto" Role="tb_produto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_fornecedor">
               <PropertyRef Name="id_fornecedor" />
@@ -979,8 +784,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_usuario_ibfk_1">
-          <End Role="tb_funcionario" Type="Self.tb_funcionario" Multiplicity="1" />
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+          <End Type="ecostorModel.tb_funcionario" Role="tb_funcionario" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ecostorModel.tb_usuario" Role="tb_usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_funcionario">
               <PropertyRef Name="id_funcionario" />
@@ -990,25 +797,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tb_log_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="tb_log" Type="Self.tb_log" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_usuario">
-              <PropertyRef Name="id_usuario" />
-            </Principal>
-            <Dependent Role="tb_log">
-              <PropertyRef Name="id_usuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tb_recuperacao_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
+          <End Type="ecostorModel.tb_usuario" Role="tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_recuperacao" Type="Self.tb_recuperacao" Multiplicity="*" />
+          <End Type="ecostorModel.tb_recuperacao" Role="tb_recuperacao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_usuario">
               <PropertyRef Name="id_usuario" />
@@ -1019,10 +812,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_ibfk_1">
-          <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="1">
+          <End Type="ecostorModel.tb_usuario" Role="tb_usuario" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="*" />
+          <End Type="ecostorModel.tb_venda" Role="tb_venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_usuario">
               <PropertyRef Name="id_usuario" />
@@ -1033,10 +826,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tb_venda_item_ibfk_2">
-          <End Role="tb_venda" Type="Self.tb_venda" Multiplicity="1">
+          <End Type="ecostorModel.tb_venda" Role="tb_venda" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="tb_venda_item" Type="Self.tb_venda_item" Multiplicity="*" />
+          <End Type="ecostorModel.tb_venda_item" Role="tb_venda_item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_venda">
               <PropertyRef Name="id_venda" />
@@ -1046,329 +839,189 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="amenicsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tb_cardapio" EntityType="Self.tb_cardapio" />
-          <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" />
-          <EntitySet Name="tb_comanda" EntityType="Self.tb_comanda" />
-          <EntitySet Name="tb_comanda_item" EntityType="Self.tb_comanda_item" />
-          <EntitySet Name="tb_compra" EntityType="Self.tb_compra" />
-          <EntitySet Name="tb_compra_item" EntityType="Self.tb_compra_item" />
-          <EntitySet Name="tb_controledeponto" EntityType="Self.tb_controledeponto" />
-          <EntitySet Name="tb_despesa" EntityType="Self.tb_despesa" />
-          <EntitySet Name="tb_estoque" EntityType="Self.tb_estoque" />
-          <EntitySet Name="tb_folhapagamento" EntityType="Self.tb_folhapagamento" />
-          <EntitySet Name="tb_fornecedor" EntityType="Self.tb_fornecedor" />
-          <EntitySet Name="tb_funcionario" EntityType="Self.tb_funcionario" />
-          <EntitySet Name="tb_log" EntityType="Self.tb_log" />
-          <EntitySet Name="tb_produto" EntityType="Self.tb_produto" />
-          <EntitySet Name="tb_recuperacao" EntityType="Self.tb_recuperacao" />
-          <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" />
-          <EntitySet Name="tb_venda" EntityType="Self.tb_venda" />
-          <EntitySet Name="tb_venda_item" EntityType="Self.tb_venda_item" />
-          <AssociationSet Name="tb_comanda_item_ibfk_1" Association="Self.tb_comanda_item_ibfk_1">
-            <End Role="tb_cardapio" EntitySet="tb_cardapio" />
-            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_ibfk_2" Association="Self.tb_comanda_ibfk_2">
-            <End Role="tb_cliente" EntitySet="tb_cliente" />
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_venda_ibfk_2" Association="Self.tb_venda_ibfk_2">
-            <End Role="tb_cliente" EntitySet="tb_cliente" />
-            <End Role="tb_venda" EntitySet="tb_venda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_ibfk_1" Association="Self.tb_comanda_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_comanda_item_ibfk_2" Association="Self.tb_comanda_item_ibfk_2">
-            <End Role="tb_comanda" EntitySet="tb_comanda" />
-            <End Role="tb_comanda_item" EntitySet="tb_comanda_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_compra_item_ibfk_1" Association="Self.tb_compra_item_ibfk_1">
-            <End Role="tb_compra" EntitySet="tb_compra" />
-            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_compra_item_ibfk_2" Association="Self.tb_compra_item_ibfk_2">
-            <End Role="tb_produto" EntitySet="tb_produto" />
-            <End Role="tb_compra_item" EntitySet="tb_compra_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_controledeponto_ibfk_1" Association="Self.tb_controledeponto_ibfk_1">
-            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
-            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
-          </AssociationSet>
-          <AssociationSet Name="tb_folhapagamento_ibfk_2" Association="Self.tb_folhapagamento_ibfk_2">
-            <End Role="tb_controledeponto" EntitySet="tb_controledeponto" />
-            <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
-          </AssociationSet>
-          <AssociationSet Name="tb_estoque_ibfk_1" Association="Self.tb_estoque_ibfk_1">
-            <End Role="tb_produto" EntitySet="tb_produto" />
-            <End Role="tb_estoque" EntitySet="tb_estoque" />
-          </AssociationSet>
-          <AssociationSet Name="tb_venda_item_ibfk_1" Association="Self.tb_venda_item_ibfk_1">
-            <End Role="tb_estoque" EntitySet="tb_estoque" />
-            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
-          </AssociationSet>
-          <AssociationSet Name="tb_folhapagamento_ibfk_1" Association="Self.tb_folhapagamento_ibfk_1">
-            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
-            <End Role="tb_folhapagamento" EntitySet="tb_folhapagamento" />
-          </AssociationSet>
-          <AssociationSet Name="tb_produto_ibfk_1" Association="Self.tb_produto_ibfk_1">
-            <End Role="tb_fornecedor" EntitySet="tb_fornecedor" />
-            <End Role="tb_produto" EntitySet="tb_produto" />
-          </AssociationSet>
-          <AssociationSet Name="tb_usuario_ibfk_1" Association="Self.tb_usuario_ibfk_1">
-            <End Role="tb_funcionario" EntitySet="tb_funcionario" />
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-          </AssociationSet>
-          <AssociationSet Name="tb_log_ibfk_1" Association="Self.tb_log_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_log" EntitySet="tb_log" />
-          </AssociationSet>
-          <AssociationSet Name="tb_recuperacao_ibfk_1" Association="Self.tb_recuperacao_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_recuperacao" EntitySet="tb_recuperacao" />
-          </AssociationSet>
-          <AssociationSet Name="tb_venda_ibfk_1" Association="Self.tb_venda_ibfk_1">
-            <End Role="tb_usuario" EntitySet="tb_usuario" />
-            <End Role="tb_venda" EntitySet="tb_venda" />
-          </AssociationSet>
-          <AssociationSet Name="tb_venda_item_ibfk_2" Association="Self.tb_venda_item_ibfk_2">
-            <End Role="tb_venda" EntitySet="tb_venda" />
-            <End Role="tb_venda_item" EntitySet="tb_venda_item" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="db_a4e779_amenicsModelStoreContainer" CdmEntityContainer="amenicsEntities">
-          <EntitySetMapping Name="tb_cardapio">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_cardapio">
-              <MappingFragment StoreEntitySet="tb_cardapio">
-                <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
-                <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
-                <ScalarProperty Name="nm_refeicao" ColumnName="nm_refeicao" />
-                <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
-                <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
-                <ScalarProperty Name="img_refeicao" ColumnName="img_refeicao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="ecostorModelStoreContainer" CdmEntityContainer="ecostorEntities">
           <EntitySetMapping Name="tb_cliente">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_cliente">
+            <EntityTypeMapping TypeName="ecostorModel.tb_cliente">
               <MappingFragment StoreEntitySet="tb_cliente">
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="nm_cliente" ColumnName="nm_cliente" />
-                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
-                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
-                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
-                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
-                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
                 <ScalarProperty Name="qtd_frequenciaMensal" ColumnName="qtd_frequenciaMensal" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_comanda">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_comanda">
-              <MappingFragment StoreEntitySet="tb_comanda">
-                <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+                <ScalarProperty Name="nm_cliente" ColumnName="nm_cliente" />
                 <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="dt_comanda" ColumnName="dt_comanda" />
-                <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_comanda_item">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_comanda_item">
-              <MappingFragment StoreEntitySet="tb_comanda_item">
-                <ScalarProperty Name="id_comanda_item" ColumnName="id_comanda_item" />
-                <ScalarProperty Name="id_comanda" ColumnName="id_comanda" />
-                <ScalarProperty Name="id_cardapio" ColumnName="id_cardapio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_compra">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_compra">
+            <EntityTypeMapping TypeName="ecostorModel.tb_compra">
               <MappingFragment StoreEntitySet="tb_compra">
-                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
-                <ScalarProperty Name="dt_compra" ColumnName="dt_compra" />
                 <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+                <ScalarProperty Name="dt_compra" ColumnName="dt_compra" />
+                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_compra_item">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_compra_item">
+            <EntityTypeMapping TypeName="ecostorModel.tb_compra_item">
               <MappingFragment StoreEntitySet="tb_compra_item">
-                <ScalarProperty Name="id_compra_item" ColumnName="id_compra_item" />
-                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
                 <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+                <ScalarProperty Name="id_compra" ColumnName="id_compra" />
+                <ScalarProperty Name="id_compra_item" ColumnName="id_compra_item" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_controledeponto">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_controledeponto">
+            <EntityTypeMapping TypeName="ecostorModel.tb_controledeponto">
               <MappingFragment StoreEntitySet="tb_controledeponto">
-                <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
-                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="dt_chegada" ColumnName="dt_chegada" />
-                <ScalarProperty Name="dt_saidaAlmoco" ColumnName="dt_saidaAlmoco" />
-                <ScalarProperty Name="dt_voltaAlmoco" ColumnName="dt_voltaAlmoco" />
                 <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
-                <ScalarProperty Name="dt_entradaHoraExtra" ColumnName="dt_entradaHoraExtra" />
-                <ScalarProperty Name="dt_saidaHoraExtra" ColumnName="dt_saidaHoraExtra" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_despesa">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_despesa">
-              <MappingFragment StoreEntitySet="tb_despesa">
-                <ScalarProperty Name="id_despesa" ColumnName="id_despesa" />
-                <ScalarProperty Name="ds_descricao" ColumnName="ds_descricao" />
-                <ScalarProperty Name="vl_despesa" ColumnName="vl_despesa" />
-                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
+                <ScalarProperty Name="dt_voltaAlmoco" ColumnName="dt_voltaAlmoco" />
+                <ScalarProperty Name="dt_saidaAlmoco" ColumnName="dt_saidaAlmoco" />
+                <ScalarProperty Name="dt_chegada" ColumnName="dt_chegada" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_estoque">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_estoque">
+            <EntityTypeMapping TypeName="ecostorModel.tb_estoque">
               <MappingFragment StoreEntitySet="tb_estoque">
-                <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
-                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-                <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
-                <ScalarProperty Name="dt_validade" ColumnName="dt_validade" />
-                <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
                 <ScalarProperty Name="bt_vendido" ColumnName="bt_vendido" />
+                <ScalarProperty Name="dt_entrada" ColumnName="dt_entrada" />
+                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
+                <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_folhapagamento">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_folhapagamento">
+            <EntityTypeMapping TypeName="ecostorModel.tb_folhapagamento">
               <MappingFragment StoreEntitySet="tb_folhapagamento">
-                <ScalarProperty Name="id_folhaPagamento" ColumnName="id_folhaPagamento" />
-                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="id_controleDePonto" ColumnName="id_controleDePonto" />
-                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
-                <ScalarProperty Name="vl_gratificacoes" ColumnName="vl_gratificacoes" />
-                <ScalarProperty Name="vl_plr" ColumnName="vl_plr" />
-                <ScalarProperty Name="vl_salarioFamilia" ColumnName="vl_salarioFamilia" />
-                <ScalarProperty Name="vl_valeAlimentacao" ColumnName="vl_valeAlimentacao" />
-                <ScalarProperty Name="vl_valeRefeicao" ColumnName="vl_valeRefeicao" />
-                <ScalarProperty Name="vl_valeTransporte" ColumnName="vl_valeTransporte" />
-                <ScalarProperty Name="vl_inss" ColumnName="vl_inss" />
-                <ScalarProperty Name="vl_ir" ColumnName="vl_ir" />
-                <ScalarProperty Name="vl_fgts" ColumnName="vl_fgts" />
-                <ScalarProperty Name="vl_planoSaude" ColumnName="vl_planoSaude" />
+                <ScalarProperty Name="vl_liquido" ColumnName="vl_liquido" />
                 <ScalarProperty Name="vl_planoOdonto" ColumnName="vl_planoOdonto" />
-                <ScalarProperty Name="vl_faltas" ColumnName="vl_faltas" />
+                <ScalarProperty Name="vl_planoSaude" ColumnName="vl_planoSaude" />
+                <ScalarProperty Name="vl_fgts" ColumnName="vl_fgts" />
+                <ScalarProperty Name="vl_ir" ColumnName="vl_ir" />
+                <ScalarProperty Name="vl_inss" ColumnName="vl_inss" />
+                <ScalarProperty Name="vl_valeTransporte" ColumnName="vl_valeTransporte" />
+                <ScalarProperty Name="vl_valeRefeicao" ColumnName="vl_valeRefeicao" />
+                <ScalarProperty Name="vl_valeAlimentacao" ColumnName="vl_valeAlimentacao" />
+                <ScalarProperty Name="vl_salarioFamilia" ColumnName="vl_salarioFamilia" />
+                <ScalarProperty Name="vl_plr" ColumnName="vl_plr" />
+                <ScalarProperty Name="vl_gratificacoes" ColumnName="vl_gratificacoes" />
+                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="id_folhaPagamento" ColumnName="id_folhaPagamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_fornecedor">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_fornecedor">
+            <EntityTypeMapping TypeName="ecostorModel.tb_fornecedor">
               <MappingFragment StoreEntitySet="tb_fornecedor">
-                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
-                <ScalarProperty Name="nm_fornecedor" ColumnName="nm_fornecedor" />
-                <ScalarProperty Name="nm_empresa" ColumnName="nm_empresa" />
-                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
-                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
-                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
-                <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
-                <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
-                <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
-                <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
                 <ScalarProperty Name="ds_cnpj" ColumnName="ds_cnpj" />
+                <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
+                <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
+                <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
+                <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
+                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
+                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+                <ScalarProperty Name="nm_empresa" ColumnName="nm_empresa" />
+                <ScalarProperty Name="nm_fornecedor" ColumnName="nm_fornecedor" />
+                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_funcionario">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_funcionario">
+            <EntityTypeMapping TypeName="ecostorModel.tb_funcionario">
               <MappingFragment StoreEntitySet="tb_funcionario">
-                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
-                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
-                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
-                <ScalarProperty Name="img_foto" ColumnName="img_foto" />
-                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
-                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
-                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
-                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
-                <ScalarProperty Name="ds_genero" ColumnName="ds_genero" />
-                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
-                <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
-                <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
-                <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
-                <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
-                <ScalarProperty Name="ds_numeroCasa" ColumnName="ds_numeroCasa" />
-                <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
-                <ScalarProperty Name="vl_salario" ColumnName="vl_salario" />
+                <ScalarProperty Name="vl_salarioPorHora" ColumnName="vl_salarioPorHora" />
                 <ScalarProperty Name="dt_contratacao" ColumnName="dt_contratacao" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_log">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_log">
-              <MappingFragment StoreEntitySet="tb_log">
-                <ScalarProperty Name="id_log" ColumnName="id_log" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="dt_dataLogin" ColumnName="dt_dataLogin" />
-                <ScalarProperty Name="ds_telaEntrou" ColumnName="ds_telaEntrou" />
-                <ScalarProperty Name="ds_oqFez" ColumnName="ds_oqFez" />
+                <ScalarProperty Name="ds_cargo" ColumnName="ds_cargo" />
+                <ScalarProperty Name="ds_numeroCasa" ColumnName="ds_numeroCasa" />
+                <ScalarProperty Name="ds_complemento" ColumnName="ds_complemento" />
+                <ScalarProperty Name="ds_UF" ColumnName="ds_UF" />
+                <ScalarProperty Name="ds_cidade" ColumnName="ds_cidade" />
+                <ScalarProperty Name="ds_cep" ColumnName="ds_cep" />
+                <ScalarProperty Name="ds_endereco" ColumnName="ds_endereco" />
+                <ScalarProperty Name="ds_genero" ColumnName="ds_genero" />
+                <ScalarProperty Name="dt_nascimento" ColumnName="dt_nascimento" />
+                <ScalarProperty Name="ds_email" ColumnName="ds_email" />
+                <ScalarProperty Name="ds_celular" ColumnName="ds_celular" />
+                <ScalarProperty Name="ds_telefone" ColumnName="ds_telefone" />
+                <ScalarProperty Name="img_foto" ColumnName="img_foto" />
+                <ScalarProperty Name="ds_cpf" ColumnName="ds_cpf" />
+                <ScalarProperty Name="ds_rg" ColumnName="ds_rg" />
+                <ScalarProperty Name="nm_funcionario" ColumnName="nm_funcionario" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_produto">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_produto">
+            <EntityTypeMapping TypeName="ecostorModel.tb_produto">
               <MappingFragment StoreEntitySet="tb_produto">
-                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
-                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
-                <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
-                <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
                 <ScalarProperty Name="img_produto" ColumnName="img_produto" />
                 <ScalarProperty Name="vl_valor" ColumnName="vl_valor" />
+                <ScalarProperty Name="nm_produto" ColumnName="nm_produto" />
+                <ScalarProperty Name="ds_categoria" ColumnName="ds_categoria" />
+                <ScalarProperty Name="id_fornecedor" ColumnName="id_fornecedor" />
+                <ScalarProperty Name="id_produto" ColumnName="id_produto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_recuperacao">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_recuperacao">
+            <EntityTypeMapping TypeName="ecostorModel.tb_recuperacao">
               <MappingFragment StoreEntitySet="tb_recuperacao">
-                <ScalarProperty Name="id_recuperacao" ColumnName="id_recuperacao" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="ds_codigo" ColumnName="ds_codigo" />
+                <ScalarProperty Name="bt_usado" ColumnName="bt_usado" />
                 <ScalarProperty Name="dt_data" ColumnName="dt_data" />
+                <ScalarProperty Name="ds_codigo" ColumnName="ds_codigo" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_recuperacao" ColumnName="id_recuperacao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_usuario">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_usuario">
+            <EntityTypeMapping TypeName="ecostorModel.tb_usuario">
               <MappingFragment StoreEntitySet="tb_usuario">
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
-                <ScalarProperty Name="nm_usuario" ColumnName="nm_usuario" />
-                <ScalarProperty Name="ds_senha" ColumnName="ds_senha" />
                 <ScalarProperty Name="nv_nivelAcesso" ColumnName="nv_nivelAcesso" />
+                <ScalarProperty Name="ds_senha" ColumnName="ds_senha" />
+                <ScalarProperty Name="nm_usuario" ColumnName="nm_usuario" />
+                <ScalarProperty Name="id_funcionario" ColumnName="id_funcionario" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_venda">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_venda">
+            <EntityTypeMapping TypeName="ecostorModel.tb_venda">
               <MappingFragment StoreEntitySet="tb_venda">
-                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
-                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
-                <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
                 <ScalarProperty Name="vl_valorTotal" ColumnName="vl_valorTotal" />
+                <ScalarProperty Name="dt_saida" ColumnName="dt_saida" />
+                <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+                <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="tb_venda_item">
-            <EntityTypeMapping TypeName="db_a4e779_amenicsModel.tb_venda_item">
+            <EntityTypeMapping TypeName="ecostorModel.tb_venda_item">
               <MappingFragment StoreEntitySet="tb_venda_item">
-                <ScalarProperty Name="id_venda_item" ColumnName="id_venda_item" />
-                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
                 <ScalarProperty Name="id_estoque" ColumnName="id_estoque" />
+                <ScalarProperty Name="id_venda" ColumnName="id_venda" />
+                <ScalarProperty Name="id_venda_item" ColumnName="id_venda_item" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_fluxocaixa">
+            <EntityTypeMapping TypeName="ecostorModel.vw_fluxocaixa">
+              <MappingFragment StoreEntitySet="vw_fluxocaixa">
+                <ScalarProperty Name="tp_operacao" ColumnName="tp_operacao" />
+                <ScalarProperty Name="vl_operacao" ColumnName="vl_operacao" />
+                <ScalarProperty Name="dt_pagamento" ColumnName="dt_pagamento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

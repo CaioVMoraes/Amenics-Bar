@@ -4,13 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Twilio;
-using Twilio.Rest.Api.V2010.Account;
-using Twilio.Types;
 using WindowsFormsApp15.Model;
 
 namespace WindowsFormsApp15.Recuperação_de_Senha
@@ -56,9 +52,10 @@ namespace WindowsFormsApp15.Recuperação_de_Senha
                 Autenticacao.Usuario.UsuarioLogado.Complemento = funcionario.ds_complemento;
                 Autenticacao.Usuario.UsuarioLogado.NumeroCasa = funcionario.ds_numeroCasa;
                 Autenticacao.Usuario.UsuarioLogado.Cargo = funcionario.ds_cargo;
-                Autenticacao.Usuario.UsuarioLogado.Salario = funcionario.vl_salario;
+                Autenticacao.Usuario.UsuarioLogado.Salario = funcionario.vl_salarioPorHora;
                 Autenticacao.Usuario.UsuarioLogado.DataContratacao = funcionario.dt_contratacao;
                 Autenticacao.Usuario.UsuarioLogado.Foto = funcionario.img_foto;
+                Autenticacao.Usuario.UsuarioLogado.NivelAcesso = modeloUsuario.nv_nivelAcesso;
 
                 if (conf == true)
                 {
@@ -72,10 +69,6 @@ namespace WindowsFormsApp15.Recuperação_de_Senha
 
                     recBusiness.Inserir(model);
                     gmail.Enviar(email, codigo);
-
-                    string celular = Autenticacao.Usuario.UsuarioLogado.Celular;
-                    string mensagem = "Seu código de recuperação é: " + "'" + codigo + "'";
-                    this.EnviarWhatsapp(celular, mensagem);
 
                     label1.Visible = false;
                     txtEmail.Visible = false;
@@ -123,16 +116,15 @@ namespace WindowsFormsApp15.Recuperação_de_Senha
                 MessageBox.Show(ex.Message);
             }
         }
-        private void EnviarWhatsapp(string telPara, string Mensagem)
+
+        private void lblSair_Click(object sender, EventArgs e)
         {
-            telPara = telPara.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "");
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            TwilioClient.Init("AC70b9b67a32b116779d34b9097e5cd9d1", "3c9bb04fa8e721cb0788430da93c5d85");
-            var message = MessageResource.Create(
-             new PhoneNumber("whatsapp:" + telPara),
-            from: new PhoneNumber("whatsapp:+14155238886"),
-            body: Mensagem
-        );
+            this.Close();
+        }
+
+        private void lblMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

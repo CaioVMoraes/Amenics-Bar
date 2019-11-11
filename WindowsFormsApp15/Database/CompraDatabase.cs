@@ -9,7 +9,8 @@ namespace WindowsFormsApp15.Database
 {
     class CompraDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
+
 
         public void InserirCompra(tb_compra modelo)
         {

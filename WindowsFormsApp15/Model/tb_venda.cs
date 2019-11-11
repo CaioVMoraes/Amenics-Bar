@@ -22,7 +22,7 @@ namespace WindowsFormsApp15.Model
     
         public int id_venda { get; set; }
         public int id_usuario { get; set; }
-        public int id_cliente { get; set; }
+        public Nullable<int> id_cliente { get; set; }
         public System.DateTime dt_saida { get; set; }
         public decimal vl_valorTotal { get; set; }
     

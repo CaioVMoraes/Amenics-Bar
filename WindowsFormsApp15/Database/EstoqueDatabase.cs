@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class EstoqueDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void CadastrarEstoque(tb_estoque modelo)
         {
@@ -26,6 +26,12 @@ namespace WindowsFormsApp15.Database
         public List<tb_estoque> ConsultarEstoqueId(int id)
         {
             List<tb_estoque> lista = db.tb_estoque.Where(x => x.id_produto == id).ToList();
+
+            return lista;
+        }
+        public List<tb_estoque> ConsultarEstoqueProduto(string produto)
+        {
+            List<tb_estoque> lista = db.tb_estoque.Where(x => x.tb_produto.nm_produto.Contains(produto)).ToList();
 
             return lista;
         }
@@ -88,6 +94,15 @@ namespace WindowsFormsApp15.Database
             tb_estoque deletar = db.tb_estoque.FirstOrDefault(x => x.id_estoque == id);
 
             db.tb_estoque.Remove(deletar);
+            db.SaveChanges();
+        }
+
+        public void AlterarEstoqueNaoVendido(int id)
+        {
+            tb_estoque alterar = db.tb_estoque.FirstOrDefault(x => x.id_estoque == id);
+
+            alterar.bt_vendido = false;
+
             db.SaveChanges();
         }
 

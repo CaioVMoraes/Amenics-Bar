@@ -56,18 +56,15 @@ namespace WindowsFormsApp15
                 Autenticacao.Usuario.UsuarioLogado.Complemento = funcionario.ds_complemento;
                 Autenticacao.Usuario.UsuarioLogado.NumeroCasa = funcionario.ds_numeroCasa;
                 Autenticacao.Usuario.UsuarioLogado.Cargo = funcionario.ds_cargo;
-                Autenticacao.Usuario.UsuarioLogado.Salario = funcionario.vl_salario;
+                Autenticacao.Usuario.UsuarioLogado.Salario = funcionario.vl_salarioPorHora;
                 Autenticacao.Usuario.UsuarioLogado.DataContratacao = funcionario.dt_contratacao;
                 Autenticacao.Usuario.UsuarioLogado.Foto = funcionario.img_foto;
-
+                Autenticacao.Usuario.UsuarioLogado.NivelAcesso = modeloUsuario.nv_nivelAcesso;
 
                 if (login == true)
                 {
                     Telas.Menu tela = new Telas.Menu();
-                    Telas.frmCadastrarPonto ponto = new Telas.frmCadastrarPonto();
-                    ponto.Show();
                     tela.Show();
-
                     this.Hide();
                 }
                 else
@@ -103,6 +100,7 @@ namespace WindowsFormsApp15
 
         private void lblMinimizar_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
 
         }
 
@@ -110,8 +108,6 @@ namespace WindowsFormsApp15
         {
             Recuperação_de_Senha.ConfirmarEmail tela = new Recuperação_de_Senha.ConfirmarEmail();
             tela.Show();
-
-            this.Hide();
         }
     }
 }

@@ -28,6 +28,7 @@ namespace WindowsFormsApp15.Autenticacao
             public static decimal Salario { get; set; }
             public static DateTime DataContratacao { get; set; }
             public static byte[] Foto { get; set; }
+            public static string NivelAcesso { get; set; }
         }
     }
 }

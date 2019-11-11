@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class ControledePontoDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void CadastrarPonto(tb_controledeponto modelo)
         {
@@ -29,17 +29,22 @@ namespace WindowsFormsApp15.Database
 
             return modelo;
         }
-        
+
+        public List<tb_controledeponto> ListarPorFuncionario(int id, int mes)
+        {
+            List<tb_controledeponto> modelo = db.tb_controledeponto.Where(x => x.id_funcionario == id && x.dt_chegada.Value.Month == mes).ToList();
+
+            return modelo;
+        }
+
         public void AlterarPonto(tb_controledeponto modelo)
         {
             tb_controledeponto alterar = db.tb_controledeponto.FirstOrDefault(x => x.id_controleDePonto == x.id_controleDePonto);
 
-            modelo.dt_chegada = alterar.dt_chegada;
-            modelo.dt_saida = alterar.dt_saida;
-            modelo.dt_saidaAlmoco = alterar.dt_saidaAlmoco;
-            modelo.dt_voltaAlmoco = alterar.dt_voltaAlmoco;
-            modelo.dt_entradaHoraExtra = alterar.dt_entradaHoraExtra;
-            modelo.dt_saidaHoraExtra = alterar.dt_saidaHoraExtra;
+            alterar.dt_chegada = modelo.dt_chegada;
+            alterar.dt_saida = modelo.dt_saida;
+            alterar.dt_saidaAlmoco = modelo.dt_saidaAlmoco;
+            alterar.dt_voltaAlmoco = modelo.dt_voltaAlmoco;
 
             db.SaveChanges();
         }

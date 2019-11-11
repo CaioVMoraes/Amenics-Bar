@@ -10,13 +10,9 @@ namespace WindowsFormsApp15.Business
     class ClienteBusiness
     {
         Database.ClienteDatabase db = new Database.ClienteDatabase();
-        tb_cliente modelo = new tb_cliente();
+
         public void InserirCliente(tb_cliente modelo)
         {
-            if(modelo.id_cliente == 0)
-            {
-                throw new ArgumentException("Id inválido");
-            }
             if (modelo.ds_celular == string.Empty)
             {
                 throw new ArgumentException("O campo celular é obrigatório");
@@ -25,18 +21,27 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("O campo telefone é obrigatório");
             }
-            if (modelo.ds_cpf == string.Empty)
+            if (modelo.ds_cpf.Length < 14)
             {
-                throw new ArgumentException("O campo CPF é obrigatório");
+                throw new ArgumentException("CPF Invalido");
             }
             if (modelo.ds_email == string.Empty)
             {
                 throw new ArgumentException("O campo Email é obrigatório");
             }
-            if (modelo.ds_rg == string.Empty)
+
+            bool email = modelo.ds_email.Contains("@");
+
+            if(email == false)
             {
-                throw new ArgumentException("O campo RG é obrigatório");
+                throw new ArgumentException("Email invalido");
             }
+
+            if (modelo.ds_rg.Length < 12)
+            {
+                throw new ArgumentException("RG Invalido");
+            }
+
             if (modelo.nm_cliente == string.Empty)
             {
                 throw new ArgumentException("O campo Nome é obrigatório");
@@ -112,11 +117,6 @@ namespace WindowsFormsApp15.Business
 
         public void AlterarCliente(tb_cliente modelo)
         {
-
-            if (modelo.id_cliente == 0)
-            {
-                throw new ArgumentException("Id inválido");
-            }
             if (modelo.ds_celular == string.Empty)
             {
                 throw new ArgumentException("O campo celular é obrigatório");
@@ -125,57 +125,40 @@ namespace WindowsFormsApp15.Business
             {
                 throw new ArgumentException("O campo telefone é obrigatório");
             }
-            if (modelo.ds_cpf == string.Empty)
+            if (modelo.ds_cpf.Length < 14)
             {
-                throw new ArgumentException("O campo CPF é obrigatório");
+                throw new ArgumentException("CPF Invalido");
             }
             if (modelo.ds_email == string.Empty)
             {
                 throw new ArgumentException("O campo Email é obrigatório");
             }
-            if (modelo.ds_rg == string.Empty)
+
+            bool email = modelo.ds_email.Contains("@");
+
+            if (email == false)
             {
-                throw new ArgumentException("O campo RG é obrigatório");
+                throw new ArgumentException("Email invalido");
             }
+
+            if (modelo.ds_rg.Length < 12)
+            {
+                throw new ArgumentException("RG Invalido");
+            }
+
             if (modelo.nm_cliente == string.Empty)
             {
                 throw new ArgumentException("O campo Nome é obrigatório");
             }
-
 
             db.AlterarCliente(modelo);
 
         }
         public void RemoverCliente(int id)
         {
-
-            if (modelo.id_cliente == 0)
+            if(id == 0)
             {
-                throw new ArgumentException("Id inválido");
-            }
-            if (modelo.ds_celular == string.Empty)
-            {
-                throw new ArgumentException("O campo celular é obrigatório");
-            }
-            if (modelo.ds_telefone == string.Empty)
-            {
-                throw new ArgumentException("O campo telefone é obrigatório");
-            }
-            if (modelo.ds_cpf == string.Empty)
-            {
-                throw new ArgumentException("O campo CPF é obrigatório");
-            }
-            if (modelo.ds_email == string.Empty)
-            {
-                throw new ArgumentException("O campo Email é obrigatório");
-            }
-            if (modelo.ds_rg == string.Empty)
-            {
-                throw new ArgumentException("O campo RG é obrigatório");
-            }
-            if (modelo.nm_cliente == string.Empty)
-            {
-                throw new ArgumentException("O campo Nome é obrigatório");
+                throw new ArgumentException("Cliente Invalido");
             }
 
             db.RemoverCliente(id);

@@ -64,5 +64,15 @@ namespace WindowsFormsApp15.Telas.Compra
         {
             dtpCompra.Value = DateTime.Now.Date;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -17,8 +17,6 @@ namespace WindowsFormsApp15.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_usuario()
         {
-            this.tb_comanda = new HashSet<tb_comanda>();
-            this.tb_log = new HashSet<tb_log>();
             this.tb_recuperacao = new HashSet<tb_recuperacao>();
             this.tb_venda = new HashSet<tb_venda>();
         }
@@ -29,11 +27,7 @@ namespace WindowsFormsApp15.Model
         public string ds_senha { get; set; }
         public string nv_nivelAcesso { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_comanda> tb_comanda { get; set; }
         public virtual tb_funcionario tb_funcionario { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_log> tb_log { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_recuperacao> tb_recuperacao { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -9,7 +9,7 @@ namespace WindowsFormsApp15.Database
 {
     class FuncionarioDatabase
     {
-        Model.amenicsEntities db = new amenicsEntities();
+        Model.ecostorEntities db = new ecostorEntities();
 
         public void CadastrarFuncionario(tb_funcionario funcionario)
         {
@@ -20,6 +20,12 @@ namespace WindowsFormsApp15.Database
         public List<tb_funcionario> ConsultarFuncionarioNome(string Nome)
         {
             List<tb_funcionario> lista = db.tb_funcionario.Where(x => x.nm_funcionario.Contains(Nome)).ToList();
+
+            return lista;
+        }
+        public List<tb_funcionario> ConsultarFuncionario()
+        {
+            List<tb_funcionario> lista = db.tb_funcionario.ToList();
 
             return lista;
         }
@@ -61,7 +67,7 @@ namespace WindowsFormsApp15.Database
 
             alterar.id_funcionario = modelo.id_funcionario;
             alterar.nm_funcionario = modelo.nm_funcionario;
-            alterar.vl_salario = modelo.vl_salario;
+            alterar.vl_salarioPorHora = modelo.vl_salarioPorHora;
             alterar.ds_cargo = modelo.ds_cargo;
             alterar.ds_celular = modelo.ds_celular;
             alterar.ds_cep = modelo.ds_cep;

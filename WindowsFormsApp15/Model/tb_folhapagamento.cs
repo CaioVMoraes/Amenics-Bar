@@ -16,7 +16,6 @@ namespace WindowsFormsApp15.Model
     {
         public int id_folhaPagamento { get; set; }
         public int id_funcionario { get; set; }
-        public int id_controleDePonto { get; set; }
         public System.DateTime dt_pagamento { get; set; }
         public decimal vl_gratificacoes { get; set; }
         public decimal vl_plr { get; set; }
@@ -29,9 +28,8 @@ namespace WindowsFormsApp15.Model
         public decimal vl_fgts { get; set; }
         public decimal vl_planoSaude { get; set; }
         public decimal vl_planoOdonto { get; set; }
-        public decimal vl_faltas { get; set; }
+        public decimal vl_liquido { get; set; }
     
-        public virtual tb_controledeponto tb_controledeponto { get; set; }
         public virtual tb_funcionario tb_funcionario { get; set; }
     }
 }

@@ -67,7 +67,7 @@
             this.btnEntrar.BackColor = System.Drawing.Color.LightCoral;
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEntrar.BorderRadius = 0;
-            this.btnEntrar.ButtonText = "ENTRAR";
+            this.btnEntrar.ButtonText = "      ENTRAR";
             this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrar.DisabledColor = System.Drawing.Color.Gray;
             this.btnEntrar.Iconcolor = System.Drawing.Color.Transparent;
@@ -82,15 +82,15 @@
             this.btnEntrar.IconVisible = true;
             this.btnEntrar.IconZoom = 90D;
             this.btnEntrar.IsTab = false;
-            this.btnEntrar.Location = new System.Drawing.Point(195, 331);
+            this.btnEntrar.Location = new System.Drawing.Point(165, 331);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Normalcolor = System.Drawing.Color.LightCoral;
             this.btnEntrar.OnHovercolor = System.Drawing.Color.IndianRed;
             this.btnEntrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEntrar.selected = false;
-            this.btnEntrar.Size = new System.Drawing.Size(123, 48);
+            this.btnEntrar.Size = new System.Drawing.Size(192, 48);
             this.btnEntrar.TabIndex = 26;
-            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.Text = "      ENTRAR";
             this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEntrar.Textcolor = System.Drawing.Color.White;
             this.btnEntrar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -105,7 +105,7 @@
             this.txtSenha.BorderThickness = 2;
             this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtSenha.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSenha.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSenha.isPassword = true;
             this.txtSenha.Location = new System.Drawing.Point(165, 281);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -123,7 +123,7 @@
             this.txtUsuario.BorderThickness = 2;
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUsuario.isPassword = false;
             this.txtUsuario.Location = new System.Drawing.Point(165, 243);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
@@ -231,6 +231,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.bunifuTileButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

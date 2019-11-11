@@ -18,6 +18,7 @@ namespace WindowsFormsApp15.Model
         public int id_usuario { get; set; }
         public string ds_codigo { get; set; }
         public System.DateTime dt_data { get; set; }
+        public bool bt_usado { get; set; }
     
         public virtual tb_usuario tb_usuario { get; set; }
     }
