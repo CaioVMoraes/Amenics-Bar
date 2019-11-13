@@ -122,8 +122,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -134,7 +133,7 @@
             // 
             // dtpContrat
             // 
-            this.dtpContrat.BackColor = System.Drawing.Color.SeaGreen;
+            this.dtpContrat.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.dtpContrat.BorderRadius = 0;
             this.dtpContrat.ForeColor = System.Drawing.Color.White;
             this.dtpContrat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -164,7 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.ClientSize = new System.Drawing.Size(920, 693);
             this.Controls.Add(this.cboFuncionario);
             this.Controls.Add(this.dtpContrat);

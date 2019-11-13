@@ -62,8 +62,8 @@
             this.txtUF = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label19 = new System.Windows.Forms.Label();
+            this.btnDeletar = new Bunifu.Framework.UI.BunifuFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -432,8 +432,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -456,10 +455,23 @@
             this.label5.TabIndex = 424;
             this.label5.Text = " ";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.MenuBar;
+            this.label19.Location = new System.Drawing.Point(323, 59);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(241, 29);
+            this.label19.TabIndex = 453;
+            this.label19.Text = "Deletar Fornecedor";
+            // 
             // btnDeletar
             // 
-            this.btnDeletar.Activecolor = System.Drawing.Color.SeaGreen;
-            this.btnDeletar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnDeletar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeletar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeletar.BorderRadius = 0;
             this.btnDeletar.ButtonText = "DELETAR";
@@ -479,8 +491,8 @@
             this.btnDeletar.IsTab = false;
             this.btnDeletar.Location = new System.Drawing.Point(603, 548);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnDeletar.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDeletar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeletar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnDeletar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDeletar.selected = false;
             this.btnDeletar.Size = new System.Drawing.Size(164, 47);
@@ -491,24 +503,11 @@
             this.btnDeletar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.MenuBar;
-            this.label19.Location = new System.Drawing.Point(323, 59);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(241, 29);
-            this.label19.TabIndex = 453;
-            this.label19.Text = "Deletar Fornecedor";
-            // 
             // frmDeletarFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(857, 609);
             this.Controls.Add(this.txtID);
@@ -590,9 +589,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuFlatButton btnDeletar;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.MaskedTextBox txtCNPJ;
         private System.Windows.Forms.TextBox txtUF;
+        private Bunifu.Framework.UI.BunifuFlatButton btnDeletar;
     }
 }

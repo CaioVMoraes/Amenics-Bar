@@ -147,7 +147,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Green;
+            this.label15.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.label15.Location = new System.Drawing.Point(999, 486);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 55);
@@ -157,7 +157,7 @@
             // 
             // btnFinalizarPedido
             // 
-            this.btnFinalizarPedido.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.btnFinalizarPedido.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnFinalizarPedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFinalizarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFinalizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -167,12 +167,12 @@
             this.btnFinalizarPedido.Size = new System.Drawing.Size(310, 88);
             this.btnFinalizarPedido.TabIndex = 166;
             this.btnFinalizarPedido.Text = "Finalizar Compra";
-            this.btnFinalizarPedido.UseVisualStyleBackColor = true;
+            this.btnFinalizarPedido.UseVisualStyleBackColor = false;
             this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel5.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(742, 96);
             this.panel5.Name = "panel5";
@@ -194,7 +194,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.imgUsuario);
@@ -333,7 +333,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Plano_Verde1;
+            this.panel4.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(0, 106);
             this.panel4.Name = "panel4";

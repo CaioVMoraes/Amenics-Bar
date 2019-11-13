@@ -54,18 +54,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCPFCliente = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.nudQuantidade = new System.Windows.Forms.NumericUpDown();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.imgUsuario = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPago)).BeginInit();
@@ -73,11 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -389,6 +389,20 @@
             this.label11.Text = "Cadastrar Cliente";
             this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::WindowsFormsApp15.Properties.Resources.collaborator_male;
+            this.pictureBox1.Location = new System.Drawing.Point(778, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 160;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -444,6 +458,18 @@
             this.label14.Text = "X";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // imgUsuario
+            // 
+            this.imgUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgUsuario.Image = ((System.Drawing.Image)(resources.GetObject("imgUsuario.Image")));
+            this.imgUsuario.Location = new System.Drawing.Point(25, 18);
+            this.imgUsuario.Name = "imgUsuario";
+            this.imgUsuario.Size = new System.Drawing.Size(45, 45);
+            this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgUsuario.TabIndex = 55;
+            this.imgUsuario.TabStop = false;
+            // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
@@ -459,7 +485,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Yellow;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel6.Controls.Add(this.label1);
             this.panel6.Controls.Add(this.lblTotal);
             this.panel6.Location = new System.Drawing.Point(12, 582);
@@ -512,32 +538,6 @@
             this.pictureBox3.TabIndex = 74;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::WindowsFormsApp15.Properties.Resources.collaborator_male;
-            this.pictureBox1.Location = new System.Drawing.Point(778, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 160;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // imgUsuario
-            // 
-            this.imgUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.imgUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgUsuario.Image = ((System.Drawing.Image)(resources.GetObject("imgUsuario.Image")));
-            this.imgUsuario.Location = new System.Drawing.Point(25, 18);
-            this.imgUsuario.Name = "imgUsuario";
-            this.imgUsuario.Size = new System.Drawing.Size(45, 45);
-            this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgUsuario.TabIndex = 55;
-            this.imgUsuario.TabStop = false;
-            // 
             // frmFluxoCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,12 +573,12 @@
             this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantidade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

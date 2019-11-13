@@ -109,8 +109,8 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Activecolor = System.Drawing.Color.SeaGreen;
-            this.btnAlterar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAlterar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnAlterar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAlterar.BorderRadius = 0;
             this.btnAlterar.ButtonText = "  ALTERAR";
@@ -130,8 +130,8 @@
             this.btnAlterar.IsTab = false;
             this.btnAlterar.Location = new System.Drawing.Point(120, 181);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnAlterar.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAlterar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnAlterar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnAlterar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAlterar.selected = false;
             this.btnAlterar.Size = new System.Drawing.Size(138, 34);
@@ -273,8 +273,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -328,7 +327,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(488, 551);
             this.Controls.Add(this.txtIdProduto);

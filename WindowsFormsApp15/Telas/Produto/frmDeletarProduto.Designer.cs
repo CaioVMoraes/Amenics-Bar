@@ -205,8 +205,8 @@
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.SeaGreen;
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "DELETAR";
@@ -226,8 +226,8 @@
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(145, 190);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(138, 34);
@@ -240,8 +240,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -296,9 +295,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(486, 562);
+            this.ClientSize = new System.Drawing.Size(486, 492);
             this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label27);

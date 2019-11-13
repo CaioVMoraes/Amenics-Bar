@@ -68,8 +68,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -200,7 +199,7 @@
             // 
             // dtpData
             // 
-            this.dtpData.BackColor = System.Drawing.Color.SeaGreen;
+            this.dtpData.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.dtpData.BorderRadius = 0;
             this.dtpData.ForeColor = System.Drawing.Color.White;
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -273,8 +272,8 @@
             // 
             // btnDeletar
             // 
-            this.btnDeletar.Activecolor = System.Drawing.Color.SeaGreen;
-            this.btnDeletar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnDeletar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeletar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnDeletar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDeletar.BorderRadius = 0;
             this.btnDeletar.ButtonText = "DELETAR";
@@ -294,8 +293,8 @@
             this.btnDeletar.IsTab = false;
             this.btnDeletar.Location = new System.Drawing.Point(152, 217);
             this.btnDeletar.Name = "btnDeletar";
-            this.btnDeletar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnDeletar.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDeletar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnDeletar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnDeletar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDeletar.selected = false;
             this.btnDeletar.Size = new System.Drawing.Size(138, 34);
@@ -310,7 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(493, 531);
             this.Controls.Add(this.txtID);

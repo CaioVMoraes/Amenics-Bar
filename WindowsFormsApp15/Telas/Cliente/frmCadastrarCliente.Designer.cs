@@ -51,8 +51,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -106,8 +105,8 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Activecolor = System.Drawing.Color.SeaGreen;
-            this.btnEntrar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnEntrar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEntrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEntrar.BorderRadius = 0;
             this.btnEntrar.ButtonText = "CADASTRAR";
@@ -127,8 +126,8 @@
             this.btnEntrar.IsTab = false;
             this.btnEntrar.Location = new System.Drawing.Point(222, 320);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnEntrar.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.btnEntrar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEntrar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnEntrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEntrar.selected = false;
             this.btnEntrar.Size = new System.Drawing.Size(145, 34);
@@ -275,7 +274,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources._3907f0a4052ed31662981053bbf12c4e;
+            this.BackgroundImage = global::WindowsFormsApp15.Properties.Resources.Background_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(433, 395);
             this.Controls.Add(this.txtRg);
