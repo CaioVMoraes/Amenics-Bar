@@ -39,7 +39,11 @@
             this.lblMinimizar = new System.Windows.Forms.Label();
             this.lblSair = new System.Windows.Forms.Label();
             this.lblEsqueciSenha = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuTileButton1
@@ -55,7 +59,7 @@
             this.bunifuTileButton1.ImageZoom = 50;
             this.bunifuTileButton1.LabelPosition = 41;
             this.bunifuTileButton1.LabelText = "Login";
-            this.bunifuTileButton1.Location = new System.Drawing.Point(195, 104);
+            this.bunifuTileButton1.Location = new System.Drawing.Point(96, 57);
             this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
             this.bunifuTileButton1.Name = "bunifuTileButton1";
             this.bunifuTileButton1.Size = new System.Drawing.Size(128, 129);
@@ -63,8 +67,8 @@
             // 
             // btnEntrar
             // 
-            this.btnEntrar.Activecolor = System.Drawing.Color.LightCoral;
-            this.btnEntrar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEntrar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEntrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEntrar.BorderRadius = 0;
             this.btnEntrar.ButtonText = "      ENTRAR";
@@ -82,13 +86,13 @@
             this.btnEntrar.IconVisible = true;
             this.btnEntrar.IconZoom = 90D;
             this.btnEntrar.IsTab = false;
-            this.btnEntrar.Location = new System.Drawing.Point(165, 331);
+            this.btnEntrar.Location = new System.Drawing.Point(96, 306);
             this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Normalcolor = System.Drawing.Color.LightCoral;
-            this.btnEntrar.OnHovercolor = System.Drawing.Color.IndianRed;
+            this.btnEntrar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnEntrar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnEntrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEntrar.selected = false;
-            this.btnEntrar.Size = new System.Drawing.Size(192, 48);
+            this.btnEntrar.Size = new System.Drawing.Size(172, 37);
             this.btnEntrar.TabIndex = 26;
             this.btnEntrar.Text = "      ENTRAR";
             this.btnEntrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,36 +103,36 @@
             // txtSenha
             // 
             this.txtSenha.BackColor = System.Drawing.Color.White;
-            this.txtSenha.BorderColorFocused = System.Drawing.Color.LightCoral;
-            this.txtSenha.BorderColorIdle = System.Drawing.Color.Salmon;
-            this.txtSenha.BorderColorMouseHover = System.Drawing.Color.Firebrick;
+            this.txtSenha.BorderColorFocused = System.Drawing.Color.DarkSlateBlue;
+            this.txtSenha.BorderColorIdle = System.Drawing.Color.DarkSlateBlue;
+            this.txtSenha.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtSenha.BorderThickness = 2;
             this.txtSenha.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtSenha.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtSenha.isPassword = true;
-            this.txtSenha.Location = new System.Drawing.Point(165, 281);
+            this.txtSenha.Location = new System.Drawing.Point(96, 245);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(192, 33);
+            this.txtSenha.Size = new System.Drawing.Size(172, 33);
             this.txtSenha.TabIndex = 25;
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.White;
-            this.txtUsuario.BorderColorFocused = System.Drawing.Color.LightCoral;
-            this.txtUsuario.BorderColorIdle = System.Drawing.Color.Salmon;
-            this.txtUsuario.BorderColorMouseHover = System.Drawing.Color.Firebrick;
+            this.txtUsuario.BorderColorFocused = System.Drawing.Color.DarkSlateBlue;
+            this.txtUsuario.BorderColorIdle = System.Drawing.Color.DarkSlateBlue;
+            this.txtUsuario.BorderColorMouseHover = System.Drawing.Color.MediumSlateBlue;
             this.txtUsuario.BorderThickness = 2;
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUsuario.isPassword = false;
-            this.txtUsuario.Location = new System.Drawing.Point(165, 243);
+            this.txtUsuario.Location = new System.Drawing.Point(96, 207);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(192, 33);
+            this.txtUsuario.Size = new System.Drawing.Size(172, 33);
             this.txtUsuario.TabIndex = 24;
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -139,7 +143,7 @@
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(90, 295);
+            this.label6.Location = new System.Drawing.Point(21, 259);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 20);
             this.label6.TabIndex = 23;
@@ -152,7 +156,7 @@
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(80, 256);
+            this.label7.Location = new System.Drawing.Point(11, 220);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 20);
             this.label7.TabIndex = 22;
@@ -160,13 +164,13 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 28);
+            this.panel1.Size = new System.Drawing.Size(793, 28);
             this.panel1.TabIndex = 308;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -178,7 +182,7 @@
             this.lblMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMinimizar.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinimizar.ForeColor = System.Drawing.Color.White;
-            this.lblMinimizar.Location = new System.Drawing.Point(437, 2);
+            this.lblMinimizar.Location = new System.Drawing.Point(737, 2);
             this.lblMinimizar.Name = "lblMinimizar";
             this.lblMinimizar.Size = new System.Drawing.Size(21, 23);
             this.lblMinimizar.TabIndex = 156;
@@ -193,7 +197,7 @@
             this.lblSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblSair.Font = new System.Drawing.Font("Lucida Sans Unicode", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSair.ForeColor = System.Drawing.Color.White;
-            this.lblSair.Location = new System.Drawing.Point(462, 5);
+            this.lblSair.Location = new System.Drawing.Point(762, 5);
             this.lblSair.Name = "lblSair";
             this.lblSair.Size = new System.Drawing.Size(23, 23);
             this.lblSair.TabIndex = 155;
@@ -206,22 +210,43 @@
             this.lblEsqueciSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblEsqueciSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEsqueciSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEsqueciSenha.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEsqueciSenha.Location = new System.Drawing.Point(80, 398);
+            this.lblEsqueciSenha.ForeColor = System.Drawing.Color.White;
+            this.lblEsqueciSenha.Location = new System.Drawing.Point(11, 377);
             this.lblEsqueciSenha.Name = "lblEsqueciSenha";
             this.lblEsqueciSenha.Size = new System.Drawing.Size(161, 20);
             this.lblEsqueciSenha.TabIndex = 309;
             this.lblEsqueciSenha.Text = "Esqueci minha senha";
             this.lblEsqueciSenha.Click += new System.EventHandler(this.label1_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(289, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(504, 405);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 310;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(57, 36);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(177, 157);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 311;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(486, 590);
+            this.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(793, 428);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblEsqueciSenha);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnEntrar);
@@ -230,6 +255,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.bunifuTileButton1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -237,6 +263,8 @@
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,6 +282,8 @@
         private System.Windows.Forms.Label lblMinimizar;
         private System.Windows.Forms.Label lblSair;
         private System.Windows.Forms.Label lblEsqueciSenha;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

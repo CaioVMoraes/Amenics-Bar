@@ -16,7 +16,7 @@ namespace WindowsFormsApp15
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Telas.Fornecedor.frmAlterarFornecedor ());
+            Application.Run(new Telas.Usuario_.frmAlterarSenha ());
         }
     }
 }
