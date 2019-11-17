@@ -213,8 +213,8 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Activecolor = System.Drawing.Color.SeaGreen;
-            this.btnCadastrar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCadastrar.Activecolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnCadastrar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCadastrar.BorderRadius = 0;
             this.btnCadastrar.ButtonText = "CADASTRAR";
@@ -234,8 +234,8 @@
             this.btnCadastrar.IsTab = false;
             this.btnCadastrar.Location = new System.Drawing.Point(120, 181);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Normalcolor = System.Drawing.Color.SeaGreen;
-            this.btnCadastrar.OnHovercolor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCadastrar.Normalcolor = System.Drawing.Color.DarkSlateBlue;
+            this.btnCadastrar.OnHovercolor = System.Drawing.Color.MediumSlateBlue;
             this.btnCadastrar.OnHoverTextColor = System.Drawing.Color.White;
             this.btnCadastrar.selected = false;
             this.btnCadastrar.Size = new System.Drawing.Size(138, 34);

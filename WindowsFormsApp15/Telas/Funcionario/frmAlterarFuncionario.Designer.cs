@@ -275,7 +275,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(235, 29);
             this.label19.TabIndex = 278;
-            this.label19.Text = "Alterar Funcionario";
+            this.label19.Text = "Alterar Funcionário";
             // 
             // txtId
             // 

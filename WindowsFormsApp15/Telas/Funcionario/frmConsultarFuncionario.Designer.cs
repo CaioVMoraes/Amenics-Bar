@@ -251,7 +251,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(185, 20);
             this.label4.TabIndex = 173;
-            this.label4.Text = "Consultar Funcionario";
+            this.label4.Text = "Consultar Funcionário";
             // 
             // label1
             // 

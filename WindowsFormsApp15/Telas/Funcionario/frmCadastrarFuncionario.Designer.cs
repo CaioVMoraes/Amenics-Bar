@@ -683,7 +683,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(271, 29);
             this.label14.TabIndex = 305;
-            this.label14.Text = "Cadastrar Funcionario";
+            this.label14.Text = "Cadastrar Funcionário";
             // 
             // frmCadastrarFuncionario
             // 

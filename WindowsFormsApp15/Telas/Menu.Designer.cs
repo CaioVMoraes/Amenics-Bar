@@ -389,8 +389,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel2.Controls.Add(this.button11);
             this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button9);
@@ -475,7 +474,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(189, 34);
             this.button8.TabIndex = 166;
-            this.button8.Text = "Funcionario / Usuario";
+            this.button8.Text = "Funcionário / Usuario";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
@@ -585,8 +584,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.panel1.Controls.Add(this.lblMinimizar);
             this.panel1.Controls.Add(this.lblSair);
             this.panel1.Controls.Add(this.lblNome);
